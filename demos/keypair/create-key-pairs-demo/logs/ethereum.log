@@ -1,0 +1,3707 @@
+14:46:36.465 INFO [general]  Config ( yes ): default properties from resource 'ethereumj.conf'
+14:46:36.622 INFO [general]  Config ( no  ): user properties from -Dethereumj.conf.res resource(s) 'null'
+14:46:36.630 INFO [general]  Config ( no  ): user properties from resource 'user.conf'
+14:46:36.634 INFO [general]  Config ( no  ): user properties from file '/Users/jieyi/Theta/theta-exchange-integration/demos/keypair/create-key-pairs-demo/config/ethereumj.conf'
+14:46:36.634 INFO [general]  Config ( no  ): test properties from resource 'test-ethereumj.conf'
+14:46:36.635 INFO [general]  Config ( no  ): test properties from resource 'test-user.conf'
+14:46:36.642 INFO [general]  Config ( no  ): user properties from -Dethereumj.conf.file file(s) 'null'
+14:46:36.643 INFO [general]  Config ( no  ): config passed via constructor
+14:46:36.650 DEBUG [general]  Config trace: # ethereumj.conf: 164-457
+blockchain {
+    # ethereumj.conf: 164
+    config {
+        # ethereumj.conf: 164
+        name=main
+    }
+    # ethereumj.conf: 457
+    only=false
+}
+# ethereumj.conf: 463
+blocks {
+    # ethereumj.conf: 463
+    loader=""
+}
+# ethereumj.conf: 230
+cache {
+    # ethereumj.conf: 251
+    blockQueueSize=32
+    # ethereumj.conf: 232
+    flush {
+        # ethereumj.conf: 241
+        blocks=0
+        # ethereumj.conf: 244
+        shortSyncFlush=true
+        # ethereumj.conf: 236
+        writeCacheSize=64
+    }
+    # ethereumj.conf: 254
+    headerQueueSize=8
+    # ethereumj.conf: 261
+    maxStateBloomSize=128
+    # ethereumj.conf: 248
+    stateCacheSize=384
+}
+# ethereumj.conf: 466
+crypto {
+    # ethereumj.conf: 470-471
+    hash {
+        # ethereumj.conf: 470
+        alg256=ETH-KECCAK-256
+        # ethereumj.conf: 471
+        alg512=ETH-KECCAK-512
+    }
+    # ethereumj.conf: 468
+    providerName=SC
+}
+# ethereumj.conf: 172
+database {
+    # ethereumj.conf: 175
+    dir=database
+    # ethereumj.conf: 192
+    fromBackup=false
+    # ethereumj.conf: 199
+    incompatibleDatabaseBehavior=EXIT
+    # ethereumj.conf: 226
+    maxOpenFiles=512
+    # ethereumj.conf: 205
+    prune {
+        # ethereumj.conf: 206
+        enabled=true
+        # ethereumj.conf: 219
+        maxDepth=192
+    }
+    # ethereumj.conf: 181
+    reset=false
+    # ethereumj.conf: 187
+    resetBlock=0
+}
+# ethereumj.conf: 385
+dump {
+    # ethereumj.conf: 398
+    block=-1
+    # ethereumj.conf: 402
+    clean {
+        # ethereumj.conf: 402
+        on {
+            # ethereumj.conf: 402
+            restart=true
+        }
+    }
+    # ethereumj.conf: 392
+    dir=dmp
+    # ethereumj.conf: 391
+    full=false
+    # ethereumj.conf: 399
+    style=pretty
+}
+# ethereumj.conf: 150
+genesis="frontier.json"
+# ethereumj.conf: 438
+hello {
+    # ethereumj.conf: 438
+    phrase=Dev
+}
+# ethereumj.conf: 454
+keyvalue {
+    # ethereumj.conf: 454
+    datasource=rocksdb
+}
+# ethereumj.conf: 324
+mine {
+    # ethereumj.conf: 343
+    coinbase="0000000000000000000000000000000000000000"
+    # ethereumj.conf: 334
+    cpuMineThreads=4
+    # ethereumj.conf: 347
+    extraData="EthereumJ powered"
+    # ethereumj.conf: 340
+    fullDataSet=true
+    # ethereumj.conf: 356
+    minBlockTimeoutMsec=0
+    # ethereumj.conf: 353
+    minGasPrice=1000000000
+    # ethereumj.conf: 330
+    start=false
+    # ethereumj.conf: 360
+    startNonce=null
+}
+# ethereumj.conf: 1-77
+peer {
+    # ethereumj.conf: 92
+    active=[]
+    # ethereumj.conf: 121
+    capabilities=[
+        # ethereumj.conf: 121
+        eth
+    ]
+    # ethereumj.conf: 130
+    channel {
+        # ethereumj.conf: 130
+        read {
+            # ethereumj.conf: 130
+            timeout=30
+        }
+    }
+    # ethereumj.conf: 125
+    connection {
+        # ethereumj.conf: 125
+        timeout=2
+    }
+    # ethereumj.conf: 1
+    discovery {
+        # ethereumj.conf: 52
+        bind {
+            # ethereumj.conf: 52
+            ip=""
+        }
+        # ethereumj.conf: 8
+        enabled=true
+        # ethereumj.conf: 44
+        external {
+            # ethereumj.conf: 44
+            ip=null
+        }
+        # ethereumj.conf: 13
+        ip {
+            # ethereumj.conf: 13
+            list=[
+                # ethereumj.conf: 15
+                "5.1.83.226:30303",
+                # ethereumj.conf: 18
+                "52.16.188.185:30303",
+                # ethereumj.conf: 19
+                "13.93.211.84:30303",
+                # ethereumj.conf: 20
+                "191.235.84.50:30303",
+                # ethereumj.conf: 21
+                "13.75.154.138:30303",
+                # ethereumj.conf: 22
+                "52.74.57.123:30303",
+                # ethereumj.conf: 25
+                "163.172.187.252:30303",
+                # ethereumj.conf: 26
+                "163.172.157.114:30303",
+                # ethereumj.conf: 27
+                "136.243.154.244:30303",
+                # ethereumj.conf: 28
+                "88.212.206.70:30303",
+                # ethereumj.conf: 29
+                "37.128.191.230:30303",
+                # ethereumj.conf: 30
+                "46.20.235.22:30303",
+                # ethereumj.conf: 31
+                "216.158.85.185:30303",
+                # ethereumj.conf: 32
+                "212.47.247.103:30303",
+                # ethereumj.conf: 33
+                "138.201.144.135:30303",
+                # ethereumj.conf: 34
+                "45.55.33.62:30303",
+                # ethereumj.conf: 35
+                "188.166.255.12:30303",
+                # ethereumj.conf: 36
+                "159.203.210.80:30303",
+                # ethereumj.conf: 37
+                "51.15.42.252:30303",
+                # ethereumj.conf: 38
+                "163.172.171.38:30303"
+            ]
+        }
+        # ethereumj.conf: 60
+        persist=true
+        # ethereumj.conf: 56
+        public {
+            # ethereumj.conf: 56
+            home {
+                # ethereumj.conf: 56
+                node=true
+            }
+        }
+        # ethereumj.conf: 69
+        touchMaxNodes=100
+        # ethereumj.conf: 65
+        touchPeriod=600
+        # ethereumj.conf: 74
+        workers=8
+    }
+    # ethereumj.conf: 80
+    listen {
+        # ethereumj.conf: 80
+        port=30303
+    }
+    # ethereumj.conf: 117
+    maxActivePeers=30
+    # ethereumj.conf: 83
+    networkId=1
+    # ethereumj.conf: 132
+    p2p {
+        # ethereumj.conf: 142
+        eip8=true
+        # ethereumj.conf: 138
+        framing {
+            # ethereumj.conf: 138
+            maxSize=32768
+        }
+    }
+    # ethereumj.conf: 103
+    trusted=[]
+}
+# ethereumj.conf: 434
+play {
+    # ethereumj.conf: 434
+    vm=true
+}
+# ethereumj.conf: 427-456
+record {
+    # ethereumj.conf: 456
+    blocks=false
+    # ethereumj.conf: 427
+    internal {
+        # ethereumj.conf: 427
+        transactions {
+            # ethereumj.conf: 427
+            data=true
+        }
+    }
+}
+# ethereumj.conf: 450
+root {
+    # ethereumj.conf: 450
+    hash {
+        # ethereumj.conf: 450
+        start=null
+    }
+}
+# ethereumj.conf: 364
+solc {
+    # ethereumj.conf: 367
+    path=null
+}
+# ethereumj.conf: 265
+sync {
+    # ethereumj.conf: 269
+    enabled=true
+    # ethereumj.conf: 320
+    ethash=mixed
+    # ethereumj.conf: 307
+    exitOnBlockConflict=false
+    # ethereumj.conf: 272
+    fast {
+        # ethereumj.conf: 285
+        backupState=false
+        # ethereumj.conf: 276
+        enabled=false
+        # ethereumj.conf: 289
+        skipHistory=false
+    }
+    # ethereumj.conf: 313
+    makeDoneByTimeout=-1
+    # ethereumj.conf: 298
+    peer {
+        # ethereumj.conf: 298
+        count=30
+    }
+}
+# ethereumj.conf: 422
+trace {
+    # ethereumj.conf: 422
+    startblock=-1
+}
+# ethereumj.conf: 379-383
+transaction {
+    # ethereumj.conf: 379
+    approve {
+        # ethereumj.conf: 379
+        timeout=15
+    }
+    # ethereumj.conf: 383
+    outdated {
+        # ethereumj.conf: 383
+        threshold=10
+    }
+}
+# ethereumj.conf: 412
+vm {
+    # ethereumj.conf: 412
+    structured {
+        # ethereumj.conf: 415
+        compressed=true
+        # ethereumj.conf: 414
+        dir=vmtrace
+        # ethereumj.conf: 416
+        initStorageLimit=10000
+        # ethereumj.conf: 413
+        trace=false
+    }
+}
+
+14:47:16.462 INFO [general]  Config ( yes ): default properties from resource 'ethereumj.conf'
+14:47:16.571 INFO [general]  Config ( no  ): user properties from -Dethereumj.conf.res resource(s) 'null'
+14:47:16.572 INFO [general]  Config ( no  ): user properties from resource 'user.conf'
+14:47:16.573 INFO [general]  Config ( no  ): user properties from file '/Users/jieyi/Theta/theta-exchange-integration/demos/keypair/create-key-pairs-demo/config/ethereumj.conf'
+14:47:16.575 INFO [general]  Config ( no  ): test properties from resource 'test-ethereumj.conf'
+14:47:16.576 INFO [general]  Config ( no  ): test properties from resource 'test-user.conf'
+14:47:16.577 INFO [general]  Config ( no  ): user properties from -Dethereumj.conf.file file(s) 'null'
+14:47:16.578 INFO [general]  Config ( no  ): config passed via constructor
+14:47:16.582 DEBUG [general]  Config trace: # ethereumj.conf: 164-457
+blockchain {
+    # ethereumj.conf: 164
+    config {
+        # ethereumj.conf: 164
+        name=main
+    }
+    # ethereumj.conf: 457
+    only=false
+}
+# ethereumj.conf: 463
+blocks {
+    # ethereumj.conf: 463
+    loader=""
+}
+# ethereumj.conf: 230
+cache {
+    # ethereumj.conf: 251
+    blockQueueSize=32
+    # ethereumj.conf: 232
+    flush {
+        # ethereumj.conf: 241
+        blocks=0
+        # ethereumj.conf: 244
+        shortSyncFlush=true
+        # ethereumj.conf: 236
+        writeCacheSize=64
+    }
+    # ethereumj.conf: 254
+    headerQueueSize=8
+    # ethereumj.conf: 261
+    maxStateBloomSize=128
+    # ethereumj.conf: 248
+    stateCacheSize=384
+}
+# ethereumj.conf: 466
+crypto {
+    # ethereumj.conf: 470-471
+    hash {
+        # ethereumj.conf: 470
+        alg256=ETH-KECCAK-256
+        # ethereumj.conf: 471
+        alg512=ETH-KECCAK-512
+    }
+    # ethereumj.conf: 468
+    providerName=SC
+}
+# ethereumj.conf: 172
+database {
+    # ethereumj.conf: 175
+    dir=database
+    # ethereumj.conf: 192
+    fromBackup=false
+    # ethereumj.conf: 199
+    incompatibleDatabaseBehavior=EXIT
+    # ethereumj.conf: 226
+    maxOpenFiles=512
+    # ethereumj.conf: 205
+    prune {
+        # ethereumj.conf: 206
+        enabled=true
+        # ethereumj.conf: 219
+        maxDepth=192
+    }
+    # ethereumj.conf: 181
+    reset=false
+    # ethereumj.conf: 187
+    resetBlock=0
+}
+# ethereumj.conf: 385
+dump {
+    # ethereumj.conf: 398
+    block=-1
+    # ethereumj.conf: 402
+    clean {
+        # ethereumj.conf: 402
+        on {
+            # ethereumj.conf: 402
+            restart=true
+        }
+    }
+    # ethereumj.conf: 392
+    dir=dmp
+    # ethereumj.conf: 391
+    full=false
+    # ethereumj.conf: 399
+    style=pretty
+}
+# ethereumj.conf: 150
+genesis="frontier.json"
+# ethereumj.conf: 438
+hello {
+    # ethereumj.conf: 438
+    phrase=Dev
+}
+# ethereumj.conf: 454
+keyvalue {
+    # ethereumj.conf: 454
+    datasource=rocksdb
+}
+# ethereumj.conf: 324
+mine {
+    # ethereumj.conf: 343
+    coinbase="0000000000000000000000000000000000000000"
+    # ethereumj.conf: 334
+    cpuMineThreads=4
+    # ethereumj.conf: 347
+    extraData="EthereumJ powered"
+    # ethereumj.conf: 340
+    fullDataSet=true
+    # ethereumj.conf: 356
+    minBlockTimeoutMsec=0
+    # ethereumj.conf: 353
+    minGasPrice=1000000000
+    # ethereumj.conf: 330
+    start=false
+    # ethereumj.conf: 360
+    startNonce=null
+}
+# ethereumj.conf: 1-77
+peer {
+    # ethereumj.conf: 92
+    active=[]
+    # ethereumj.conf: 121
+    capabilities=[
+        # ethereumj.conf: 121
+        eth
+    ]
+    # ethereumj.conf: 130
+    channel {
+        # ethereumj.conf: 130
+        read {
+            # ethereumj.conf: 130
+            timeout=30
+        }
+    }
+    # ethereumj.conf: 125
+    connection {
+        # ethereumj.conf: 125
+        timeout=2
+    }
+    # ethereumj.conf: 1
+    discovery {
+        # ethereumj.conf: 52
+        bind {
+            # ethereumj.conf: 52
+            ip=""
+        }
+        # ethereumj.conf: 8
+        enabled=true
+        # ethereumj.conf: 44
+        external {
+            # ethereumj.conf: 44
+            ip=null
+        }
+        # ethereumj.conf: 13
+        ip {
+            # ethereumj.conf: 13
+            list=[
+                # ethereumj.conf: 15
+                "5.1.83.226:30303",
+                # ethereumj.conf: 18
+                "52.16.188.185:30303",
+                # ethereumj.conf: 19
+                "13.93.211.84:30303",
+                # ethereumj.conf: 20
+                "191.235.84.50:30303",
+                # ethereumj.conf: 21
+                "13.75.154.138:30303",
+                # ethereumj.conf: 22
+                "52.74.57.123:30303",
+                # ethereumj.conf: 25
+                "163.172.187.252:30303",
+                # ethereumj.conf: 26
+                "163.172.157.114:30303",
+                # ethereumj.conf: 27
+                "136.243.154.244:30303",
+                # ethereumj.conf: 28
+                "88.212.206.70:30303",
+                # ethereumj.conf: 29
+                "37.128.191.230:30303",
+                # ethereumj.conf: 30
+                "46.20.235.22:30303",
+                # ethereumj.conf: 31
+                "216.158.85.185:30303",
+                # ethereumj.conf: 32
+                "212.47.247.103:30303",
+                # ethereumj.conf: 33
+                "138.201.144.135:30303",
+                # ethereumj.conf: 34
+                "45.55.33.62:30303",
+                # ethereumj.conf: 35
+                "188.166.255.12:30303",
+                # ethereumj.conf: 36
+                "159.203.210.80:30303",
+                # ethereumj.conf: 37
+                "51.15.42.252:30303",
+                # ethereumj.conf: 38
+                "163.172.171.38:30303"
+            ]
+        }
+        # ethereumj.conf: 60
+        persist=true
+        # ethereumj.conf: 56
+        public {
+            # ethereumj.conf: 56
+            home {
+                # ethereumj.conf: 56
+                node=true
+            }
+        }
+        # ethereumj.conf: 69
+        touchMaxNodes=100
+        # ethereumj.conf: 65
+        touchPeriod=600
+        # ethereumj.conf: 74
+        workers=8
+    }
+    # ethereumj.conf: 80
+    listen {
+        # ethereumj.conf: 80
+        port=30303
+    }
+    # ethereumj.conf: 117
+    maxActivePeers=30
+    # ethereumj.conf: 83
+    networkId=1
+    # ethereumj.conf: 132
+    p2p {
+        # ethereumj.conf: 142
+        eip8=true
+        # ethereumj.conf: 138
+        framing {
+            # ethereumj.conf: 138
+            maxSize=32768
+        }
+    }
+    # ethereumj.conf: 103
+    trusted=[]
+}
+# ethereumj.conf: 434
+play {
+    # ethereumj.conf: 434
+    vm=true
+}
+# ethereumj.conf: 427-456
+record {
+    # ethereumj.conf: 456
+    blocks=false
+    # ethereumj.conf: 427
+    internal {
+        # ethereumj.conf: 427
+        transactions {
+            # ethereumj.conf: 427
+            data=true
+        }
+    }
+}
+# ethereumj.conf: 450
+root {
+    # ethereumj.conf: 450
+    hash {
+        # ethereumj.conf: 450
+        start=null
+    }
+}
+# ethereumj.conf: 364
+solc {
+    # ethereumj.conf: 367
+    path=null
+}
+# ethereumj.conf: 265
+sync {
+    # ethereumj.conf: 269
+    enabled=true
+    # ethereumj.conf: 320
+    ethash=mixed
+    # ethereumj.conf: 307
+    exitOnBlockConflict=false
+    # ethereumj.conf: 272
+    fast {
+        # ethereumj.conf: 285
+        backupState=false
+        # ethereumj.conf: 276
+        enabled=false
+        # ethereumj.conf: 289
+        skipHistory=false
+    }
+    # ethereumj.conf: 313
+    makeDoneByTimeout=-1
+    # ethereumj.conf: 298
+    peer {
+        # ethereumj.conf: 298
+        count=30
+    }
+}
+# ethereumj.conf: 422
+trace {
+    # ethereumj.conf: 422
+    startblock=-1
+}
+# ethereumj.conf: 379-383
+transaction {
+    # ethereumj.conf: 379
+    approve {
+        # ethereumj.conf: 379
+        timeout=15
+    }
+    # ethereumj.conf: 383
+    outdated {
+        # ethereumj.conf: 383
+        threshold=10
+    }
+}
+# ethereumj.conf: 412
+vm {
+    # ethereumj.conf: 412
+    structured {
+        # ethereumj.conf: 415
+        compressed=true
+        # ethereumj.conf: 414
+        dir=vmtrace
+        # ethereumj.conf: 416
+        initStorageLimit=10000
+        # ethereumj.conf: 413
+        trace=false
+    }
+}
+
+14:48:22.697 INFO [general]  Config ( yes ): default properties from resource 'ethereumj.conf'
+14:48:22.895 INFO [general]  Config ( no  ): user properties from -Dethereumj.conf.res resource(s) 'null'
+14:48:22.896 INFO [general]  Config ( no  ): user properties from resource 'user.conf'
+14:48:22.897 INFO [general]  Config ( no  ): user properties from file '/Users/jieyi/Theta/theta-exchange-integration/demos/keypair/create-key-pairs-demo/config/ethereumj.conf'
+14:48:22.897 INFO [general]  Config ( no  ): test properties from resource 'test-ethereumj.conf'
+14:48:22.898 INFO [general]  Config ( no  ): test properties from resource 'test-user.conf'
+14:48:22.900 INFO [general]  Config ( no  ): user properties from -Dethereumj.conf.file file(s) 'null'
+14:48:22.900 INFO [general]  Config ( no  ): config passed via constructor
+14:48:22.906 DEBUG [general]  Config trace: # ethereumj.conf: 164-457
+blockchain {
+    # ethereumj.conf: 164
+    config {
+        # ethereumj.conf: 164
+        name=main
+    }
+    # ethereumj.conf: 457
+    only=false
+}
+# ethereumj.conf: 463
+blocks {
+    # ethereumj.conf: 463
+    loader=""
+}
+# ethereumj.conf: 230
+cache {
+    # ethereumj.conf: 251
+    blockQueueSize=32
+    # ethereumj.conf: 232
+    flush {
+        # ethereumj.conf: 241
+        blocks=0
+        # ethereumj.conf: 244
+        shortSyncFlush=true
+        # ethereumj.conf: 236
+        writeCacheSize=64
+    }
+    # ethereumj.conf: 254
+    headerQueueSize=8
+    # ethereumj.conf: 261
+    maxStateBloomSize=128
+    # ethereumj.conf: 248
+    stateCacheSize=384
+}
+# ethereumj.conf: 466
+crypto {
+    # ethereumj.conf: 470-471
+    hash {
+        # ethereumj.conf: 470
+        alg256=ETH-KECCAK-256
+        # ethereumj.conf: 471
+        alg512=ETH-KECCAK-512
+    }
+    # ethereumj.conf: 468
+    providerName=SC
+}
+# ethereumj.conf: 172
+database {
+    # ethereumj.conf: 175
+    dir=database
+    # ethereumj.conf: 192
+    fromBackup=false
+    # ethereumj.conf: 199
+    incompatibleDatabaseBehavior=EXIT
+    # ethereumj.conf: 226
+    maxOpenFiles=512
+    # ethereumj.conf: 205
+    prune {
+        # ethereumj.conf: 206
+        enabled=true
+        # ethereumj.conf: 219
+        maxDepth=192
+    }
+    # ethereumj.conf: 181
+    reset=false
+    # ethereumj.conf: 187
+    resetBlock=0
+}
+# ethereumj.conf: 385
+dump {
+    # ethereumj.conf: 398
+    block=-1
+    # ethereumj.conf: 402
+    clean {
+        # ethereumj.conf: 402
+        on {
+            # ethereumj.conf: 402
+            restart=true
+        }
+    }
+    # ethereumj.conf: 392
+    dir=dmp
+    # ethereumj.conf: 391
+    full=false
+    # ethereumj.conf: 399
+    style=pretty
+}
+# ethereumj.conf: 150
+genesis="frontier.json"
+# ethereumj.conf: 438
+hello {
+    # ethereumj.conf: 438
+    phrase=Dev
+}
+# ethereumj.conf: 454
+keyvalue {
+    # ethereumj.conf: 454
+    datasource=rocksdb
+}
+# ethereumj.conf: 324
+mine {
+    # ethereumj.conf: 343
+    coinbase="0000000000000000000000000000000000000000"
+    # ethereumj.conf: 334
+    cpuMineThreads=4
+    # ethereumj.conf: 347
+    extraData="EthereumJ powered"
+    # ethereumj.conf: 340
+    fullDataSet=true
+    # ethereumj.conf: 356
+    minBlockTimeoutMsec=0
+    # ethereumj.conf: 353
+    minGasPrice=1000000000
+    # ethereumj.conf: 330
+    start=false
+    # ethereumj.conf: 360
+    startNonce=null
+}
+# ethereumj.conf: 1-77
+peer {
+    # ethereumj.conf: 92
+    active=[]
+    # ethereumj.conf: 121
+    capabilities=[
+        # ethereumj.conf: 121
+        eth
+    ]
+    # ethereumj.conf: 130
+    channel {
+        # ethereumj.conf: 130
+        read {
+            # ethereumj.conf: 130
+            timeout=30
+        }
+    }
+    # ethereumj.conf: 125
+    connection {
+        # ethereumj.conf: 125
+        timeout=2
+    }
+    # ethereumj.conf: 1
+    discovery {
+        # ethereumj.conf: 52
+        bind {
+            # ethereumj.conf: 52
+            ip=""
+        }
+        # ethereumj.conf: 8
+        enabled=true
+        # ethereumj.conf: 44
+        external {
+            # ethereumj.conf: 44
+            ip=null
+        }
+        # ethereumj.conf: 13
+        ip {
+            # ethereumj.conf: 13
+            list=[
+                # ethereumj.conf: 15
+                "5.1.83.226:30303",
+                # ethereumj.conf: 18
+                "52.16.188.185:30303",
+                # ethereumj.conf: 19
+                "13.93.211.84:30303",
+                # ethereumj.conf: 20
+                "191.235.84.50:30303",
+                # ethereumj.conf: 21
+                "13.75.154.138:30303",
+                # ethereumj.conf: 22
+                "52.74.57.123:30303",
+                # ethereumj.conf: 25
+                "163.172.187.252:30303",
+                # ethereumj.conf: 26
+                "163.172.157.114:30303",
+                # ethereumj.conf: 27
+                "136.243.154.244:30303",
+                # ethereumj.conf: 28
+                "88.212.206.70:30303",
+                # ethereumj.conf: 29
+                "37.128.191.230:30303",
+                # ethereumj.conf: 30
+                "46.20.235.22:30303",
+                # ethereumj.conf: 31
+                "216.158.85.185:30303",
+                # ethereumj.conf: 32
+                "212.47.247.103:30303",
+                # ethereumj.conf: 33
+                "138.201.144.135:30303",
+                # ethereumj.conf: 34
+                "45.55.33.62:30303",
+                # ethereumj.conf: 35
+                "188.166.255.12:30303",
+                # ethereumj.conf: 36
+                "159.203.210.80:30303",
+                # ethereumj.conf: 37
+                "51.15.42.252:30303",
+                # ethereumj.conf: 38
+                "163.172.171.38:30303"
+            ]
+        }
+        # ethereumj.conf: 60
+        persist=true
+        # ethereumj.conf: 56
+        public {
+            # ethereumj.conf: 56
+            home {
+                # ethereumj.conf: 56
+                node=true
+            }
+        }
+        # ethereumj.conf: 69
+        touchMaxNodes=100
+        # ethereumj.conf: 65
+        touchPeriod=600
+        # ethereumj.conf: 74
+        workers=8
+    }
+    # ethereumj.conf: 80
+    listen {
+        # ethereumj.conf: 80
+        port=30303
+    }
+    # ethereumj.conf: 117
+    maxActivePeers=30
+    # ethereumj.conf: 83
+    networkId=1
+    # ethereumj.conf: 132
+    p2p {
+        # ethereumj.conf: 142
+        eip8=true
+        # ethereumj.conf: 138
+        framing {
+            # ethereumj.conf: 138
+            maxSize=32768
+        }
+    }
+    # ethereumj.conf: 103
+    trusted=[]
+}
+# ethereumj.conf: 434
+play {
+    # ethereumj.conf: 434
+    vm=true
+}
+# ethereumj.conf: 427-456
+record {
+    # ethereumj.conf: 456
+    blocks=false
+    # ethereumj.conf: 427
+    internal {
+        # ethereumj.conf: 427
+        transactions {
+            # ethereumj.conf: 427
+            data=true
+        }
+    }
+}
+# ethereumj.conf: 450
+root {
+    # ethereumj.conf: 450
+    hash {
+        # ethereumj.conf: 450
+        start=null
+    }
+}
+# ethereumj.conf: 364
+solc {
+    # ethereumj.conf: 367
+    path=null
+}
+# ethereumj.conf: 265
+sync {
+    # ethereumj.conf: 269
+    enabled=true
+    # ethereumj.conf: 320
+    ethash=mixed
+    # ethereumj.conf: 307
+    exitOnBlockConflict=false
+    # ethereumj.conf: 272
+    fast {
+        # ethereumj.conf: 285
+        backupState=false
+        # ethereumj.conf: 276
+        enabled=false
+        # ethereumj.conf: 289
+        skipHistory=false
+    }
+    # ethereumj.conf: 313
+    makeDoneByTimeout=-1
+    # ethereumj.conf: 298
+    peer {
+        # ethereumj.conf: 298
+        count=30
+    }
+}
+# ethereumj.conf: 422
+trace {
+    # ethereumj.conf: 422
+    startblock=-1
+}
+# ethereumj.conf: 379-383
+transaction {
+    # ethereumj.conf: 379
+    approve {
+        # ethereumj.conf: 379
+        timeout=15
+    }
+    # ethereumj.conf: 383
+    outdated {
+        # ethereumj.conf: 383
+        threshold=10
+    }
+}
+# ethereumj.conf: 412
+vm {
+    # ethereumj.conf: 412
+    structured {
+        # ethereumj.conf: 415
+        compressed=true
+        # ethereumj.conf: 414
+        dir=vmtrace
+        # ethereumj.conf: 416
+        initStorageLimit=10000
+        # ethereumj.conf: 413
+        trace=false
+    }
+}
+
+14:48:36.615 INFO [general]  Config ( yes ): default properties from resource 'ethereumj.conf'
+14:48:36.667 INFO [general]  Config ( no  ): user properties from -Dethereumj.conf.res resource(s) 'null'
+14:48:36.668 INFO [general]  Config ( no  ): user properties from resource 'user.conf'
+14:48:36.669 INFO [general]  Config ( no  ): user properties from file '/Users/jieyi/Theta/theta-exchange-integration/demos/keypair/create-key-pairs-demo/config/ethereumj.conf'
+14:48:36.669 INFO [general]  Config ( no  ): test properties from resource 'test-ethereumj.conf'
+14:48:36.670 INFO [general]  Config ( no  ): test properties from resource 'test-user.conf'
+14:48:36.671 INFO [general]  Config ( no  ): user properties from -Dethereumj.conf.file file(s) 'null'
+14:48:36.671 INFO [general]  Config ( no  ): config passed via constructor
+14:48:36.674 DEBUG [general]  Config trace: # ethereumj.conf: 164-457
+blockchain {
+    # ethereumj.conf: 164
+    config {
+        # ethereumj.conf: 164
+        name=main
+    }
+    # ethereumj.conf: 457
+    only=false
+}
+# ethereumj.conf: 463
+blocks {
+    # ethereumj.conf: 463
+    loader=""
+}
+# ethereumj.conf: 230
+cache {
+    # ethereumj.conf: 251
+    blockQueueSize=32
+    # ethereumj.conf: 232
+    flush {
+        # ethereumj.conf: 241
+        blocks=0
+        # ethereumj.conf: 244
+        shortSyncFlush=true
+        # ethereumj.conf: 236
+        writeCacheSize=64
+    }
+    # ethereumj.conf: 254
+    headerQueueSize=8
+    # ethereumj.conf: 261
+    maxStateBloomSize=128
+    # ethereumj.conf: 248
+    stateCacheSize=384
+}
+# ethereumj.conf: 466
+crypto {
+    # ethereumj.conf: 470-471
+    hash {
+        # ethereumj.conf: 470
+        alg256=ETH-KECCAK-256
+        # ethereumj.conf: 471
+        alg512=ETH-KECCAK-512
+    }
+    # ethereumj.conf: 468
+    providerName=SC
+}
+# ethereumj.conf: 172
+database {
+    # ethereumj.conf: 175
+    dir=database
+    # ethereumj.conf: 192
+    fromBackup=false
+    # ethereumj.conf: 199
+    incompatibleDatabaseBehavior=EXIT
+    # ethereumj.conf: 226
+    maxOpenFiles=512
+    # ethereumj.conf: 205
+    prune {
+        # ethereumj.conf: 206
+        enabled=true
+        # ethereumj.conf: 219
+        maxDepth=192
+    }
+    # ethereumj.conf: 181
+    reset=false
+    # ethereumj.conf: 187
+    resetBlock=0
+}
+# ethereumj.conf: 385
+dump {
+    # ethereumj.conf: 398
+    block=-1
+    # ethereumj.conf: 402
+    clean {
+        # ethereumj.conf: 402
+        on {
+            # ethereumj.conf: 402
+            restart=true
+        }
+    }
+    # ethereumj.conf: 392
+    dir=dmp
+    # ethereumj.conf: 391
+    full=false
+    # ethereumj.conf: 399
+    style=pretty
+}
+# ethereumj.conf: 150
+genesis="frontier.json"
+# ethereumj.conf: 438
+hello {
+    # ethereumj.conf: 438
+    phrase=Dev
+}
+# ethereumj.conf: 454
+keyvalue {
+    # ethereumj.conf: 454
+    datasource=rocksdb
+}
+# ethereumj.conf: 324
+mine {
+    # ethereumj.conf: 343
+    coinbase="0000000000000000000000000000000000000000"
+    # ethereumj.conf: 334
+    cpuMineThreads=4
+    # ethereumj.conf: 347
+    extraData="EthereumJ powered"
+    # ethereumj.conf: 340
+    fullDataSet=true
+    # ethereumj.conf: 356
+    minBlockTimeoutMsec=0
+    # ethereumj.conf: 353
+    minGasPrice=1000000000
+    # ethereumj.conf: 330
+    start=false
+    # ethereumj.conf: 360
+    startNonce=null
+}
+# ethereumj.conf: 1-77
+peer {
+    # ethereumj.conf: 92
+    active=[]
+    # ethereumj.conf: 121
+    capabilities=[
+        # ethereumj.conf: 121
+        eth
+    ]
+    # ethereumj.conf: 130
+    channel {
+        # ethereumj.conf: 130
+        read {
+            # ethereumj.conf: 130
+            timeout=30
+        }
+    }
+    # ethereumj.conf: 125
+    connection {
+        # ethereumj.conf: 125
+        timeout=2
+    }
+    # ethereumj.conf: 1
+    discovery {
+        # ethereumj.conf: 52
+        bind {
+            # ethereumj.conf: 52
+            ip=""
+        }
+        # ethereumj.conf: 8
+        enabled=true
+        # ethereumj.conf: 44
+        external {
+            # ethereumj.conf: 44
+            ip=null
+        }
+        # ethereumj.conf: 13
+        ip {
+            # ethereumj.conf: 13
+            list=[
+                # ethereumj.conf: 15
+                "5.1.83.226:30303",
+                # ethereumj.conf: 18
+                "52.16.188.185:30303",
+                # ethereumj.conf: 19
+                "13.93.211.84:30303",
+                # ethereumj.conf: 20
+                "191.235.84.50:30303",
+                # ethereumj.conf: 21
+                "13.75.154.138:30303",
+                # ethereumj.conf: 22
+                "52.74.57.123:30303",
+                # ethereumj.conf: 25
+                "163.172.187.252:30303",
+                # ethereumj.conf: 26
+                "163.172.157.114:30303",
+                # ethereumj.conf: 27
+                "136.243.154.244:30303",
+                # ethereumj.conf: 28
+                "88.212.206.70:30303",
+                # ethereumj.conf: 29
+                "37.128.191.230:30303",
+                # ethereumj.conf: 30
+                "46.20.235.22:30303",
+                # ethereumj.conf: 31
+                "216.158.85.185:30303",
+                # ethereumj.conf: 32
+                "212.47.247.103:30303",
+                # ethereumj.conf: 33
+                "138.201.144.135:30303",
+                # ethereumj.conf: 34
+                "45.55.33.62:30303",
+                # ethereumj.conf: 35
+                "188.166.255.12:30303",
+                # ethereumj.conf: 36
+                "159.203.210.80:30303",
+                # ethereumj.conf: 37
+                "51.15.42.252:30303",
+                # ethereumj.conf: 38
+                "163.172.171.38:30303"
+            ]
+        }
+        # ethereumj.conf: 60
+        persist=true
+        # ethereumj.conf: 56
+        public {
+            # ethereumj.conf: 56
+            home {
+                # ethereumj.conf: 56
+                node=true
+            }
+        }
+        # ethereumj.conf: 69
+        touchMaxNodes=100
+        # ethereumj.conf: 65
+        touchPeriod=600
+        # ethereumj.conf: 74
+        workers=8
+    }
+    # ethereumj.conf: 80
+    listen {
+        # ethereumj.conf: 80
+        port=30303
+    }
+    # ethereumj.conf: 117
+    maxActivePeers=30
+    # ethereumj.conf: 83
+    networkId=1
+    # ethereumj.conf: 132
+    p2p {
+        # ethereumj.conf: 142
+        eip8=true
+        # ethereumj.conf: 138
+        framing {
+            # ethereumj.conf: 138
+            maxSize=32768
+        }
+    }
+    # ethereumj.conf: 103
+    trusted=[]
+}
+# ethereumj.conf: 434
+play {
+    # ethereumj.conf: 434
+    vm=true
+}
+# ethereumj.conf: 427-456
+record {
+    # ethereumj.conf: 456
+    blocks=false
+    # ethereumj.conf: 427
+    internal {
+        # ethereumj.conf: 427
+        transactions {
+            # ethereumj.conf: 427
+            data=true
+        }
+    }
+}
+# ethereumj.conf: 450
+root {
+    # ethereumj.conf: 450
+    hash {
+        # ethereumj.conf: 450
+        start=null
+    }
+}
+# ethereumj.conf: 364
+solc {
+    # ethereumj.conf: 367
+    path=null
+}
+# ethereumj.conf: 265
+sync {
+    # ethereumj.conf: 269
+    enabled=true
+    # ethereumj.conf: 320
+    ethash=mixed
+    # ethereumj.conf: 307
+    exitOnBlockConflict=false
+    # ethereumj.conf: 272
+    fast {
+        # ethereumj.conf: 285
+        backupState=false
+        # ethereumj.conf: 276
+        enabled=false
+        # ethereumj.conf: 289
+        skipHistory=false
+    }
+    # ethereumj.conf: 313
+    makeDoneByTimeout=-1
+    # ethereumj.conf: 298
+    peer {
+        # ethereumj.conf: 298
+        count=30
+    }
+}
+# ethereumj.conf: 422
+trace {
+    # ethereumj.conf: 422
+    startblock=-1
+}
+# ethereumj.conf: 379-383
+transaction {
+    # ethereumj.conf: 379
+    approve {
+        # ethereumj.conf: 379
+        timeout=15
+    }
+    # ethereumj.conf: 383
+    outdated {
+        # ethereumj.conf: 383
+        threshold=10
+    }
+}
+# ethereumj.conf: 412
+vm {
+    # ethereumj.conf: 412
+    structured {
+        # ethereumj.conf: 415
+        compressed=true
+        # ethereumj.conf: 414
+        dir=vmtrace
+        # ethereumj.conf: 416
+        initStorageLimit=10000
+        # ethereumj.conf: 413
+        trace=false
+    }
+}
+
+14:48:51.066 INFO [general]  Config ( yes ): default properties from resource 'ethereumj.conf'
+14:48:51.118 INFO [general]  Config ( no  ): user properties from -Dethereumj.conf.res resource(s) 'null'
+14:48:51.119 INFO [general]  Config ( no  ): user properties from resource 'user.conf'
+14:48:51.120 INFO [general]  Config ( no  ): user properties from file '/Users/jieyi/Theta/theta-exchange-integration/demos/keypair/create-key-pairs-demo/config/ethereumj.conf'
+14:48:51.120 INFO [general]  Config ( no  ): test properties from resource 'test-ethereumj.conf'
+14:48:51.120 INFO [general]  Config ( no  ): test properties from resource 'test-user.conf'
+14:48:51.121 INFO [general]  Config ( no  ): user properties from -Dethereumj.conf.file file(s) 'null'
+14:48:51.121 INFO [general]  Config ( no  ): config passed via constructor
+14:48:51.125 DEBUG [general]  Config trace: # ethereumj.conf: 164-457
+blockchain {
+    # ethereumj.conf: 164
+    config {
+        # ethereumj.conf: 164
+        name=main
+    }
+    # ethereumj.conf: 457
+    only=false
+}
+# ethereumj.conf: 463
+blocks {
+    # ethereumj.conf: 463
+    loader=""
+}
+# ethereumj.conf: 230
+cache {
+    # ethereumj.conf: 251
+    blockQueueSize=32
+    # ethereumj.conf: 232
+    flush {
+        # ethereumj.conf: 241
+        blocks=0
+        # ethereumj.conf: 244
+        shortSyncFlush=true
+        # ethereumj.conf: 236
+        writeCacheSize=64
+    }
+    # ethereumj.conf: 254
+    headerQueueSize=8
+    # ethereumj.conf: 261
+    maxStateBloomSize=128
+    # ethereumj.conf: 248
+    stateCacheSize=384
+}
+# ethereumj.conf: 466
+crypto {
+    # ethereumj.conf: 470-471
+    hash {
+        # ethereumj.conf: 470
+        alg256=ETH-KECCAK-256
+        # ethereumj.conf: 471
+        alg512=ETH-KECCAK-512
+    }
+    # ethereumj.conf: 468
+    providerName=SC
+}
+# ethereumj.conf: 172
+database {
+    # ethereumj.conf: 175
+    dir=database
+    # ethereumj.conf: 192
+    fromBackup=false
+    # ethereumj.conf: 199
+    incompatibleDatabaseBehavior=EXIT
+    # ethereumj.conf: 226
+    maxOpenFiles=512
+    # ethereumj.conf: 205
+    prune {
+        # ethereumj.conf: 206
+        enabled=true
+        # ethereumj.conf: 219
+        maxDepth=192
+    }
+    # ethereumj.conf: 181
+    reset=false
+    # ethereumj.conf: 187
+    resetBlock=0
+}
+# ethereumj.conf: 385
+dump {
+    # ethereumj.conf: 398
+    block=-1
+    # ethereumj.conf: 402
+    clean {
+        # ethereumj.conf: 402
+        on {
+            # ethereumj.conf: 402
+            restart=true
+        }
+    }
+    # ethereumj.conf: 392
+    dir=dmp
+    # ethereumj.conf: 391
+    full=false
+    # ethereumj.conf: 399
+    style=pretty
+}
+# ethereumj.conf: 150
+genesis="frontier.json"
+# ethereumj.conf: 438
+hello {
+    # ethereumj.conf: 438
+    phrase=Dev
+}
+# ethereumj.conf: 454
+keyvalue {
+    # ethereumj.conf: 454
+    datasource=rocksdb
+}
+# ethereumj.conf: 324
+mine {
+    # ethereumj.conf: 343
+    coinbase="0000000000000000000000000000000000000000"
+    # ethereumj.conf: 334
+    cpuMineThreads=4
+    # ethereumj.conf: 347
+    extraData="EthereumJ powered"
+    # ethereumj.conf: 340
+    fullDataSet=true
+    # ethereumj.conf: 356
+    minBlockTimeoutMsec=0
+    # ethereumj.conf: 353
+    minGasPrice=1000000000
+    # ethereumj.conf: 330
+    start=false
+    # ethereumj.conf: 360
+    startNonce=null
+}
+# ethereumj.conf: 1-77
+peer {
+    # ethereumj.conf: 92
+    active=[]
+    # ethereumj.conf: 121
+    capabilities=[
+        # ethereumj.conf: 121
+        eth
+    ]
+    # ethereumj.conf: 130
+    channel {
+        # ethereumj.conf: 130
+        read {
+            # ethereumj.conf: 130
+            timeout=30
+        }
+    }
+    # ethereumj.conf: 125
+    connection {
+        # ethereumj.conf: 125
+        timeout=2
+    }
+    # ethereumj.conf: 1
+    discovery {
+        # ethereumj.conf: 52
+        bind {
+            # ethereumj.conf: 52
+            ip=""
+        }
+        # ethereumj.conf: 8
+        enabled=true
+        # ethereumj.conf: 44
+        external {
+            # ethereumj.conf: 44
+            ip=null
+        }
+        # ethereumj.conf: 13
+        ip {
+            # ethereumj.conf: 13
+            list=[
+                # ethereumj.conf: 15
+                "5.1.83.226:30303",
+                # ethereumj.conf: 18
+                "52.16.188.185:30303",
+                # ethereumj.conf: 19
+                "13.93.211.84:30303",
+                # ethereumj.conf: 20
+                "191.235.84.50:30303",
+                # ethereumj.conf: 21
+                "13.75.154.138:30303",
+                # ethereumj.conf: 22
+                "52.74.57.123:30303",
+                # ethereumj.conf: 25
+                "163.172.187.252:30303",
+                # ethereumj.conf: 26
+                "163.172.157.114:30303",
+                # ethereumj.conf: 27
+                "136.243.154.244:30303",
+                # ethereumj.conf: 28
+                "88.212.206.70:30303",
+                # ethereumj.conf: 29
+                "37.128.191.230:30303",
+                # ethereumj.conf: 30
+                "46.20.235.22:30303",
+                # ethereumj.conf: 31
+                "216.158.85.185:30303",
+                # ethereumj.conf: 32
+                "212.47.247.103:30303",
+                # ethereumj.conf: 33
+                "138.201.144.135:30303",
+                # ethereumj.conf: 34
+                "45.55.33.62:30303",
+                # ethereumj.conf: 35
+                "188.166.255.12:30303",
+                # ethereumj.conf: 36
+                "159.203.210.80:30303",
+                # ethereumj.conf: 37
+                "51.15.42.252:30303",
+                # ethereumj.conf: 38
+                "163.172.171.38:30303"
+            ]
+        }
+        # ethereumj.conf: 60
+        persist=true
+        # ethereumj.conf: 56
+        public {
+            # ethereumj.conf: 56
+            home {
+                # ethereumj.conf: 56
+                node=true
+            }
+        }
+        # ethereumj.conf: 69
+        touchMaxNodes=100
+        # ethereumj.conf: 65
+        touchPeriod=600
+        # ethereumj.conf: 74
+        workers=8
+    }
+    # ethereumj.conf: 80
+    listen {
+        # ethereumj.conf: 80
+        port=30303
+    }
+    # ethereumj.conf: 117
+    maxActivePeers=30
+    # ethereumj.conf: 83
+    networkId=1
+    # ethereumj.conf: 132
+    p2p {
+        # ethereumj.conf: 142
+        eip8=true
+        # ethereumj.conf: 138
+        framing {
+            # ethereumj.conf: 138
+            maxSize=32768
+        }
+    }
+    # ethereumj.conf: 103
+    trusted=[]
+}
+# ethereumj.conf: 434
+play {
+    # ethereumj.conf: 434
+    vm=true
+}
+# ethereumj.conf: 427-456
+record {
+    # ethereumj.conf: 456
+    blocks=false
+    # ethereumj.conf: 427
+    internal {
+        # ethereumj.conf: 427
+        transactions {
+            # ethereumj.conf: 427
+            data=true
+        }
+    }
+}
+# ethereumj.conf: 450
+root {
+    # ethereumj.conf: 450
+    hash {
+        # ethereumj.conf: 450
+        start=null
+    }
+}
+# ethereumj.conf: 364
+solc {
+    # ethereumj.conf: 367
+    path=null
+}
+# ethereumj.conf: 265
+sync {
+    # ethereumj.conf: 269
+    enabled=true
+    # ethereumj.conf: 320
+    ethash=mixed
+    # ethereumj.conf: 307
+    exitOnBlockConflict=false
+    # ethereumj.conf: 272
+    fast {
+        # ethereumj.conf: 285
+        backupState=false
+        # ethereumj.conf: 276
+        enabled=false
+        # ethereumj.conf: 289
+        skipHistory=false
+    }
+    # ethereumj.conf: 313
+    makeDoneByTimeout=-1
+    # ethereumj.conf: 298
+    peer {
+        # ethereumj.conf: 298
+        count=30
+    }
+}
+# ethereumj.conf: 422
+trace {
+    # ethereumj.conf: 422
+    startblock=-1
+}
+# ethereumj.conf: 379-383
+transaction {
+    # ethereumj.conf: 379
+    approve {
+        # ethereumj.conf: 379
+        timeout=15
+    }
+    # ethereumj.conf: 383
+    outdated {
+        # ethereumj.conf: 383
+        threshold=10
+    }
+}
+# ethereumj.conf: 412
+vm {
+    # ethereumj.conf: 412
+    structured {
+        # ethereumj.conf: 415
+        compressed=true
+        # ethereumj.conf: 414
+        dir=vmtrace
+        # ethereumj.conf: 416
+        initStorageLimit=10000
+        # ethereumj.conf: 413
+        trace=false
+    }
+}
+
+14:52:20.436 INFO [general]  Config ( yes ): default properties from resource 'ethereumj.conf'
+14:52:20.515 INFO [general]  Config ( no  ): user properties from -Dethereumj.conf.res resource(s) 'null'
+14:52:20.515 INFO [general]  Config ( no  ): user properties from resource 'user.conf'
+14:52:20.516 INFO [general]  Config ( no  ): user properties from file '/Users/jieyi/Theta/theta-exchange-integration/demos/keypair/create-key-pairs-demo/config/ethereumj.conf'
+14:52:20.517 INFO [general]  Config ( no  ): test properties from resource 'test-ethereumj.conf'
+14:52:20.517 INFO [general]  Config ( no  ): test properties from resource 'test-user.conf'
+14:52:20.518 INFO [general]  Config ( no  ): user properties from -Dethereumj.conf.file file(s) 'null'
+14:52:20.519 INFO [general]  Config ( no  ): config passed via constructor
+14:52:20.523 DEBUG [general]  Config trace: # ethereumj.conf: 164-457
+blockchain {
+    # ethereumj.conf: 164
+    config {
+        # ethereumj.conf: 164
+        name=main
+    }
+    # ethereumj.conf: 457
+    only=false
+}
+# ethereumj.conf: 463
+blocks {
+    # ethereumj.conf: 463
+    loader=""
+}
+# ethereumj.conf: 230
+cache {
+    # ethereumj.conf: 251
+    blockQueueSize=32
+    # ethereumj.conf: 232
+    flush {
+        # ethereumj.conf: 241
+        blocks=0
+        # ethereumj.conf: 244
+        shortSyncFlush=true
+        # ethereumj.conf: 236
+        writeCacheSize=64
+    }
+    # ethereumj.conf: 254
+    headerQueueSize=8
+    # ethereumj.conf: 261
+    maxStateBloomSize=128
+    # ethereumj.conf: 248
+    stateCacheSize=384
+}
+# ethereumj.conf: 466
+crypto {
+    # ethereumj.conf: 470-471
+    hash {
+        # ethereumj.conf: 470
+        alg256=ETH-KECCAK-256
+        # ethereumj.conf: 471
+        alg512=ETH-KECCAK-512
+    }
+    # ethereumj.conf: 468
+    providerName=SC
+}
+# ethereumj.conf: 172
+database {
+    # ethereumj.conf: 175
+    dir=database
+    # ethereumj.conf: 192
+    fromBackup=false
+    # ethereumj.conf: 199
+    incompatibleDatabaseBehavior=EXIT
+    # ethereumj.conf: 226
+    maxOpenFiles=512
+    # ethereumj.conf: 205
+    prune {
+        # ethereumj.conf: 206
+        enabled=true
+        # ethereumj.conf: 219
+        maxDepth=192
+    }
+    # ethereumj.conf: 181
+    reset=false
+    # ethereumj.conf: 187
+    resetBlock=0
+}
+# ethereumj.conf: 385
+dump {
+    # ethereumj.conf: 398
+    block=-1
+    # ethereumj.conf: 402
+    clean {
+        # ethereumj.conf: 402
+        on {
+            # ethereumj.conf: 402
+            restart=true
+        }
+    }
+    # ethereumj.conf: 392
+    dir=dmp
+    # ethereumj.conf: 391
+    full=false
+    # ethereumj.conf: 399
+    style=pretty
+}
+# ethereumj.conf: 150
+genesis="frontier.json"
+# ethereumj.conf: 438
+hello {
+    # ethereumj.conf: 438
+    phrase=Dev
+}
+# ethereumj.conf: 454
+keyvalue {
+    # ethereumj.conf: 454
+    datasource=rocksdb
+}
+# ethereumj.conf: 324
+mine {
+    # ethereumj.conf: 343
+    coinbase="0000000000000000000000000000000000000000"
+    # ethereumj.conf: 334
+    cpuMineThreads=4
+    # ethereumj.conf: 347
+    extraData="EthereumJ powered"
+    # ethereumj.conf: 340
+    fullDataSet=true
+    # ethereumj.conf: 356
+    minBlockTimeoutMsec=0
+    # ethereumj.conf: 353
+    minGasPrice=1000000000
+    # ethereumj.conf: 330
+    start=false
+    # ethereumj.conf: 360
+    startNonce=null
+}
+# ethereumj.conf: 1-77
+peer {
+    # ethereumj.conf: 92
+    active=[]
+    # ethereumj.conf: 121
+    capabilities=[
+        # ethereumj.conf: 121
+        eth
+    ]
+    # ethereumj.conf: 130
+    channel {
+        # ethereumj.conf: 130
+        read {
+            # ethereumj.conf: 130
+            timeout=30
+        }
+    }
+    # ethereumj.conf: 125
+    connection {
+        # ethereumj.conf: 125
+        timeout=2
+    }
+    # ethereumj.conf: 1
+    discovery {
+        # ethereumj.conf: 52
+        bind {
+            # ethereumj.conf: 52
+            ip=""
+        }
+        # ethereumj.conf: 8
+        enabled=true
+        # ethereumj.conf: 44
+        external {
+            # ethereumj.conf: 44
+            ip=null
+        }
+        # ethereumj.conf: 13
+        ip {
+            # ethereumj.conf: 13
+            list=[
+                # ethereumj.conf: 15
+                "5.1.83.226:30303",
+                # ethereumj.conf: 18
+                "52.16.188.185:30303",
+                # ethereumj.conf: 19
+                "13.93.211.84:30303",
+                # ethereumj.conf: 20
+                "191.235.84.50:30303",
+                # ethereumj.conf: 21
+                "13.75.154.138:30303",
+                # ethereumj.conf: 22
+                "52.74.57.123:30303",
+                # ethereumj.conf: 25
+                "163.172.187.252:30303",
+                # ethereumj.conf: 26
+                "163.172.157.114:30303",
+                # ethereumj.conf: 27
+                "136.243.154.244:30303",
+                # ethereumj.conf: 28
+                "88.212.206.70:30303",
+                # ethereumj.conf: 29
+                "37.128.191.230:30303",
+                # ethereumj.conf: 30
+                "46.20.235.22:30303",
+                # ethereumj.conf: 31
+                "216.158.85.185:30303",
+                # ethereumj.conf: 32
+                "212.47.247.103:30303",
+                # ethereumj.conf: 33
+                "138.201.144.135:30303",
+                # ethereumj.conf: 34
+                "45.55.33.62:30303",
+                # ethereumj.conf: 35
+                "188.166.255.12:30303",
+                # ethereumj.conf: 36
+                "159.203.210.80:30303",
+                # ethereumj.conf: 37
+                "51.15.42.252:30303",
+                # ethereumj.conf: 38
+                "163.172.171.38:30303"
+            ]
+        }
+        # ethereumj.conf: 60
+        persist=true
+        # ethereumj.conf: 56
+        public {
+            # ethereumj.conf: 56
+            home {
+                # ethereumj.conf: 56
+                node=true
+            }
+        }
+        # ethereumj.conf: 69
+        touchMaxNodes=100
+        # ethereumj.conf: 65
+        touchPeriod=600
+        # ethereumj.conf: 74
+        workers=8
+    }
+    # ethereumj.conf: 80
+    listen {
+        # ethereumj.conf: 80
+        port=30303
+    }
+    # ethereumj.conf: 117
+    maxActivePeers=30
+    # ethereumj.conf: 83
+    networkId=1
+    # ethereumj.conf: 132
+    p2p {
+        # ethereumj.conf: 142
+        eip8=true
+        # ethereumj.conf: 138
+        framing {
+            # ethereumj.conf: 138
+            maxSize=32768
+        }
+    }
+    # ethereumj.conf: 103
+    trusted=[]
+}
+# ethereumj.conf: 434
+play {
+    # ethereumj.conf: 434
+    vm=true
+}
+# ethereumj.conf: 427-456
+record {
+    # ethereumj.conf: 456
+    blocks=false
+    # ethereumj.conf: 427
+    internal {
+        # ethereumj.conf: 427
+        transactions {
+            # ethereumj.conf: 427
+            data=true
+        }
+    }
+}
+# ethereumj.conf: 450
+root {
+    # ethereumj.conf: 450
+    hash {
+        # ethereumj.conf: 450
+        start=null
+    }
+}
+# ethereumj.conf: 364
+solc {
+    # ethereumj.conf: 367
+    path=null
+}
+# ethereumj.conf: 265
+sync {
+    # ethereumj.conf: 269
+    enabled=true
+    # ethereumj.conf: 320
+    ethash=mixed
+    # ethereumj.conf: 307
+    exitOnBlockConflict=false
+    # ethereumj.conf: 272
+    fast {
+        # ethereumj.conf: 285
+        backupState=false
+        # ethereumj.conf: 276
+        enabled=false
+        # ethereumj.conf: 289
+        skipHistory=false
+    }
+    # ethereumj.conf: 313
+    makeDoneByTimeout=-1
+    # ethereumj.conf: 298
+    peer {
+        # ethereumj.conf: 298
+        count=30
+    }
+}
+# ethereumj.conf: 422
+trace {
+    # ethereumj.conf: 422
+    startblock=-1
+}
+# ethereumj.conf: 379-383
+transaction {
+    # ethereumj.conf: 379
+    approve {
+        # ethereumj.conf: 379
+        timeout=15
+    }
+    # ethereumj.conf: 383
+    outdated {
+        # ethereumj.conf: 383
+        threshold=10
+    }
+}
+# ethereumj.conf: 412
+vm {
+    # ethereumj.conf: 412
+    structured {
+        # ethereumj.conf: 415
+        compressed=true
+        # ethereumj.conf: 414
+        dir=vmtrace
+        # ethereumj.conf: 416
+        initStorageLimit=10000
+        # ethereumj.conf: 413
+        trace=false
+    }
+}
+
+14:52:28.470 INFO [general]  Config ( yes ): default properties from resource 'ethereumj.conf'
+14:52:28.564 INFO [general]  Config ( no  ): user properties from -Dethereumj.conf.res resource(s) 'null'
+14:52:28.564 INFO [general]  Config ( no  ): user properties from resource 'user.conf'
+14:52:28.565 INFO [general]  Config ( no  ): user properties from file '/Users/jieyi/Theta/theta-exchange-integration/demos/keypair/create-key-pairs-demo/config/ethereumj.conf'
+14:52:28.566 INFO [general]  Config ( no  ): test properties from resource 'test-ethereumj.conf'
+14:52:28.566 INFO [general]  Config ( no  ): test properties from resource 'test-user.conf'
+14:52:28.567 INFO [general]  Config ( no  ): user properties from -Dethereumj.conf.file file(s) 'null'
+14:52:28.567 INFO [general]  Config ( no  ): config passed via constructor
+14:52:28.573 DEBUG [general]  Config trace: # ethereumj.conf: 164-457
+blockchain {
+    # ethereumj.conf: 164
+    config {
+        # ethereumj.conf: 164
+        name=main
+    }
+    # ethereumj.conf: 457
+    only=false
+}
+# ethereumj.conf: 463
+blocks {
+    # ethereumj.conf: 463
+    loader=""
+}
+# ethereumj.conf: 230
+cache {
+    # ethereumj.conf: 251
+    blockQueueSize=32
+    # ethereumj.conf: 232
+    flush {
+        # ethereumj.conf: 241
+        blocks=0
+        # ethereumj.conf: 244
+        shortSyncFlush=true
+        # ethereumj.conf: 236
+        writeCacheSize=64
+    }
+    # ethereumj.conf: 254
+    headerQueueSize=8
+    # ethereumj.conf: 261
+    maxStateBloomSize=128
+    # ethereumj.conf: 248
+    stateCacheSize=384
+}
+# ethereumj.conf: 466
+crypto {
+    # ethereumj.conf: 470-471
+    hash {
+        # ethereumj.conf: 470
+        alg256=ETH-KECCAK-256
+        # ethereumj.conf: 471
+        alg512=ETH-KECCAK-512
+    }
+    # ethereumj.conf: 468
+    providerName=SC
+}
+# ethereumj.conf: 172
+database {
+    # ethereumj.conf: 175
+    dir=database
+    # ethereumj.conf: 192
+    fromBackup=false
+    # ethereumj.conf: 199
+    incompatibleDatabaseBehavior=EXIT
+    # ethereumj.conf: 226
+    maxOpenFiles=512
+    # ethereumj.conf: 205
+    prune {
+        # ethereumj.conf: 206
+        enabled=true
+        # ethereumj.conf: 219
+        maxDepth=192
+    }
+    # ethereumj.conf: 181
+    reset=false
+    # ethereumj.conf: 187
+    resetBlock=0
+}
+# ethereumj.conf: 385
+dump {
+    # ethereumj.conf: 398
+    block=-1
+    # ethereumj.conf: 402
+    clean {
+        # ethereumj.conf: 402
+        on {
+            # ethereumj.conf: 402
+            restart=true
+        }
+    }
+    # ethereumj.conf: 392
+    dir=dmp
+    # ethereumj.conf: 391
+    full=false
+    # ethereumj.conf: 399
+    style=pretty
+}
+# ethereumj.conf: 150
+genesis="frontier.json"
+# ethereumj.conf: 438
+hello {
+    # ethereumj.conf: 438
+    phrase=Dev
+}
+# ethereumj.conf: 454
+keyvalue {
+    # ethereumj.conf: 454
+    datasource=rocksdb
+}
+# ethereumj.conf: 324
+mine {
+    # ethereumj.conf: 343
+    coinbase="0000000000000000000000000000000000000000"
+    # ethereumj.conf: 334
+    cpuMineThreads=4
+    # ethereumj.conf: 347
+    extraData="EthereumJ powered"
+    # ethereumj.conf: 340
+    fullDataSet=true
+    # ethereumj.conf: 356
+    minBlockTimeoutMsec=0
+    # ethereumj.conf: 353
+    minGasPrice=1000000000
+    # ethereumj.conf: 330
+    start=false
+    # ethereumj.conf: 360
+    startNonce=null
+}
+# ethereumj.conf: 1-77
+peer {
+    # ethereumj.conf: 92
+    active=[]
+    # ethereumj.conf: 121
+    capabilities=[
+        # ethereumj.conf: 121
+        eth
+    ]
+    # ethereumj.conf: 130
+    channel {
+        # ethereumj.conf: 130
+        read {
+            # ethereumj.conf: 130
+            timeout=30
+        }
+    }
+    # ethereumj.conf: 125
+    connection {
+        # ethereumj.conf: 125
+        timeout=2
+    }
+    # ethereumj.conf: 1
+    discovery {
+        # ethereumj.conf: 52
+        bind {
+            # ethereumj.conf: 52
+            ip=""
+        }
+        # ethereumj.conf: 8
+        enabled=true
+        # ethereumj.conf: 44
+        external {
+            # ethereumj.conf: 44
+            ip=null
+        }
+        # ethereumj.conf: 13
+        ip {
+            # ethereumj.conf: 13
+            list=[
+                # ethereumj.conf: 15
+                "5.1.83.226:30303",
+                # ethereumj.conf: 18
+                "52.16.188.185:30303",
+                # ethereumj.conf: 19
+                "13.93.211.84:30303",
+                # ethereumj.conf: 20
+                "191.235.84.50:30303",
+                # ethereumj.conf: 21
+                "13.75.154.138:30303",
+                # ethereumj.conf: 22
+                "52.74.57.123:30303",
+                # ethereumj.conf: 25
+                "163.172.187.252:30303",
+                # ethereumj.conf: 26
+                "163.172.157.114:30303",
+                # ethereumj.conf: 27
+                "136.243.154.244:30303",
+                # ethereumj.conf: 28
+                "88.212.206.70:30303",
+                # ethereumj.conf: 29
+                "37.128.191.230:30303",
+                # ethereumj.conf: 30
+                "46.20.235.22:30303",
+                # ethereumj.conf: 31
+                "216.158.85.185:30303",
+                # ethereumj.conf: 32
+                "212.47.247.103:30303",
+                # ethereumj.conf: 33
+                "138.201.144.135:30303",
+                # ethereumj.conf: 34
+                "45.55.33.62:30303",
+                # ethereumj.conf: 35
+                "188.166.255.12:30303",
+                # ethereumj.conf: 36
+                "159.203.210.80:30303",
+                # ethereumj.conf: 37
+                "51.15.42.252:30303",
+                # ethereumj.conf: 38
+                "163.172.171.38:30303"
+            ]
+        }
+        # ethereumj.conf: 60
+        persist=true
+        # ethereumj.conf: 56
+        public {
+            # ethereumj.conf: 56
+            home {
+                # ethereumj.conf: 56
+                node=true
+            }
+        }
+        # ethereumj.conf: 69
+        touchMaxNodes=100
+        # ethereumj.conf: 65
+        touchPeriod=600
+        # ethereumj.conf: 74
+        workers=8
+    }
+    # ethereumj.conf: 80
+    listen {
+        # ethereumj.conf: 80
+        port=30303
+    }
+    # ethereumj.conf: 117
+    maxActivePeers=30
+    # ethereumj.conf: 83
+    networkId=1
+    # ethereumj.conf: 132
+    p2p {
+        # ethereumj.conf: 142
+        eip8=true
+        # ethereumj.conf: 138
+        framing {
+            # ethereumj.conf: 138
+            maxSize=32768
+        }
+    }
+    # ethereumj.conf: 103
+    trusted=[]
+}
+# ethereumj.conf: 434
+play {
+    # ethereumj.conf: 434
+    vm=true
+}
+# ethereumj.conf: 427-456
+record {
+    # ethereumj.conf: 456
+    blocks=false
+    # ethereumj.conf: 427
+    internal {
+        # ethereumj.conf: 427
+        transactions {
+            # ethereumj.conf: 427
+            data=true
+        }
+    }
+}
+# ethereumj.conf: 450
+root {
+    # ethereumj.conf: 450
+    hash {
+        # ethereumj.conf: 450
+        start=null
+    }
+}
+# ethereumj.conf: 364
+solc {
+    # ethereumj.conf: 367
+    path=null
+}
+# ethereumj.conf: 265
+sync {
+    # ethereumj.conf: 269
+    enabled=true
+    # ethereumj.conf: 320
+    ethash=mixed
+    # ethereumj.conf: 307
+    exitOnBlockConflict=false
+    # ethereumj.conf: 272
+    fast {
+        # ethereumj.conf: 285
+        backupState=false
+        # ethereumj.conf: 276
+        enabled=false
+        # ethereumj.conf: 289
+        skipHistory=false
+    }
+    # ethereumj.conf: 313
+    makeDoneByTimeout=-1
+    # ethereumj.conf: 298
+    peer {
+        # ethereumj.conf: 298
+        count=30
+    }
+}
+# ethereumj.conf: 422
+trace {
+    # ethereumj.conf: 422
+    startblock=-1
+}
+# ethereumj.conf: 379-383
+transaction {
+    # ethereumj.conf: 379
+    approve {
+        # ethereumj.conf: 379
+        timeout=15
+    }
+    # ethereumj.conf: 383
+    outdated {
+        # ethereumj.conf: 383
+        threshold=10
+    }
+}
+# ethereumj.conf: 412
+vm {
+    # ethereumj.conf: 412
+    structured {
+        # ethereumj.conf: 415
+        compressed=true
+        # ethereumj.conf: 414
+        dir=vmtrace
+        # ethereumj.conf: 416
+        initStorageLimit=10000
+        # ethereumj.conf: 413
+        trace=false
+    }
+}
+
+14:52:36.565 INFO [general]  Config ( yes ): default properties from resource 'ethereumj.conf'
+14:52:36.681 INFO [general]  Config ( no  ): user properties from -Dethereumj.conf.res resource(s) 'null'
+14:52:36.683 INFO [general]  Config ( no  ): user properties from resource 'user.conf'
+14:52:36.684 INFO [general]  Config ( no  ): user properties from file '/Users/jieyi/Theta/theta-exchange-integration/demos/keypair/create-key-pairs-demo/config/ethereumj.conf'
+14:52:36.684 INFO [general]  Config ( no  ): test properties from resource 'test-ethereumj.conf'
+14:52:36.684 INFO [general]  Config ( no  ): test properties from resource 'test-user.conf'
+14:52:36.685 INFO [general]  Config ( no  ): user properties from -Dethereumj.conf.file file(s) 'null'
+14:52:36.686 INFO [general]  Config ( no  ): config passed via constructor
+14:52:36.693 DEBUG [general]  Config trace: # ethereumj.conf: 164-457
+blockchain {
+    # ethereumj.conf: 164
+    config {
+        # ethereumj.conf: 164
+        name=main
+    }
+    # ethereumj.conf: 457
+    only=false
+}
+# ethereumj.conf: 463
+blocks {
+    # ethereumj.conf: 463
+    loader=""
+}
+# ethereumj.conf: 230
+cache {
+    # ethereumj.conf: 251
+    blockQueueSize=32
+    # ethereumj.conf: 232
+    flush {
+        # ethereumj.conf: 241
+        blocks=0
+        # ethereumj.conf: 244
+        shortSyncFlush=true
+        # ethereumj.conf: 236
+        writeCacheSize=64
+    }
+    # ethereumj.conf: 254
+    headerQueueSize=8
+    # ethereumj.conf: 261
+    maxStateBloomSize=128
+    # ethereumj.conf: 248
+    stateCacheSize=384
+}
+# ethereumj.conf: 466
+crypto {
+    # ethereumj.conf: 470-471
+    hash {
+        # ethereumj.conf: 470
+        alg256=ETH-KECCAK-256
+        # ethereumj.conf: 471
+        alg512=ETH-KECCAK-512
+    }
+    # ethereumj.conf: 468
+    providerName=SC
+}
+# ethereumj.conf: 172
+database {
+    # ethereumj.conf: 175
+    dir=database
+    # ethereumj.conf: 192
+    fromBackup=false
+    # ethereumj.conf: 199
+    incompatibleDatabaseBehavior=EXIT
+    # ethereumj.conf: 226
+    maxOpenFiles=512
+    # ethereumj.conf: 205
+    prune {
+        # ethereumj.conf: 206
+        enabled=true
+        # ethereumj.conf: 219
+        maxDepth=192
+    }
+    # ethereumj.conf: 181
+    reset=false
+    # ethereumj.conf: 187
+    resetBlock=0
+}
+# ethereumj.conf: 385
+dump {
+    # ethereumj.conf: 398
+    block=-1
+    # ethereumj.conf: 402
+    clean {
+        # ethereumj.conf: 402
+        on {
+            # ethereumj.conf: 402
+            restart=true
+        }
+    }
+    # ethereumj.conf: 392
+    dir=dmp
+    # ethereumj.conf: 391
+    full=false
+    # ethereumj.conf: 399
+    style=pretty
+}
+# ethereumj.conf: 150
+genesis="frontier.json"
+# ethereumj.conf: 438
+hello {
+    # ethereumj.conf: 438
+    phrase=Dev
+}
+# ethereumj.conf: 454
+keyvalue {
+    # ethereumj.conf: 454
+    datasource=rocksdb
+}
+# ethereumj.conf: 324
+mine {
+    # ethereumj.conf: 343
+    coinbase="0000000000000000000000000000000000000000"
+    # ethereumj.conf: 334
+    cpuMineThreads=4
+    # ethereumj.conf: 347
+    extraData="EthereumJ powered"
+    # ethereumj.conf: 340
+    fullDataSet=true
+    # ethereumj.conf: 356
+    minBlockTimeoutMsec=0
+    # ethereumj.conf: 353
+    minGasPrice=1000000000
+    # ethereumj.conf: 330
+    start=false
+    # ethereumj.conf: 360
+    startNonce=null
+}
+# ethereumj.conf: 1-77
+peer {
+    # ethereumj.conf: 92
+    active=[]
+    # ethereumj.conf: 121
+    capabilities=[
+        # ethereumj.conf: 121
+        eth
+    ]
+    # ethereumj.conf: 130
+    channel {
+        # ethereumj.conf: 130
+        read {
+            # ethereumj.conf: 130
+            timeout=30
+        }
+    }
+    # ethereumj.conf: 125
+    connection {
+        # ethereumj.conf: 125
+        timeout=2
+    }
+    # ethereumj.conf: 1
+    discovery {
+        # ethereumj.conf: 52
+        bind {
+            # ethereumj.conf: 52
+            ip=""
+        }
+        # ethereumj.conf: 8
+        enabled=true
+        # ethereumj.conf: 44
+        external {
+            # ethereumj.conf: 44
+            ip=null
+        }
+        # ethereumj.conf: 13
+        ip {
+            # ethereumj.conf: 13
+            list=[
+                # ethereumj.conf: 15
+                "5.1.83.226:30303",
+                # ethereumj.conf: 18
+                "52.16.188.185:30303",
+                # ethereumj.conf: 19
+                "13.93.211.84:30303",
+                # ethereumj.conf: 20
+                "191.235.84.50:30303",
+                # ethereumj.conf: 21
+                "13.75.154.138:30303",
+                # ethereumj.conf: 22
+                "52.74.57.123:30303",
+                # ethereumj.conf: 25
+                "163.172.187.252:30303",
+                # ethereumj.conf: 26
+                "163.172.157.114:30303",
+                # ethereumj.conf: 27
+                "136.243.154.244:30303",
+                # ethereumj.conf: 28
+                "88.212.206.70:30303",
+                # ethereumj.conf: 29
+                "37.128.191.230:30303",
+                # ethereumj.conf: 30
+                "46.20.235.22:30303",
+                # ethereumj.conf: 31
+                "216.158.85.185:30303",
+                # ethereumj.conf: 32
+                "212.47.247.103:30303",
+                # ethereumj.conf: 33
+                "138.201.144.135:30303",
+                # ethereumj.conf: 34
+                "45.55.33.62:30303",
+                # ethereumj.conf: 35
+                "188.166.255.12:30303",
+                # ethereumj.conf: 36
+                "159.203.210.80:30303",
+                # ethereumj.conf: 37
+                "51.15.42.252:30303",
+                # ethereumj.conf: 38
+                "163.172.171.38:30303"
+            ]
+        }
+        # ethereumj.conf: 60
+        persist=true
+        # ethereumj.conf: 56
+        public {
+            # ethereumj.conf: 56
+            home {
+                # ethereumj.conf: 56
+                node=true
+            }
+        }
+        # ethereumj.conf: 69
+        touchMaxNodes=100
+        # ethereumj.conf: 65
+        touchPeriod=600
+        # ethereumj.conf: 74
+        workers=8
+    }
+    # ethereumj.conf: 80
+    listen {
+        # ethereumj.conf: 80
+        port=30303
+    }
+    # ethereumj.conf: 117
+    maxActivePeers=30
+    # ethereumj.conf: 83
+    networkId=1
+    # ethereumj.conf: 132
+    p2p {
+        # ethereumj.conf: 142
+        eip8=true
+        # ethereumj.conf: 138
+        framing {
+            # ethereumj.conf: 138
+            maxSize=32768
+        }
+    }
+    # ethereumj.conf: 103
+    trusted=[]
+}
+# ethereumj.conf: 434
+play {
+    # ethereumj.conf: 434
+    vm=true
+}
+# ethereumj.conf: 427-456
+record {
+    # ethereumj.conf: 456
+    blocks=false
+    # ethereumj.conf: 427
+    internal {
+        # ethereumj.conf: 427
+        transactions {
+            # ethereumj.conf: 427
+            data=true
+        }
+    }
+}
+# ethereumj.conf: 450
+root {
+    # ethereumj.conf: 450
+    hash {
+        # ethereumj.conf: 450
+        start=null
+    }
+}
+# ethereumj.conf: 364
+solc {
+    # ethereumj.conf: 367
+    path=null
+}
+# ethereumj.conf: 265
+sync {
+    # ethereumj.conf: 269
+    enabled=true
+    # ethereumj.conf: 320
+    ethash=mixed
+    # ethereumj.conf: 307
+    exitOnBlockConflict=false
+    # ethereumj.conf: 272
+    fast {
+        # ethereumj.conf: 285
+        backupState=false
+        # ethereumj.conf: 276
+        enabled=false
+        # ethereumj.conf: 289
+        skipHistory=false
+    }
+    # ethereumj.conf: 313
+    makeDoneByTimeout=-1
+    # ethereumj.conf: 298
+    peer {
+        # ethereumj.conf: 298
+        count=30
+    }
+}
+# ethereumj.conf: 422
+trace {
+    # ethereumj.conf: 422
+    startblock=-1
+}
+# ethereumj.conf: 379-383
+transaction {
+    # ethereumj.conf: 379
+    approve {
+        # ethereumj.conf: 379
+        timeout=15
+    }
+    # ethereumj.conf: 383
+    outdated {
+        # ethereumj.conf: 383
+        threshold=10
+    }
+}
+# ethereumj.conf: 412
+vm {
+    # ethereumj.conf: 412
+    structured {
+        # ethereumj.conf: 415
+        compressed=true
+        # ethereumj.conf: 414
+        dir=vmtrace
+        # ethereumj.conf: 416
+        initStorageLimit=10000
+        # ethereumj.conf: 413
+        trace=false
+    }
+}
+
+14:52:46.030 INFO [general]  Config ( yes ): default properties from resource 'ethereumj.conf'
+14:52:46.148 INFO [general]  Config ( no  ): user properties from -Dethereumj.conf.res resource(s) 'null'
+14:52:46.149 INFO [general]  Config ( no  ): user properties from resource 'user.conf'
+14:52:46.150 INFO [general]  Config ( no  ): user properties from file '/Users/jieyi/Theta/theta-exchange-integration/demos/keypair/create-key-pairs-demo/config/ethereumj.conf'
+14:52:46.151 INFO [general]  Config ( no  ): test properties from resource 'test-ethereumj.conf'
+14:52:46.151 INFO [general]  Config ( no  ): test properties from resource 'test-user.conf'
+14:52:46.152 INFO [general]  Config ( no  ): user properties from -Dethereumj.conf.file file(s) 'null'
+14:52:46.154 INFO [general]  Config ( no  ): config passed via constructor
+14:52:46.158 DEBUG [general]  Config trace: # ethereumj.conf: 164-457
+blockchain {
+    # ethereumj.conf: 164
+    config {
+        # ethereumj.conf: 164
+        name=main
+    }
+    # ethereumj.conf: 457
+    only=false
+}
+# ethereumj.conf: 463
+blocks {
+    # ethereumj.conf: 463
+    loader=""
+}
+# ethereumj.conf: 230
+cache {
+    # ethereumj.conf: 251
+    blockQueueSize=32
+    # ethereumj.conf: 232
+    flush {
+        # ethereumj.conf: 241
+        blocks=0
+        # ethereumj.conf: 244
+        shortSyncFlush=true
+        # ethereumj.conf: 236
+        writeCacheSize=64
+    }
+    # ethereumj.conf: 254
+    headerQueueSize=8
+    # ethereumj.conf: 261
+    maxStateBloomSize=128
+    # ethereumj.conf: 248
+    stateCacheSize=384
+}
+# ethereumj.conf: 466
+crypto {
+    # ethereumj.conf: 470-471
+    hash {
+        # ethereumj.conf: 470
+        alg256=ETH-KECCAK-256
+        # ethereumj.conf: 471
+        alg512=ETH-KECCAK-512
+    }
+    # ethereumj.conf: 468
+    providerName=SC
+}
+# ethereumj.conf: 172
+database {
+    # ethereumj.conf: 175
+    dir=database
+    # ethereumj.conf: 192
+    fromBackup=false
+    # ethereumj.conf: 199
+    incompatibleDatabaseBehavior=EXIT
+    # ethereumj.conf: 226
+    maxOpenFiles=512
+    # ethereumj.conf: 205
+    prune {
+        # ethereumj.conf: 206
+        enabled=true
+        # ethereumj.conf: 219
+        maxDepth=192
+    }
+    # ethereumj.conf: 181
+    reset=false
+    # ethereumj.conf: 187
+    resetBlock=0
+}
+# ethereumj.conf: 385
+dump {
+    # ethereumj.conf: 398
+    block=-1
+    # ethereumj.conf: 402
+    clean {
+        # ethereumj.conf: 402
+        on {
+            # ethereumj.conf: 402
+            restart=true
+        }
+    }
+    # ethereumj.conf: 392
+    dir=dmp
+    # ethereumj.conf: 391
+    full=false
+    # ethereumj.conf: 399
+    style=pretty
+}
+# ethereumj.conf: 150
+genesis="frontier.json"
+# ethereumj.conf: 438
+hello {
+    # ethereumj.conf: 438
+    phrase=Dev
+}
+# ethereumj.conf: 454
+keyvalue {
+    # ethereumj.conf: 454
+    datasource=rocksdb
+}
+# ethereumj.conf: 324
+mine {
+    # ethereumj.conf: 343
+    coinbase="0000000000000000000000000000000000000000"
+    # ethereumj.conf: 334
+    cpuMineThreads=4
+    # ethereumj.conf: 347
+    extraData="EthereumJ powered"
+    # ethereumj.conf: 340
+    fullDataSet=true
+    # ethereumj.conf: 356
+    minBlockTimeoutMsec=0
+    # ethereumj.conf: 353
+    minGasPrice=1000000000
+    # ethereumj.conf: 330
+    start=false
+    # ethereumj.conf: 360
+    startNonce=null
+}
+# ethereumj.conf: 1-77
+peer {
+    # ethereumj.conf: 92
+    active=[]
+    # ethereumj.conf: 121
+    capabilities=[
+        # ethereumj.conf: 121
+        eth
+    ]
+    # ethereumj.conf: 130
+    channel {
+        # ethereumj.conf: 130
+        read {
+            # ethereumj.conf: 130
+            timeout=30
+        }
+    }
+    # ethereumj.conf: 125
+    connection {
+        # ethereumj.conf: 125
+        timeout=2
+    }
+    # ethereumj.conf: 1
+    discovery {
+        # ethereumj.conf: 52
+        bind {
+            # ethereumj.conf: 52
+            ip=""
+        }
+        # ethereumj.conf: 8
+        enabled=true
+        # ethereumj.conf: 44
+        external {
+            # ethereumj.conf: 44
+            ip=null
+        }
+        # ethereumj.conf: 13
+        ip {
+            # ethereumj.conf: 13
+            list=[
+                # ethereumj.conf: 15
+                "5.1.83.226:30303",
+                # ethereumj.conf: 18
+                "52.16.188.185:30303",
+                # ethereumj.conf: 19
+                "13.93.211.84:30303",
+                # ethereumj.conf: 20
+                "191.235.84.50:30303",
+                # ethereumj.conf: 21
+                "13.75.154.138:30303",
+                # ethereumj.conf: 22
+                "52.74.57.123:30303",
+                # ethereumj.conf: 25
+                "163.172.187.252:30303",
+                # ethereumj.conf: 26
+                "163.172.157.114:30303",
+                # ethereumj.conf: 27
+                "136.243.154.244:30303",
+                # ethereumj.conf: 28
+                "88.212.206.70:30303",
+                # ethereumj.conf: 29
+                "37.128.191.230:30303",
+                # ethereumj.conf: 30
+                "46.20.235.22:30303",
+                # ethereumj.conf: 31
+                "216.158.85.185:30303",
+                # ethereumj.conf: 32
+                "212.47.247.103:30303",
+                # ethereumj.conf: 33
+                "138.201.144.135:30303",
+                # ethereumj.conf: 34
+                "45.55.33.62:30303",
+                # ethereumj.conf: 35
+                "188.166.255.12:30303",
+                # ethereumj.conf: 36
+                "159.203.210.80:30303",
+                # ethereumj.conf: 37
+                "51.15.42.252:30303",
+                # ethereumj.conf: 38
+                "163.172.171.38:30303"
+            ]
+        }
+        # ethereumj.conf: 60
+        persist=true
+        # ethereumj.conf: 56
+        public {
+            # ethereumj.conf: 56
+            home {
+                # ethereumj.conf: 56
+                node=true
+            }
+        }
+        # ethereumj.conf: 69
+        touchMaxNodes=100
+        # ethereumj.conf: 65
+        touchPeriod=600
+        # ethereumj.conf: 74
+        workers=8
+    }
+    # ethereumj.conf: 80
+    listen {
+        # ethereumj.conf: 80
+        port=30303
+    }
+    # ethereumj.conf: 117
+    maxActivePeers=30
+    # ethereumj.conf: 83
+    networkId=1
+    # ethereumj.conf: 132
+    p2p {
+        # ethereumj.conf: 142
+        eip8=true
+        # ethereumj.conf: 138
+        framing {
+            # ethereumj.conf: 138
+            maxSize=32768
+        }
+    }
+    # ethereumj.conf: 103
+    trusted=[]
+}
+# ethereumj.conf: 434
+play {
+    # ethereumj.conf: 434
+    vm=true
+}
+# ethereumj.conf: 427-456
+record {
+    # ethereumj.conf: 456
+    blocks=false
+    # ethereumj.conf: 427
+    internal {
+        # ethereumj.conf: 427
+        transactions {
+            # ethereumj.conf: 427
+            data=true
+        }
+    }
+}
+# ethereumj.conf: 450
+root {
+    # ethereumj.conf: 450
+    hash {
+        # ethereumj.conf: 450
+        start=null
+    }
+}
+# ethereumj.conf: 364
+solc {
+    # ethereumj.conf: 367
+    path=null
+}
+# ethereumj.conf: 265
+sync {
+    # ethereumj.conf: 269
+    enabled=true
+    # ethereumj.conf: 320
+    ethash=mixed
+    # ethereumj.conf: 307
+    exitOnBlockConflict=false
+    # ethereumj.conf: 272
+    fast {
+        # ethereumj.conf: 285
+        backupState=false
+        # ethereumj.conf: 276
+        enabled=false
+        # ethereumj.conf: 289
+        skipHistory=false
+    }
+    # ethereumj.conf: 313
+    makeDoneByTimeout=-1
+    # ethereumj.conf: 298
+    peer {
+        # ethereumj.conf: 298
+        count=30
+    }
+}
+# ethereumj.conf: 422
+trace {
+    # ethereumj.conf: 422
+    startblock=-1
+}
+# ethereumj.conf: 379-383
+transaction {
+    # ethereumj.conf: 379
+    approve {
+        # ethereumj.conf: 379
+        timeout=15
+    }
+    # ethereumj.conf: 383
+    outdated {
+        # ethereumj.conf: 383
+        threshold=10
+    }
+}
+# ethereumj.conf: 412
+vm {
+    # ethereumj.conf: 412
+    structured {
+        # ethereumj.conf: 415
+        compressed=true
+        # ethereumj.conf: 414
+        dir=vmtrace
+        # ethereumj.conf: 416
+        initStorageLimit=10000
+        # ethereumj.conf: 413
+        trace=false
+    }
+}
+
+14:53:30.769 INFO [general]  Config ( yes ): default properties from resource 'ethereumj.conf'
+14:53:30.821 INFO [general]  Config ( no  ): user properties from -Dethereumj.conf.res resource(s) 'null'
+14:53:30.822 INFO [general]  Config ( no  ): user properties from resource 'user.conf'
+14:53:30.823 INFO [general]  Config ( no  ): user properties from file '/Users/jieyi/Theta/theta-exchange-integration/demos/keypair/create-key-pairs-demo/config/ethereumj.conf'
+14:53:30.823 INFO [general]  Config ( no  ): test properties from resource 'test-ethereumj.conf'
+14:53:30.824 INFO [general]  Config ( no  ): test properties from resource 'test-user.conf'
+14:53:30.824 INFO [general]  Config ( no  ): user properties from -Dethereumj.conf.file file(s) 'null'
+14:53:30.825 INFO [general]  Config ( no  ): config passed via constructor
+14:53:30.827 DEBUG [general]  Config trace: # ethereumj.conf: 164-457
+blockchain {
+    # ethereumj.conf: 164
+    config {
+        # ethereumj.conf: 164
+        name=main
+    }
+    # ethereumj.conf: 457
+    only=false
+}
+# ethereumj.conf: 463
+blocks {
+    # ethereumj.conf: 463
+    loader=""
+}
+# ethereumj.conf: 230
+cache {
+    # ethereumj.conf: 251
+    blockQueueSize=32
+    # ethereumj.conf: 232
+    flush {
+        # ethereumj.conf: 241
+        blocks=0
+        # ethereumj.conf: 244
+        shortSyncFlush=true
+        # ethereumj.conf: 236
+        writeCacheSize=64
+    }
+    # ethereumj.conf: 254
+    headerQueueSize=8
+    # ethereumj.conf: 261
+    maxStateBloomSize=128
+    # ethereumj.conf: 248
+    stateCacheSize=384
+}
+# ethereumj.conf: 466
+crypto {
+    # ethereumj.conf: 470-471
+    hash {
+        # ethereumj.conf: 470
+        alg256=ETH-KECCAK-256
+        # ethereumj.conf: 471
+        alg512=ETH-KECCAK-512
+    }
+    # ethereumj.conf: 468
+    providerName=SC
+}
+# ethereumj.conf: 172
+database {
+    # ethereumj.conf: 175
+    dir=database
+    # ethereumj.conf: 192
+    fromBackup=false
+    # ethereumj.conf: 199
+    incompatibleDatabaseBehavior=EXIT
+    # ethereumj.conf: 226
+    maxOpenFiles=512
+    # ethereumj.conf: 205
+    prune {
+        # ethereumj.conf: 206
+        enabled=true
+        # ethereumj.conf: 219
+        maxDepth=192
+    }
+    # ethereumj.conf: 181
+    reset=false
+    # ethereumj.conf: 187
+    resetBlock=0
+}
+# ethereumj.conf: 385
+dump {
+    # ethereumj.conf: 398
+    block=-1
+    # ethereumj.conf: 402
+    clean {
+        # ethereumj.conf: 402
+        on {
+            # ethereumj.conf: 402
+            restart=true
+        }
+    }
+    # ethereumj.conf: 392
+    dir=dmp
+    # ethereumj.conf: 391
+    full=false
+    # ethereumj.conf: 399
+    style=pretty
+}
+# ethereumj.conf: 150
+genesis="frontier.json"
+# ethereumj.conf: 438
+hello {
+    # ethereumj.conf: 438
+    phrase=Dev
+}
+# ethereumj.conf: 454
+keyvalue {
+    # ethereumj.conf: 454
+    datasource=rocksdb
+}
+# ethereumj.conf: 324
+mine {
+    # ethereumj.conf: 343
+    coinbase="0000000000000000000000000000000000000000"
+    # ethereumj.conf: 334
+    cpuMineThreads=4
+    # ethereumj.conf: 347
+    extraData="EthereumJ powered"
+    # ethereumj.conf: 340
+    fullDataSet=true
+    # ethereumj.conf: 356
+    minBlockTimeoutMsec=0
+    # ethereumj.conf: 353
+    minGasPrice=1000000000
+    # ethereumj.conf: 330
+    start=false
+    # ethereumj.conf: 360
+    startNonce=null
+}
+# ethereumj.conf: 1-77
+peer {
+    # ethereumj.conf: 92
+    active=[]
+    # ethereumj.conf: 121
+    capabilities=[
+        # ethereumj.conf: 121
+        eth
+    ]
+    # ethereumj.conf: 130
+    channel {
+        # ethereumj.conf: 130
+        read {
+            # ethereumj.conf: 130
+            timeout=30
+        }
+    }
+    # ethereumj.conf: 125
+    connection {
+        # ethereumj.conf: 125
+        timeout=2
+    }
+    # ethereumj.conf: 1
+    discovery {
+        # ethereumj.conf: 52
+        bind {
+            # ethereumj.conf: 52
+            ip=""
+        }
+        # ethereumj.conf: 8
+        enabled=true
+        # ethereumj.conf: 44
+        external {
+            # ethereumj.conf: 44
+            ip=null
+        }
+        # ethereumj.conf: 13
+        ip {
+            # ethereumj.conf: 13
+            list=[
+                # ethereumj.conf: 15
+                "5.1.83.226:30303",
+                # ethereumj.conf: 18
+                "52.16.188.185:30303",
+                # ethereumj.conf: 19
+                "13.93.211.84:30303",
+                # ethereumj.conf: 20
+                "191.235.84.50:30303",
+                # ethereumj.conf: 21
+                "13.75.154.138:30303",
+                # ethereumj.conf: 22
+                "52.74.57.123:30303",
+                # ethereumj.conf: 25
+                "163.172.187.252:30303",
+                # ethereumj.conf: 26
+                "163.172.157.114:30303",
+                # ethereumj.conf: 27
+                "136.243.154.244:30303",
+                # ethereumj.conf: 28
+                "88.212.206.70:30303",
+                # ethereumj.conf: 29
+                "37.128.191.230:30303",
+                # ethereumj.conf: 30
+                "46.20.235.22:30303",
+                # ethereumj.conf: 31
+                "216.158.85.185:30303",
+                # ethereumj.conf: 32
+                "212.47.247.103:30303",
+                # ethereumj.conf: 33
+                "138.201.144.135:30303",
+                # ethereumj.conf: 34
+                "45.55.33.62:30303",
+                # ethereumj.conf: 35
+                "188.166.255.12:30303",
+                # ethereumj.conf: 36
+                "159.203.210.80:30303",
+                # ethereumj.conf: 37
+                "51.15.42.252:30303",
+                # ethereumj.conf: 38
+                "163.172.171.38:30303"
+            ]
+        }
+        # ethereumj.conf: 60
+        persist=true
+        # ethereumj.conf: 56
+        public {
+            # ethereumj.conf: 56
+            home {
+                # ethereumj.conf: 56
+                node=true
+            }
+        }
+        # ethereumj.conf: 69
+        touchMaxNodes=100
+        # ethereumj.conf: 65
+        touchPeriod=600
+        # ethereumj.conf: 74
+        workers=8
+    }
+    # ethereumj.conf: 80
+    listen {
+        # ethereumj.conf: 80
+        port=30303
+    }
+    # ethereumj.conf: 117
+    maxActivePeers=30
+    # ethereumj.conf: 83
+    networkId=1
+    # ethereumj.conf: 132
+    p2p {
+        # ethereumj.conf: 142
+        eip8=true
+        # ethereumj.conf: 138
+        framing {
+            # ethereumj.conf: 138
+            maxSize=32768
+        }
+    }
+    # ethereumj.conf: 103
+    trusted=[]
+}
+# ethereumj.conf: 434
+play {
+    # ethereumj.conf: 434
+    vm=true
+}
+# ethereumj.conf: 427-456
+record {
+    # ethereumj.conf: 456
+    blocks=false
+    # ethereumj.conf: 427
+    internal {
+        # ethereumj.conf: 427
+        transactions {
+            # ethereumj.conf: 427
+            data=true
+        }
+    }
+}
+# ethereumj.conf: 450
+root {
+    # ethereumj.conf: 450
+    hash {
+        # ethereumj.conf: 450
+        start=null
+    }
+}
+# ethereumj.conf: 364
+solc {
+    # ethereumj.conf: 367
+    path=null
+}
+# ethereumj.conf: 265
+sync {
+    # ethereumj.conf: 269
+    enabled=true
+    # ethereumj.conf: 320
+    ethash=mixed
+    # ethereumj.conf: 307
+    exitOnBlockConflict=false
+    # ethereumj.conf: 272
+    fast {
+        # ethereumj.conf: 285
+        backupState=false
+        # ethereumj.conf: 276
+        enabled=false
+        # ethereumj.conf: 289
+        skipHistory=false
+    }
+    # ethereumj.conf: 313
+    makeDoneByTimeout=-1
+    # ethereumj.conf: 298
+    peer {
+        # ethereumj.conf: 298
+        count=30
+    }
+}
+# ethereumj.conf: 422
+trace {
+    # ethereumj.conf: 422
+    startblock=-1
+}
+# ethereumj.conf: 379-383
+transaction {
+    # ethereumj.conf: 379
+    approve {
+        # ethereumj.conf: 379
+        timeout=15
+    }
+    # ethereumj.conf: 383
+    outdated {
+        # ethereumj.conf: 383
+        threshold=10
+    }
+}
+# ethereumj.conf: 412
+vm {
+    # ethereumj.conf: 412
+    structured {
+        # ethereumj.conf: 415
+        compressed=true
+        # ethereumj.conf: 414
+        dir=vmtrace
+        # ethereumj.conf: 416
+        initStorageLimit=10000
+        # ethereumj.conf: 413
+        trace=false
+    }
+}
+
+14:53:37.519 INFO [general]  Config ( yes ): default properties from resource 'ethereumj.conf'
+14:53:37.570 INFO [general]  Config ( no  ): user properties from -Dethereumj.conf.res resource(s) 'null'
+14:53:37.571 INFO [general]  Config ( no  ): user properties from resource 'user.conf'
+14:53:37.571 INFO [general]  Config ( no  ): user properties from file '/Users/jieyi/Theta/theta-exchange-integration/demos/keypair/create-key-pairs-demo/config/ethereumj.conf'
+14:53:37.572 INFO [general]  Config ( no  ): test properties from resource 'test-ethereumj.conf'
+14:53:37.572 INFO [general]  Config ( no  ): test properties from resource 'test-user.conf'
+14:53:37.573 INFO [general]  Config ( no  ): user properties from -Dethereumj.conf.file file(s) 'null'
+14:53:37.574 INFO [general]  Config ( no  ): config passed via constructor
+14:53:37.576 DEBUG [general]  Config trace: # ethereumj.conf: 164-457
+blockchain {
+    # ethereumj.conf: 164
+    config {
+        # ethereumj.conf: 164
+        name=main
+    }
+    # ethereumj.conf: 457
+    only=false
+}
+# ethereumj.conf: 463
+blocks {
+    # ethereumj.conf: 463
+    loader=""
+}
+# ethereumj.conf: 230
+cache {
+    # ethereumj.conf: 251
+    blockQueueSize=32
+    # ethereumj.conf: 232
+    flush {
+        # ethereumj.conf: 241
+        blocks=0
+        # ethereumj.conf: 244
+        shortSyncFlush=true
+        # ethereumj.conf: 236
+        writeCacheSize=64
+    }
+    # ethereumj.conf: 254
+    headerQueueSize=8
+    # ethereumj.conf: 261
+    maxStateBloomSize=128
+    # ethereumj.conf: 248
+    stateCacheSize=384
+}
+# ethereumj.conf: 466
+crypto {
+    # ethereumj.conf: 470-471
+    hash {
+        # ethereumj.conf: 470
+        alg256=ETH-KECCAK-256
+        # ethereumj.conf: 471
+        alg512=ETH-KECCAK-512
+    }
+    # ethereumj.conf: 468
+    providerName=SC
+}
+# ethereumj.conf: 172
+database {
+    # ethereumj.conf: 175
+    dir=database
+    # ethereumj.conf: 192
+    fromBackup=false
+    # ethereumj.conf: 199
+    incompatibleDatabaseBehavior=EXIT
+    # ethereumj.conf: 226
+    maxOpenFiles=512
+    # ethereumj.conf: 205
+    prune {
+        # ethereumj.conf: 206
+        enabled=true
+        # ethereumj.conf: 219
+        maxDepth=192
+    }
+    # ethereumj.conf: 181
+    reset=false
+    # ethereumj.conf: 187
+    resetBlock=0
+}
+# ethereumj.conf: 385
+dump {
+    # ethereumj.conf: 398
+    block=-1
+    # ethereumj.conf: 402
+    clean {
+        # ethereumj.conf: 402
+        on {
+            # ethereumj.conf: 402
+            restart=true
+        }
+    }
+    # ethereumj.conf: 392
+    dir=dmp
+    # ethereumj.conf: 391
+    full=false
+    # ethereumj.conf: 399
+    style=pretty
+}
+# ethereumj.conf: 150
+genesis="frontier.json"
+# ethereumj.conf: 438
+hello {
+    # ethereumj.conf: 438
+    phrase=Dev
+}
+# ethereumj.conf: 454
+keyvalue {
+    # ethereumj.conf: 454
+    datasource=rocksdb
+}
+# ethereumj.conf: 324
+mine {
+    # ethereumj.conf: 343
+    coinbase="0000000000000000000000000000000000000000"
+    # ethereumj.conf: 334
+    cpuMineThreads=4
+    # ethereumj.conf: 347
+    extraData="EthereumJ powered"
+    # ethereumj.conf: 340
+    fullDataSet=true
+    # ethereumj.conf: 356
+    minBlockTimeoutMsec=0
+    # ethereumj.conf: 353
+    minGasPrice=1000000000
+    # ethereumj.conf: 330
+    start=false
+    # ethereumj.conf: 360
+    startNonce=null
+}
+# ethereumj.conf: 1-77
+peer {
+    # ethereumj.conf: 92
+    active=[]
+    # ethereumj.conf: 121
+    capabilities=[
+        # ethereumj.conf: 121
+        eth
+    ]
+    # ethereumj.conf: 130
+    channel {
+        # ethereumj.conf: 130
+        read {
+            # ethereumj.conf: 130
+            timeout=30
+        }
+    }
+    # ethereumj.conf: 125
+    connection {
+        # ethereumj.conf: 125
+        timeout=2
+    }
+    # ethereumj.conf: 1
+    discovery {
+        # ethereumj.conf: 52
+        bind {
+            # ethereumj.conf: 52
+            ip=""
+        }
+        # ethereumj.conf: 8
+        enabled=true
+        # ethereumj.conf: 44
+        external {
+            # ethereumj.conf: 44
+            ip=null
+        }
+        # ethereumj.conf: 13
+        ip {
+            # ethereumj.conf: 13
+            list=[
+                # ethereumj.conf: 15
+                "5.1.83.226:30303",
+                # ethereumj.conf: 18
+                "52.16.188.185:30303",
+                # ethereumj.conf: 19
+                "13.93.211.84:30303",
+                # ethereumj.conf: 20
+                "191.235.84.50:30303",
+                # ethereumj.conf: 21
+                "13.75.154.138:30303",
+                # ethereumj.conf: 22
+                "52.74.57.123:30303",
+                # ethereumj.conf: 25
+                "163.172.187.252:30303",
+                # ethereumj.conf: 26
+                "163.172.157.114:30303",
+                # ethereumj.conf: 27
+                "136.243.154.244:30303",
+                # ethereumj.conf: 28
+                "88.212.206.70:30303",
+                # ethereumj.conf: 29
+                "37.128.191.230:30303",
+                # ethereumj.conf: 30
+                "46.20.235.22:30303",
+                # ethereumj.conf: 31
+                "216.158.85.185:30303",
+                # ethereumj.conf: 32
+                "212.47.247.103:30303",
+                # ethereumj.conf: 33
+                "138.201.144.135:30303",
+                # ethereumj.conf: 34
+                "45.55.33.62:30303",
+                # ethereumj.conf: 35
+                "188.166.255.12:30303",
+                # ethereumj.conf: 36
+                "159.203.210.80:30303",
+                # ethereumj.conf: 37
+                "51.15.42.252:30303",
+                # ethereumj.conf: 38
+                "163.172.171.38:30303"
+            ]
+        }
+        # ethereumj.conf: 60
+        persist=true
+        # ethereumj.conf: 56
+        public {
+            # ethereumj.conf: 56
+            home {
+                # ethereumj.conf: 56
+                node=true
+            }
+        }
+        # ethereumj.conf: 69
+        touchMaxNodes=100
+        # ethereumj.conf: 65
+        touchPeriod=600
+        # ethereumj.conf: 74
+        workers=8
+    }
+    # ethereumj.conf: 80
+    listen {
+        # ethereumj.conf: 80
+        port=30303
+    }
+    # ethereumj.conf: 117
+    maxActivePeers=30
+    # ethereumj.conf: 83
+    networkId=1
+    # ethereumj.conf: 132
+    p2p {
+        # ethereumj.conf: 142
+        eip8=true
+        # ethereumj.conf: 138
+        framing {
+            # ethereumj.conf: 138
+            maxSize=32768
+        }
+    }
+    # ethereumj.conf: 103
+    trusted=[]
+}
+# ethereumj.conf: 434
+play {
+    # ethereumj.conf: 434
+    vm=true
+}
+# ethereumj.conf: 427-456
+record {
+    # ethereumj.conf: 456
+    blocks=false
+    # ethereumj.conf: 427
+    internal {
+        # ethereumj.conf: 427
+        transactions {
+            # ethereumj.conf: 427
+            data=true
+        }
+    }
+}
+# ethereumj.conf: 450
+root {
+    # ethereumj.conf: 450
+    hash {
+        # ethereumj.conf: 450
+        start=null
+    }
+}
+# ethereumj.conf: 364
+solc {
+    # ethereumj.conf: 367
+    path=null
+}
+# ethereumj.conf: 265
+sync {
+    # ethereumj.conf: 269
+    enabled=true
+    # ethereumj.conf: 320
+    ethash=mixed
+    # ethereumj.conf: 307
+    exitOnBlockConflict=false
+    # ethereumj.conf: 272
+    fast {
+        # ethereumj.conf: 285
+        backupState=false
+        # ethereumj.conf: 276
+        enabled=false
+        # ethereumj.conf: 289
+        skipHistory=false
+    }
+    # ethereumj.conf: 313
+    makeDoneByTimeout=-1
+    # ethereumj.conf: 298
+    peer {
+        # ethereumj.conf: 298
+        count=30
+    }
+}
+# ethereumj.conf: 422
+trace {
+    # ethereumj.conf: 422
+    startblock=-1
+}
+# ethereumj.conf: 379-383
+transaction {
+    # ethereumj.conf: 379
+    approve {
+        # ethereumj.conf: 379
+        timeout=15
+    }
+    # ethereumj.conf: 383
+    outdated {
+        # ethereumj.conf: 383
+        threshold=10
+    }
+}
+# ethereumj.conf: 412
+vm {
+    # ethereumj.conf: 412
+    structured {
+        # ethereumj.conf: 415
+        compressed=true
+        # ethereumj.conf: 414
+        dir=vmtrace
+        # ethereumj.conf: 416
+        initStorageLimit=10000
+        # ethereumj.conf: 413
+        trace=false
+    }
+}
+

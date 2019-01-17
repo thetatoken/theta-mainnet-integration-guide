@@ -1,6 +1,0 @@
-<dependency>
-    <groupId>org.ethereum</groupId>
-    <artifactId>ethereumj-core</artifactId>
-    <version>1.2.0-RELEASE</version>
-    <!--  <type>zip</type>  -->
-</dependency>
