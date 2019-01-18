@@ -3,6 +3,9 @@ package org.theta;
 import org.ethereum.crypto.ECKey;
 import org.spongycastle.util.encoders.Hex;
 
+//
+// Reference: https://github.com/ethereum/ethereumj/blob/develop/ethereumj-core/src/main/java/org/ethereum/crypto/ECKey.java
+//
 public class App {
 
     final static int BatchSize = 100; 
