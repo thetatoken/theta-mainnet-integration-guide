@@ -1,6 +1,6 @@
 # Connect to the Testnet
 
-Theta Labs maintains a testnet environment which resembles the mainnet to facilitate partner testing. To connect to the testnet, open a terminal, and follow the setup steps below.
+Theta Labs maintains a testnet environment which resembles the mainnet to facilitate partner testing. To connect to the testnet, open a terminal, and follow the steps below.
 
 #### Step 1. Setup
 Follow the instructions in [setup](./setup.md) to build and install the Theta ledger. Then,
