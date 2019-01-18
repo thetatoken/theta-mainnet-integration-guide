@@ -1,12 +1,20 @@
 # Theta Mainnet Integration Guide
 
-This repo contains documentation and demos to guide the Theta mainnet integration.
+This repo contains documentation and demos to facilitate the Theta mainnet integration.
 
-### Documentation
+## Documentation
 
-The documentation is organized under the [docs](docs/) directory. The [setup guide](docs/setup.md) provides the instructions to build and install the Theta Ledger on a Linux machine, and lauch a local private net for testing. The [command line tool guide](docs/cmd.md) illustrates how to interact with the Theta ledger through the Theta command line interface. The [API document](docs/api.md) lists the RPC APIs of the Theta ledger. The [testnet](docs/testnet.md) and [mainnet](docs/mainnet.md) integration guide contain the steps for launching a Theta node and connect to the testnet and mainnet, respectively.
+The documentation is organized under the [docs](docs/) directory. 
 
-### Demos
+**Setup**: The [setup guide](docs/setup.md) provides the instructions to build and install the Theta Ledger on a Linux machine, and lauch a local private net for testing. 
+
+**CMD Tool**: The [command line tool guide](docs/cmd.md) illustrates how to interact with the Theta ledger through the Theta command line interface. 
+
+**RPC API**: The [API document](docs/api.md) lists the RPC APIs of the Theta ledger. 
+
+**Testnet/Mainnet**: The [testnet](docs/testnet.md) and [mainnet](docs/mainnet.md) integration guide contain the steps for launching a Theta node and connect to the testnet and mainnet, respectively.
+
+## Demos
 
 The [demos](demos/) directory contains a couple integration examples:
 
