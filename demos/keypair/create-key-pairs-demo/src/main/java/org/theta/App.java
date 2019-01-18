@@ -34,12 +34,12 @@ public class App {
                 throw new Exception(String.format("Invalid address with checksum: %s", addrWithCheckSum));
             }
                 
-            System.out.println("--------------------------------------------------");
+            System.out.println("-------------------------------------------------------");
             System.out.println("Private Key: " + prikBase16);
             System.out.println("Public  Key: " + pubkBase16);
             System.out.println("Address    : " + addrBase16);
             System.out.println("Address(cs): " + addrWithCheckSum);
-            System.out.println("--------------------------------------------------");
+            System.out.println("-------------------------------------------------------");
             System.out.println("");
         }
     }
@@ -49,7 +49,7 @@ public class App {
         address = address.toLowerCase().replaceAll("0x","");
         String addressHash = Hex.toHexString(HashUtil.sha3(address.toLowerCase().getBytes()));
         String checksumAddress = "0x";
-        for (int i = 0; i < address.length(); i++ ) {
+        for (int i = 0; i < address.length(); i++) {
             String addri = address.substring(i, i+1);
             String hashi = addressHash.substring(i, i+1);       
             // If ith character is 9 to f then make it uppercase
@@ -87,7 +87,7 @@ public class App {
         }
 
         String addressHash = Hex.toHexString(HashUtil.sha3(address.toLowerCase().getBytes()));
-        for (int i = 0; i < expectedLength; i++ ) {
+        for (int i = 0; i < expectedLength; i++) {
             // the ith letter should be uppercase if the ith digit of casemap is 1
             String addri = address.substring(i, i+1);
             String hashi = addressHash.substring(i, i+1);
