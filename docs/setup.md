@@ -1,4 +1,6 @@
-## Setup
+# Setup
+
+## Preparation
 
 Install Go and set environment variables `GOPATH` , `GOBIN`, and `PATH`. The current code base should compile with **Go 1.9.7**.
 
