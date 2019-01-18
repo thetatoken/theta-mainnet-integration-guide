@@ -20,6 +20,10 @@ public class App {
             byte[] prik = key.getPrivKeyBytes();
             byte[] pubk = key.getPubKey();
             byte[] addr = key.getAddress();
+
+            if (Hex.toHexString(prik).length() != 64) {
+                continue; // to guarantee the private key is 256 bits long
+            }
     
             String prikBase16   = "0x" + Hex.toHexString(prik);
             String pubkBase16   = "0x" + Hex.toHexString(pubk);
