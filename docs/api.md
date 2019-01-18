@@ -1,7 +1,7 @@
 # API Reference
 
 ## Table of Contents
-- [GetAccount API](#getaccountapi)
+- [GetAccount API](#getaccount-api)
 
 ## GetAccount API
 
