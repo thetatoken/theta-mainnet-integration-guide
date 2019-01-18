@@ -4,14 +4,16 @@ import org.ethereum.crypto.ECKey;
 import org.ethereum.crypto.HashUtil;
 import org.spongycastle.util.encoders.Hex;
 
-//
-// Reference: https://github.com/ethereum/ethereumj/blob/develop/ethereumj-core/src/main/java/org/ethereum/crypto/ECKey.java
-//
 public class App {
 
     final static int BatchSize = 100; 
 
     public static void main(String[] args) throws Exception {
+        createAndValidateKeypairBatch();
+    }
+
+    // Reference: https://github.com/ethereum/ethereumj/blob/develop/ethereumj-core/src/main/java/org/ethereum/crypto/ECKey.java
+    private static void createAndValidateKeypairBatch() throws Exception {
         for (int i = 0; i < BatchSize; i ++) {
             ECKey key = new ECKey();
 
@@ -60,6 +62,7 @@ public class App {
         return checksumAddress;
     }
 
+    // Reference: https://github.com/ethereum/go-ethereum/blob/aa9fff3e68b1def0a9a22009c233150bf9ba481f/jsre/ethereum_js.go#L2288
     private static boolean validateAddress(String address) {
         // Must be a 20 bytes long hex string, the 0x prefix is optional
         if (!address.matches("^(0x)?[0-9a-fA-F]{40}$")) {
