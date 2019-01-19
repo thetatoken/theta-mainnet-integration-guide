@@ -182,7 +182,9 @@ This API returns the finalized block of given the height. If none of the block a
 
 **Returns**
 
-Similar to the returns of the GetBlock API. Please see above.
+Similar to the returns of the GetBlock API. Please [see above](#getblock).
+
+**Example**
 
 ```
 // Request
