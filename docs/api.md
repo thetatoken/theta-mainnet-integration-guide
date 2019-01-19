@@ -1,5 +1,7 @@
 # API Reference
 
+We can interact with the Theta ledger through its RPC API interface. By default the Theta node runs an RPC server at port 16888. In the examples belows, we assume the reader has followed the [setup guide](setup.md) to launch a private net on the local machine.
+
 ## Table of Contents
 - [GetAccount](#getaccount)
 - [GetTransaction](#gettransaction)
@@ -204,7 +206,7 @@ curl -X POST -H 'Content-Type: application/json' --data '{"jsonrpc":"2.0","metho
 		"timestamp": "1547855622",
 		"proposer": "0x2e833968e5bb786ae419c4d13189fb081cc43bab",
 		"children": ["0xf507fe7c8f6ebb95eccaaca347d48e23804a0c6b0ac0a157f30fa6ad83387f26"],
-		"status": 2,
+		"status": 4,
 		"hash": "0xc6e5ad5e3d38e4391b06a5023d5687dbbd039d2772ac655799b61e3e6cd3d810",
 		"transactions": [...]
 	}
