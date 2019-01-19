@@ -3,12 +3,20 @@
 We can interact with the Theta ledger through its RPC API interface. By default the Theta node runs an RPC server at port 16888. In the examples belows, we assume the reader has followed the [setup guide](setup.md) to launch a private net on the local machine.
 
 ## Table of Contents
-- [GetAccount](#getaccount)
-- [GetTransaction](#gettransaction)
-- [GetBlock](#getblock)
-- [GetBlockByHeight](#getblockbyheight)
+- [Query APIs](#query-apis)
+	- [GetAccount](#getaccount)
+	- [GetTransaction](#gettransaction)
+	- [GetBlock](#getblock)
+	- [GetBlockByHeight](#getblockbyheight)
+- [Tx APIs](#tx-apis)
+	- [BroadcastRawTransaction](#broadcastrawtransaction)
+	- [BroadcastRawTransactionAsync](#broadcastrawtransactionasync)
+- [Call Smart Contract](#call-smart-contract)
+	- [CallSmartContract](#callsmartcontract)
+	
+## Query APIs
 
-## GetAccount
+### GetAccount
 
 This API returns the details of the account being queried in json format.
 
@@ -46,7 +54,7 @@ curl -X POST -H 'Content-Type: application/json' --data '{"jsonrpc":"2.0","metho
 	}
 }
 ```
-## GetTransaction
+### GetTransaction
 
 This API returns the transaction being queried in json format.
 
@@ -64,17 +72,17 @@ This API returns the transaction being queried in json format.
 
 ```
 // Request
-curl -X POST -H 'Content-Type: application/json' --data '{"jsonrpc":"2.0","method":"theta.GetTransaction","params":[{"hash":"0xf02066216334a7bde4d4f670817d06165a69d8e44b4aedad1b26f2be217e68c7"}],"id":1}' http://localhost:16888/rpc
+curl -X POST -H 'Content-Type: application/json' --data '{"jsonrpc":"2.0","method":"theta.GetTransaction","params":[{"hash":"0x0b715ff87534d154b90d5b9a77b65c0a03dd651b9e4d8b5560c370ba6bcf0ff4"}],"id":1}' http://localhost:16888/rpc
 
 // Result
 {
 	"jsonrpc": "2.0",
 	"id": 1,
 	"result": {
-		"block_hash": "0xb372c01b546d7e94e906bee92a6f2c4d30b9c90827113978ef604301282eff36",
-		"block_height": "5854",
+		"block_hash": "0xc1c2a245fb1cbde39bfabd23cce12d42dc90acbebd99e6e416dec4d18130f2ef",
+		"block_height": "1",
 		"status": "finalized",
-		"hash": "0xf02066216334a7bde4d4f670817d06165a69d8e44b4aedad1b26f2be217e68c7",
+		"hash": "0x0b715ff87534d154b90d5b9a77b65c0a03dd651b9e4d8b5560c370ba6bcf0ff4",
 		"transaction": {
 			"proposer": {
 				"address": "0x2e833968e5bb786ae419c4d13189fb081cc43bab",
@@ -92,13 +100,13 @@ curl -X POST -H 'Content-Type: application/json' --data '{"jsonrpc":"2.0","metho
 					"gammawei": "0"
 				}
 			}],
-			"block_height": "5853"
+			"block_height": "0"
 		}
 	}
 }
 ```
 
-## GetBlock
+### GetBlock
 
 This API returns the block being queried in json format.
 
@@ -151,7 +159,7 @@ Block status transitions:
 **Example**
 ```
 // Request
-curl -X POST -H 'Content-Type: application/json' --data '{"jsonrpc":"2.0","method":"theta.GetBlock","params":[{"hash":"0xb372c01b546d7e94e906bee92a6f2c4d30b9c90827113978ef604301282eff36"}],"id":1}' http://localhost:16888/rpc
+curl -X POST -H 'Content-Type: application/json' --data '{"jsonrpc":"2.0","method":"theta.GetBlock","params":[{"hash":"0xc1c2a245fb1cbde39bfabd23cce12d42dc90acbebd99e6e416dec4d18130f2ef"}],"id":1}' http://localhost:16888/rpc
 
 // Result
 {
@@ -159,22 +167,22 @@ curl -X POST -H 'Content-Type: application/json' --data '{"jsonrpc":"2.0","metho
 	"id": 1,
 	"result": {
 		"chain_id": "",
-		"epoch": "11706",
-		"height": "5854",
-		"parent": "0x03178520f9a92bb1f291ebe42a5feff9f35c9f4edb297476bae2c94fb300756c",
-		"transactions_hash": "0xe3a2e64dc731c493cf6558f3a11a2d9fe6011d43cbbf2ee802a965c65d5a1f02",
+		"epoch": "1",
+		"height": "1",
+		"parent": "0x2264d9e9f8e929ac9a39947029adc33d8a33d226a26960b20ebc08a59c208d23",
+		"transactions_hash": "0x9e35782ddf9110118434ca5c4db7ff9ec7f0186e215f6efaea76ff34815fb46c",
 		"state_hash": "0x6bab2eae0448b40183c3b0140f2c9a05405a6d27ecc45cbbd90a839c7d1c3191",
-		"timestamp": "1547854431",
+		"timestamp": "1547580477",
 		"proposer": "0x2e833968e5bb786ae419c4d13189fb081cc43bab",
-		"children": ["0x456a39f9f816376fb40170c2a21a2b2b3e69a25b0a2f18fdcffd3256ed6b8461"],
+		"children": ["0xf6cd62e2314a6c98d98a76c744c3f80cae6f012e7ed5750b28dae144b828f6fa"],
 		"status": 4,
-		"hash": "0xb372c01b546d7e94e906bee92a6f2c4d30b9c90827113978ef604301282eff36",
+		"hash": "0xc1c2a245fb1cbde39bfabd23cce12d42dc90acbebd99e6e416dec4d18130f2ef",
 		"transactions": [...]
 	}
 }
 ```
 
-## GetBlockByHeight
+### GetBlockByHeight
 
 This API returns the finalized block of given the height. If none of the block at the given height is finalized (either directly or indirectly), the API simplely returns an empty result.
 
@@ -190,7 +198,7 @@ Similar to the returns of the GetBlock API. Please [see above](#getblock).
 
 ```
 // Request
-curl -X POST -H 'Content-Type: application/json' --data '{"jsonrpc":"2.0","method":"theta.GetBlockByHeight","params":[{"height":"6092"}],"id":1}' http://localhost:16888/rpc
+curl -X POST -H 'Content-Type: application/json' --data '{"jsonrpc":"2.0","method":"theta.GetBlockByHeight","params":[{"height":"1"}],"id":1}' http://localhost:16888/rpc
 
 // Result
 {
@@ -198,17 +206,70 @@ curl -X POST -H 'Content-Type: application/json' --data '{"jsonrpc":"2.0","metho
 	"id": 1,
 	"result": {
 		"chain_id": "",
-		"epoch": "12182",
-		"height": "6092",
-		"parent": "0x8b2e6ef21053ffa84a4d70db7d65659fec09449c208668a4fcbda601dcd86c6c",
-		"transactions_hash": "0x37795472f1a78ce2951b9d76b35d2f6428ed5ecb13b7e993f1296be9dc16945b",
+		"epoch": "1",
+		"height": "1",
+		"parent": "0x2264d9e9f8e929ac9a39947029adc33d8a33d226a26960b20ebc08a59c208d23",
+		"transactions_hash": "0x9e35782ddf9110118434ca5c4db7ff9ec7f0186e215f6efaea76ff34815fb46c",
 		"state_hash": "0x6bab2eae0448b40183c3b0140f2c9a05405a6d27ecc45cbbd90a839c7d1c3191",
-		"timestamp": "1547855622",
+		"timestamp": "1547580477",
 		"proposer": "0x2e833968e5bb786ae419c4d13189fb081cc43bab",
-		"children": ["0xf507fe7c8f6ebb95eccaaca347d48e23804a0c6b0ac0a157f30fa6ad83387f26"],
+		"children": ["0xf6cd62e2314a6c98d98a76c744c3f80cae6f012e7ed5750b28dae144b828f6fa"],
 		"status": 4,
-		"hash": "0xc6e5ad5e3d38e4391b06a5023d5687dbbd039d2772ac655799b61e3e6cd3d810",
+		"hash": "0xc1c2a245fb1cbde39bfabd23cce12d42dc90acbebd99e6e416dec4d18130f2ef",
 		"transactions": [...]
 	}
 }
 ```
+
+## Tx APIs
+
+### BroadcastRawTransaction
+
+This API submits the given raw transaction to the blockchain, and returns only after the transaction to be included in the blockchain, or timed out (i.e. synchronous call).
+
+**Query Parameters**
+
+- tx_bytes: the signed transaction bytes
+
+**Returns**
+
+**Example**
+```
+```
+
+
+### BroadcastRawTransactionAsync
+
+This API submits the given raw transaction to the blockchain, and returns immediately (i.e. asynchronous call).
+
+**Query Parameters**
+
+- tx_bytes: the signed transaction bytes
+
+**Returns**
+
+**Example**
+```
+```
+
+## Call Smart Contract
+
+### CallSmartContract
+
+This API simulates the smart contract execution locally without submitting the smart contract transaction to the blockchain. It is useful to evalute the execution result, calculate the gas cost, etc.
+
+**Query Parameters**
+
+- sctx_bytes: the signed transaction bytes
+
+**Returns**
+
+- vm_return: the return of the virtual machine
+- contract_address: the address of the corresponding smart contract
+- gas_used: amount of gas used for the smart contract execution
+- vm_error: error returned by the virtual machine if any
+
+**Example**
+```
+```
+
