@@ -165,7 +165,7 @@ curl -X POST -H 'Content-Type: application/json' --data '{"jsonrpc":"2.0","metho
 		"timestamp": "1547854431",
 		"proposer": "0x2e833968e5bb786ae419c4d13189fb081cc43bab",
 		"children": ["0x456a39f9f816376fb40170c2a21a2b2b3e69a25b0a2f18fdcffd3256ed6b8461"],
-		"status": 2,
+		"status": 4,
 		"hash": "0xb372c01b546d7e94e906bee92a6f2c4d30b9c90827113978ef604301282eff36",
 		"transactions": [...]
 	}
