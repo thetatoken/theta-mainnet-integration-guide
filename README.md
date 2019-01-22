@@ -6,20 +6,20 @@ This repo contains documentation and demos to facilitate Theta mainnet integrati
 
 The documentation is organized under the [docs](docs/) directory. 
 
-**Setup**: The [setup guide](docs/setup.md) provides the instructions to build and install the Theta Ledger on a Linux machine, and lauch a local private net for testing. 
+  - **Setup**: The [setup guide](docs/setup.md) provides the instructions to build and install the Theta Ledger on a Linux machine, and lauch a local private net for testing. 
 
-**CMD Tool**: The [command line tool guide](docs/cmd.md) illustrates how to interact with the Theta ledger through the Theta command line interface. 
+  - **CMD Tool**: The [command line tool guide](docs/cmd.md) illustrates how to interact with the Theta ledger through the Theta command line interface. 
 
-**RPC API**: The [API reference](docs/api.md) lists the RPC APIs of the Theta ledger. 
+  - **RPC API**: The [API reference](docs/api.md) lists the RPC APIs of the Theta ledger. 
 
-**Testnet/Mainnet**: The [testnet](docs/testnet.md) and [mainnet](docs/mainnet.md) integration guide contain the steps for launching a Theta node and connect to the testnet and mainnet, respectively.
+  - **Testnet/Mainnet**: The [testnet](docs/testnet.md) and [mainnet](docs/mainnet.md) integration guide contain the steps for launching a Theta node and connect to the testnet and mainnet, respectively.
 
 ## Demos
 
 The [demos](demos/) directory contains a couple integration examples:
 
-**keypair**: A Java program which demonstrates how to quickly generate key pairs (private key and the corresponding address) in batches.
+  - **keypair**: The [keypair demo](demos/keypair) is a Java program which demonstrates how to quickly generate key pairs (private key and the corresponding address) in batches.
 
-**tx**: Three Java programs that demonstrate: 1) how to construct and serialize a transaction, 2) how to sign a transaction offline, and 3) how to broadcast the signed transaction to the Theta ledger.
+  - **tx**: The [tx demo](demos/tx) is a Java program that demonstrate: 1) how to construct and serialize a transaction, 2) how to sign a transaction offline, and 3) how to broadcast the signed transaction to the Theta ledger.
 
-**api**: A Java programs that shows how to interact with the Theta ledger through its RPC interface.
+  - **api**: The [api demo](demos/api) is a Java program which shows how to interact with the Theta ledger through its RPC interface.
