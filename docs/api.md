@@ -75,12 +75,13 @@ This API returns the block being queried in json format.
 - children: children blocks
 - hash: the block hash
 - transactions: json representation of the transactions contained in the block
- - raw: transaction details
- - type: type of the transaction (see the "Transaction Types" note below)
- - hash: hash of the transaction
-- status: status of the block (see the "Block Status" note below)
+	- raw: transaction details
+	- type: type of the transaction (see the **Transaction Types** note below)
+	- hash: hash of the transaction
+- status: status of the block (see the **Block Status** note below)
 
 **Transaction Types**
+
 ```
 0: coinbase transaction, for validator/guardian reward
 1: slash transaction, for slashing malicious actors
@@ -209,7 +210,7 @@ Similar to the returns of the GetBlock API. Please [see above](#getblock).
 
 **Example**
 
-In this example, we queried the block at height 3. The result is similar to the result of the GetBlock API.
+In this example, we query the block at height 3. The result is similar to the result of the GetBlock API.
 
 ```
 // Request
