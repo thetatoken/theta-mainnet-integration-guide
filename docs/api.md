@@ -82,32 +82,27 @@ This API returns the block being queried in json format.
 
 **Transaction Types**
 ```
-{
-  0: coinbase transaction, for validator/guardian reward,
-  1: slash transaction, for slashing malicious actors,
-  2: send transaction, for sending tokens among accounts,
-  3: reserve fund transaction, for off-chain micropayment,
-  4: release fund transaction, for off-chain micropayment,
-  5: service payment transaction, for off-chain micropayment,
-  6: split rule transaction, for the "split rule" special smart contract,
-  7: smart contract transaction, for general purpose smart contract,
-  8: deposit stake transaction, for depositing stake to validators/guardians,
-  9: withdraw stake transaction, for withdrawing stake from validators/guardians
-}
+0: coinbase transaction, for validator/guardian reward
+1: slash transaction, for slashing malicious actors
+2: send transaction, for sending tokens among accounts
+3: reserve fund transaction, for off-chain micropayment
+4: release fund transaction, for off-chain micropayment
+5: service payment transaction, for off-chain micropayment
+6: split rule transaction, for the "split rule" special smart contract
+7: smart contract transaction, for general purpose smart contract
+8: deposit stake transaction, for depositing stake to validators/guardians
+9: withdraw stake transaction, for withdrawing stake from validators/guardians
 ```
 
 **Block Status**
 
 ```
-{
-	0: pending, 
-	1: invalid,
-	2: valid,
-	3: committed,
-	4: directly finalized, 
-	5: indirectly finalized,
-	
-}
+0: pending 
+1: valid
+2: invalid
+3: committed
+4: directly finalized
+5: indirectly finalized
 ```
 A block is considered Finalized by the validators if the status is **either 4 or 5**
 
@@ -147,12 +142,12 @@ curl -X POST -H 'Content-Type: application/json' --data '{"jsonrpc":"2.0","metho
 		"status": 4,
 		"hash": "0xc1c2a245fb1cbde39bfabd23cce12d42dc90acbebd99e6e416dec4d18130f2ef",
 		"transactions": [
-      {
-        "raw" : {...},
-        "type": 1,
-        "hash": "0x0b715ff87534d154b90d5b9a77b65c0a03dd651b9e4d8b5560c370ba6bcf0ff4"
-      }
-    ]
+			{
+				"raw" : {...},
+				"type": 1,
+				"hash": "0x0b715ff87534d154b90d5b9a77b65c0a03dd651b9e4d8b5560c370ba6bcf0ff4"
+			}
+		]
 	}
 }
 ```
