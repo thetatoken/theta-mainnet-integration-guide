@@ -17,11 +17,9 @@ public final class RawTxBroadcaster {
         JSONObject params = new JSONObject();
         params.put("tx_bytes", Hex.encodeHexString(rawTx));
         JSONObject broadcastRawTxResult = RawTxBroadcaster.rpc.call(rpcMethod, params);
-        System.out.println("-------------------------------------------------------");
         System.out.println("RPC Call \"theta.BroadcastRawTransaction\" Result:");
         System.out.println("");
         System.out.println(broadcastRawTxResult.toString());
-        System.out.println("-------------------------------------------------------");
         System.out.println("");
     }
     

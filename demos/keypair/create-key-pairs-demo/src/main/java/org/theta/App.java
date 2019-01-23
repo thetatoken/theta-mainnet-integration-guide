@@ -1,5 +1,7 @@
 package org.theta;
 
+import java.math.BigInteger;
+import java.util.Arrays;
 import org.ethereum.crypto.ECKey;
 import org.ethereum.crypto.HashUtil;
 import org.spongycastle.util.encoders.Hex;

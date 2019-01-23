@@ -37,7 +37,7 @@ public final class App {
         System.out.println("----------------------------------------------------");
         System.out.println("");
 
-        // ----------------- Demo #1: Construct a Transaction ----------------- //
+        System.out.println("----------------- Demo #1: Construct a Transaction -----------------");
 
         // This demo illustrates how to construct a SendTx to send tokens from one address to another.
         // A SendTx transaction can send both Theta and Gamma tokens in one shot.
@@ -47,25 +47,16 @@ public final class App {
         BigInteger feeInGammaWei = BigInteger.valueOf(10).pow(12); // Any fee >= 10^12 GammaWei should work, higher fee yields higher priority
         long senderSequence = App.getAccountSequence(senderAddr) + 1; // similar to the "nonce" parameter in Ethereum transaction
         SendTx sendTx = TxAssembler.assembleSendTx(senderAddr, receiverAddr, thetaWeiToSend, gammaWeiToSend, feeInGammaWei, senderSequence);
+        System.out.printf("SendTx constructed: %s -> %s {%d ThetaWei, %d GammaWei}\n\n",
+            senderAddr, receiverAddr, thetaWeiToSend, gammaWeiToSend);
 
-        System.out.printf("SendTx signBytes    : %s\n\n", Hex.encodeHexString(sendTx.signBytes(chainID)));
-        System.out.printf("fee signBytes       : %s\n\n", Hex.encodeHexString(sendTx.fee.rlpEncode()));
-        System.out.printf("Inputs          xxx : %s\n\n", Hex.encodeHexString(RLP.encodeList(sendTx.inputs[0].rlpEncode())));
-        System.out.printf("Inputs[0] signBytes : %s\n\n", Hex.encodeHexString(sendTx.inputs[0].rlpEncode()));
-        System.out.printf("Inputs[0].coins     : %s\n\n", Hex.encodeHexString(sendTx.inputs[0].coins.rlpEncode()));
-        System.out.printf("Inputs[0].address   : %s\n\n", Hex.encodeHexString(RLP.encode(sendTx.inputs[0].address)));
-        System.out.printf("Outputs[0] signBytes: %s\n\n", Hex.encodeHexString(sendTx.outputs[0].rlpEncode()));
-        System.out.printf("Outputs[0].coins    : %s\n\n", Hex.encodeHexString(sendTx.outputs[0].coins.rlpEncode()));
-
-        // ----------------- Demo #2: Sign the Transaction -------------------- //
+        System.out.println("----------------- Demo #2: Sign the Transaction --------------------");
      
         // This demo illustrates how to serialize and sign the transaction.
         byte[] signedRawTxBytes = TxSigner.getSignedRawTxBytes(chainID, sendTx);
+        System.out.printf("\nSigned SendTx Raw Bytes: %s\n\n", Hex.encodeHexString(signedRawTxBytes));
 
-        System.out.printf("Sender Signature    : %s\n\n", Hex.encodeHexString(sendTx.inputs[0].signature));
-        System.out.printf("Signed SendTx       : %s\n\n", Hex.encodeHexString(signedRawTxBytes));
-
-        // --------------- Demo #3: Broadcast the Transaction ----------------- //
+        System.out.println("--------------- Demo #3: Broadcast the Transaction -----------------");
 
         // This demo illustrate how to broadcast the signed raw transaction to the blockchain.
         // This may take a couple seconds, since the "theta.BroadcastRawTransaction" RPC call
@@ -105,6 +96,6 @@ public final class App {
         BigInteger thetaWei = coinsJSON.getBigInteger("thetawei");
         BigInteger gammaWei = coinsJSON.getBigInteger("gammawei");
 
-        System.out.printf("Balance of %s:\n\tthetaWei = %s\n\tgammaWei = %s\n\n", address, thetaWei, gammaWei);
+        System.out.printf("Balance of %s:\n\tThetaWei: %s\n\tGammaWei: %s\n\n", address, thetaWei, gammaWei);
     }
 }

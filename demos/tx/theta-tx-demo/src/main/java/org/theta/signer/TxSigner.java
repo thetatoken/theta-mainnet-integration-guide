@@ -56,15 +56,19 @@ public final class TxSigner {
     }
 
     private static byte[] sign(byte[] rawTxBytes) throws Exception {
-        BigInteger privateKey = new BigInteger(Hex.decode(TxSigner.PRIVATE_KEY_STRING));
+        BigInteger privateKey = parseBigIntegerPositive(TxSigner.PRIVATE_KEY_STRING, 256);
         ECKey key = ECKey.fromPrivate(privateKey);
         byte[] txHash = HashUtil.sha3(rawTxBytes);
         byte[] signature = key.sign(txHash).toByteArray();
-
-        System.out.printf(">>>>>>>>> txHash: %s\n", org.apache.commons.codec.binary.Hex.encodeHexString(txHash));
-        System.out.printf(">>>>>>>>> Address: %s\n", org.apache.commons.codec.binary.Hex.encodeHexString(key.getAddress()));
-
         return signature;
     }
+
+    private static BigInteger parseBigIntegerPositive(String val, int bitlen) {
+        BigInteger b = new BigInteger(Hex.decode(val));
+        if (b.compareTo(BigInteger.ZERO) < 0)
+            b = b.add(BigInteger.ONE.shiftLeft(bitlen));
+        return b;
+    }
+
 
 }
