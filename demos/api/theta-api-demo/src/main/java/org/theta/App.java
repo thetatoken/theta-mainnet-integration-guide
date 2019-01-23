@@ -21,11 +21,23 @@ public final class App {
     // Setup guide: https://github.com/thetatoken/theta-mainnet-integration-guide/blob/master/docs/setup.md#setup
     public static void main(String[] args) throws Exception {
 
+        // --------------- Get the Status of the Blockchain ---------------- //
+        // API Reference: https://github.com/thetatoken/theta-mainnet-integration-guide/blob/master/docs/api.md#getstatus
+        String rpcMethod = "theta.GetStatus";
+        JSONObject params = new JSONObject();
+        JSONObject getStatusResult = post(rpcMethod, params);
+        System.out.println("-------------------------------------------------------");
+        System.out.println("RPC Call \"theta.GetStatus\" Result:");
+        System.out.println("");
+        System.out.println(getStatusResult.toString());
+        System.out.println("-------------------------------------------------------");
+        System.out.println("");
+
         // ---------------- Get a block at the given height ---------------- //
         // API Reference: https://github.com/thetatoken/theta-mainnet-integration-guide/blob/master/docs/api.md#getblockbyheight
         int blockHeight = 1;
-        String rpcMethod = "theta.GetBlockByHeight";
-        JSONObject params = new JSONObject();
+        rpcMethod = "theta.GetBlockByHeight";
+        params = new JSONObject();
         params.put("height", Integer.toString(blockHeight));
         JSONObject getBlockByHeightResult = post(rpcMethod, params);
         System.out.println("-------------------------------------------------------");

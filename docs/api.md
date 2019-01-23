@@ -4,6 +4,7 @@ We can interact with the Theta ledger through its RPC API interface. By default 
 
 ## Table of Contents
 - [Query APIs](#query-apis)
+    - [GetStatus](#getstatus)
 	- [GetAccount](#getaccount)
 	- [GetBlock](#getblock)
 	- [GetBlockByHeight](#getblockbyheight)
@@ -15,6 +16,41 @@ We can interact with the Theta ledger through its RPC API interface. By default 
 	- [CallSmartContract](#callsmartcontract)
 	
 ## Query APIs
+
+### GetStatus
+
+This API returns the current status of the blockchain.
+
+**RPC Method**: theta.GetStatus
+
+**Returns**
+
+- latest_finalized_block_hash: the hash of the latest finalized block
+- latest_finalized_block_height: the block height of the latest finalized block
+- latest_finalized_block_time: the timestamp of the latest finalized block
+- latest_finalized_block_epoch: the epoch (can be viewed as a logical clock for proposer rotation) of the latest finalized block
+- current_epoch: the current epoch
+- current_time: the current Unix timestamp
+
+**Example**
+```
+// Request
+curl -X POST -H 'Content-Type: application/json' --data '{"jsonrpc":"2.0","method":"theta.GetStatus","params":[],"id":1}' http://localhost:16888/rpc
+
+// Result
+{
+	"jsonrpc": "2.0",
+	"id": 1,
+	"result": {
+		"latest_finalized_block_hash": "0x51115199121b66ef4420a369e2b23d6b8382de9f0d4f2f8af35a7b1b1ae1b24b",
+		"latest_finalized_block_height": "20554",
+		"latest_finalized_block_time": "1548274304",
+		"latest_finalized_block_epoch": "41106",
+		"current_epoch": "41109",
+		"current_time": "1548274311"
+	}
+}
+```
 
 ### GetAccount
 
@@ -28,7 +64,7 @@ This API returns the details of the account being queried in json format.
 
 **Returns**
 
-- code: hash of the smart contract bytecode (for smart contract accounts)
+- code: the hash of the smart contract bytecode (for smart contract accounts)
 - coins: the native token balance
 - reserved_funds: fund reserved for micropayment through the off-chain resource-oriented payment pool
 - root: the root hash of the data Merkle-Patricia trie (for smart contract accounts)
