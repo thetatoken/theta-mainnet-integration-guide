@@ -14,12 +14,12 @@ public final class App {
     
     private static RPC rpc;
 
-    // This program includes three demos: 1) Construct a transaction, 2) sign the transaction, and 3) broadcast
+    // This program includes three demos: 1) Construct a transaction, 2) sign and serialize the transaction, and 3) broadcast
     // the signed transaction to the blockchain. For convenience, we have combined the three demos into one program.
     // However, we note that each demo can be easily modified to be a standalone program. In particular, the second demo 
     // (transaction signing) can be run on an OFFLINE computer to sign the transaction in a more secure evironment.
 
-    // Before running this demo, please follow the steps in the setup guide to launch a local private net
+    // Before running this demo, please follow the steps in the setup guide to launch a local private net.
     // Setup guide: https://github.com/thetatoken/theta-mainnet-integration-guide/blob/master/docs/setup.md#setup 
      public static void main(String[] args) throws Exception {        
         String rpcUrl = "http://localhost:16888/rpc"; // can point to any Theta node
@@ -43,7 +43,7 @@ public final class App {
         BigInteger ten18 = BigInteger.valueOf(10).pow(18); // 10^18, 1 Theta = 10^18 ThetaWei, 1 Gamma = 10^ GammaWei
         BigInteger thetaWeiToSend = BigInteger.valueOf(10).multiply(ten18);
         BigInteger gammaWeiToSend = BigInteger.valueOf(20).multiply(ten18);
-        BigInteger feeInGammaWei = BigInteger.valueOf(10).pow(12); // Any fee >= 10^12 GammaWei should work, higher fee yields higher priority
+        BigInteger feeInGammaWei  = BigInteger.valueOf(10).pow(12); // Any fee >= 10^12 GammaWei should work, higher fee yields higher priority
         long senderSequence = App.getAccountSequence(senderAddr) + 1; // similar to the "nonce" parameter in Ethereum transaction
         SendTx sendTx = TxAssembler.assembleSendTx(senderAddr, receiverAddr, thetaWeiToSend, gammaWeiToSend, feeInGammaWei, senderSequence);
         System.out.printf("SendTx constructed: From %s to %s {ThetaWei: %d, GammaWei: %d}\n\n",
@@ -54,7 +54,7 @@ public final class App {
         // This demo illustrates how to sign and serialize the transaction (can be done on an offline machine).
         byte[] signedRawTxBytes = TxSigner.getSignedRawTxBytes(chainID, sendTx);
         System.out.printf("\nSigned SendTx Raw Bytes: %s\n\n", Hex.encodeHexString(signedRawTxBytes));
-
+        
         System.out.println("--------------- Demo #3: Broadcast the Transaction -----------------");
 
         // This demo illustrate how to broadcast the signed raw transaction to the blockchain.

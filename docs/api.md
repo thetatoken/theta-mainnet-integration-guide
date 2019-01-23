@@ -20,6 +20,8 @@ We can interact with the Theta ledger through its RPC API interface. By default 
 
 This API returns the details of the account being queried in json format.
 
+***RPC Method**: theta.GetAccount
+
 **Query Parameters**
 
 - address: the address of the account
@@ -57,6 +59,8 @@ curl -X POST -H 'Content-Type: application/json' --data '{"jsonrpc":"2.0","metho
 ### GetBlock
 
 This API returns the block being queried in json format.
+
+***RPC Method**: theta.GetBlock
 
 **Query Parameters**
 
@@ -153,7 +157,7 @@ curl -X POST -H 'Content-Type: application/json' --data '{"jsonrpc":"2.0","metho
 						"gammawei": "0"
 					},
 					"sequence": "0",
-					"signature": {}
+					"signature": "0x31af035f0dc47ded00eb5139fd5e4bb76f82e89e29adae60df1277a25b0c7b135b097502ff0aa66249a423d22f291804a9e178af59c24ccbf1af2f58b83964ef00"
 				},
 				"outputs": [{
 					"address": "0x2e833968e5bb786ae419c4d13189fb081cc43bab",
@@ -179,7 +183,7 @@ curl -X POST -H 'Content-Type: application/json' --data '{"jsonrpc":"2.0","metho
 						"gammawei": "20000001000000000000"
 					},
 					"sequence": "1",
-					"signature": {}
+					"signature": "0x2f8f17b13c07e57d4c5d2c89e87d9e608f0eff22ef1f96eed5647b063265450216ef4f7a8578bf702cf26db00fb2e758521873bb1b68528325c84b59a2debc7400"
 				}],
 				"outputs": [{
 					"address": "0x9f1233798e905e173560071255140b4a8abd3ec6",
@@ -199,6 +203,8 @@ curl -X POST -H 'Content-Type: application/json' --data '{"jsonrpc":"2.0","metho
 ### GetBlockByHeight
 
 This API returns the finalized block of given the height. If none of the block at the given height is finalized (either directly or indirectly), the API simplely returns an empty result.
+
+***RPC Method**: theta.GetBlockByHeight
 
 **Query Parameters**
 
@@ -235,12 +241,13 @@ curl -X POST -H 'Content-Type: application/json' --data '{"jsonrpc":"2.0","metho
 		"transactions": [...]
 	}
 }
-
 ```
 
 ### GetTransaction
 
 This API returns the transaction being queried in json format.
+
+***RPC Method**: theta.GetTransaction
 
 **Query Parameters**
 
@@ -283,7 +290,7 @@ curl -X POST -H 'Content-Type: application/json' --data '{"jsonrpc":"2.0","metho
 					"gammawei": "20000001000000000000"
 				},
 				"sequence": "1",
-				"signature": {}
+				"signature": "0x2f8f17b13c07e57d4c5d2c89e87d9e608f0eff22ef1f96eed5647b063265450216ef4f7a8578bf702cf26db00fb2e758521873bb1b68528325c84b59a2debc7400"
 			}],
 			"outputs": [{
 				"address": "0x9f1233798e905e173560071255140b4a8abd3ec6",
@@ -304,14 +311,47 @@ curl -X POST -H 'Content-Type: application/json' --data '{"jsonrpc":"2.0","metho
 
 This API submits the given raw transaction to the blockchain, and returns only after the transaction to be included in the blockchain, or timed out (i.e. synchronous call).
 
+***RPC Method**: theta.BroadcastRawTransaction
+
 **Query Parameters**
 
 - tx_bytes: the signed transaction bytes
 
 **Returns**
 
+- hash: the hash of the transaction
+- block: the details of the block that contains the transaction
+
 **Example**
 ```
+// Request
+curl -X POST -H 'Content-Type: application/json' --data '{"jsonrpc":"2.0","method":"theta.BroadcastRawTransaction","params":[{"tx_bytes":"02f8a4c78085e8d4a51000f86ff86d942e833968e5bb786ae419c4d13189fb081cc43babd3888ac7230489e800008901158e46f1e875100015b841c2daae6cab92e37308763664fcbe93d90219df5a3520853a9713e70e734b11f27a43db6b77da4f885213b45a294c2b4c74dc9a018d35ba93e5b9297876a293c700eae9949f1233798e905e173560071255140b4a8abd3ec6d3888ac7230489e800008901158e460913d00000"}],"id":1}' http://localhost:16888/rpc
+
+// Result
+{
+	"jsonrpc": "2.0",
+	"id": 1,
+	"result": {
+		"hash": "0x0a495698654ff5372ef8936eca727c25b975ea0f7e5ebea282e3c86017dfe521",
+		"block": {
+			"ChainID": "private_net",
+			"Epoch": 40186,
+			"Height": 20094,
+			"Parent": "0x6797d42ff724a47e9dfd3aa425e2a4f06f40b64fd347ca8c9ebb43d08cb58847",
+			"HCC": {
+				"Votes": {},
+				"BlockHash": "0x6797d42ff724a47e9dfd3aa425e2a4f06f40b64fd347ca8c9ebb43d08cb58847"
+			},
+			"TxHash": "0xbed5492c96d8251c2f0846a2d12d7a17eb88966a736fa0e8f96af36ed3ffaa74",
+			"ReceiptHash": "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421",
+			"Bloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+			"StateHash": "0xd2b1fa73461fe80d266933033df073a2eb5b82d16cad46f2f74fa2b575adbc88",
+			"Timestamp": 1548272003,
+			"Proposer": "0x2e833968e5bb786ae419c4d13189fb081cc43bab",
+			"Signature": "0x514b731086640c79122f81db1ac1a142d39a92393affb3cbaa09df395dbb441a4b735a66d0da1a52887b66a155033e51b36584dd14b68616fe30b0f2a3f434fa01"
+		}
+	}
+}
 ```
 
 
@@ -319,14 +359,29 @@ This API submits the given raw transaction to the blockchain, and returns only a
 
 This API submits the given raw transaction to the blockchain, and returns immediately (i.e. asynchronous call).
 
+***RPC Method**: theta.BroadcastRawTransactionAsync
+
 **Query Parameters**
 
 - tx_bytes: the signed transaction bytes
 
 **Returns**
 
+- hash: the hash of the transaction
+
 **Example**
 ```
+// Request
+curl -X POST -H 'Content-Type: application/json' --data '{"jsonrpc":"2.0","method":"theta.BroadcastRawTransactionAsync","params":[{"tx_bytes":"02f8a4c78085e8d4a51000f86ff86d942e833968e5bb786ae419c4d13189fb081cc43babd3888ac7230489e800008901158e46f1e875100016b841393e2eba6241482098cf11ef4dd869209d7ebd716397f3c862ca5b762bbf403006b1fa009786102383c408cabdf7450c1c73d4dd4a20d3b48a39a88ffe0ecb0e01eae9949f1233798e905e173560071255140b4a8abd3ec6d3888ac7230489e800008901158e460913d00000"}],"id":1}' http://localhost:16888/rpc
+
+// Result
+{
+	"jsonrpc": "2.0",
+	"id": 1,
+	"result": {
+		"hash": "0xccc7ba0360108369eaebfa0899858bf76a40c6e10d14a93c75697f42a7d33c50"
+	}
+}
 ```
 
 ## Call Smart Contract
@@ -334,6 +389,8 @@ This API submits the given raw transaction to the blockchain, and returns immedi
 ### CallSmartContract
 
 This API simulates the smart contract execution locally without submitting the smart contract transaction to the blockchain. It is useful to evalute the execution result, calculate the gas cost, etc.
+
+***RPC Method**: theta.CallSmartContract
 
 **Query Parameters**
 
