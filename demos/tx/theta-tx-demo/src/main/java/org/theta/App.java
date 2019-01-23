@@ -51,7 +51,7 @@ public final class App {
 
         System.out.println("----------------- Demo #2: Sign the Transaction --------------------");
      
-        // This demo illustrates how to serialize and sign the transaction.
+        // This demo illustrates how to sign and serialize the transaction (can be done on an offline machine).
         byte[] signedRawTxBytes = TxSigner.getSignedRawTxBytes(chainID, sendTx);
         System.out.printf("\nSigned SendTx Raw Bytes: %s\n\n", Hex.encodeHexString(signedRawTxBytes));
 

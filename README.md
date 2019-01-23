@@ -20,6 +20,6 @@ The [demos](demos/) directory contains the following integration examples:
 
   - **keypair**: The [keypair demo](demos/keypair) is a Java program which demonstrates how to quickly generate key pairs (private key and the corresponding address) in batches.
 
-  - **tx**: The [tx demo](demos/tx) is a Java program that demonstrate: 1) how to construct and serialize a transaction, 2) how to sign a transaction offline, and 3) how to broadcast the signed transaction to the Theta ledger.
+  - **tx**: The [tx demo](demos/tx) is a Java program that demonstrate: 1) how to construct a transaction, 2) how to sign and serialize a transaction offline, and 3) how to broadcast the signed transaction to the Theta ledger.
 
   - **api**: The [api demo](demos/api) is a Java program which shows how to interact with the Theta ledger through its RPC interface.
