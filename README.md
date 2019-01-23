@@ -16,7 +16,7 @@ The documentation is organized under the [docs](docs/) directory.
 
 ## Demos
 
-The [demos](demos/) directory contains a couple integration examples:
+The [demos](demos/) directory contains the following integration examples:
 
   - **keypair**: The [keypair demo](demos/keypair) is a Java program which demonstrates how to quickly generate key pairs (private key and the corresponding address) in batches.
 

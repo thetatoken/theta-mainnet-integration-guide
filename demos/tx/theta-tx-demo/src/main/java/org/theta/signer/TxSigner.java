@@ -44,23 +44,29 @@ public final class TxSigner {
     //
 
     public static byte[] getSignedRawTxBytes(String chainID, Tx tx) throws Exception {
-        byte[] txRawBytes = tx.signBytes(chainID);
-        byte[] signature = TxSigner.sign(txRawBytes);
-        tx.setSignature(signature);
-
-        byte[] signedRawBytes = new byte[0];
-        signedRawBytes = Arrays.concatenate(signedRawBytes, RLP.encode(tx.getType()));
-        signedRawBytes = Arrays.concatenate(signedRawBytes, tx.rlpEncode()); // this time encode with signature
-
+        tx = signTx(chainID, tx);
+        byte[] signedRawBytes = serializeTx(tx);
         return signedRawBytes;
     }
 
-    private static byte[] sign(byte[] rawTxBytes) throws Exception {
+    private static Tx signTx(String chainID, Tx tx) throws Exception {
         BigInteger privateKey = parseBigIntegerPositive(TxSigner.PRIVATE_KEY_STRING, 256);
         ECKey key = ECKey.fromPrivate(privateKey);
-        byte[] txHash = HashUtil.sha3(rawTxBytes);
+
+        byte[] txRawBytes = tx.signBytes(chainID);
+        byte[] txHash = HashUtil.sha3(txRawBytes);
         byte[] signature = key.sign(txHash).toByteArray();
-        return signature;
+
+        tx.setSignature(signature);
+
+        return tx;
+    }
+
+    private static byte[] serializeTx(Tx tx) {
+        byte[] signedRawBytes = new byte[0];
+        signedRawBytes = Arrays.concatenate(signedRawBytes, RLP.encode(tx.getType()));
+        signedRawBytes = Arrays.concatenate(signedRawBytes, tx.rlpEncode()); // this time encode with signature
+        return signedRawBytes;
     }
 
     private static BigInteger parseBigIntegerPositive(String val, int bitlen) {
@@ -69,6 +75,5 @@ public final class TxSigner {
             b = b.add(BigInteger.ONE.shiftLeft(bitlen));
         return b;
     }
-
 
 }

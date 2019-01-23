@@ -3,13 +3,12 @@ package org.theta;
 import java.math.BigInteger;
 
 import org.apache.commons.codec.binary.Hex;
-import org.ethereum.util.RLP;
 import org.json.JSONObject;
-import org.theta.tx.types.SendTx;
-import org.theta.tx.TxAssembler;
-import org.theta.signer.TxSigner;
 import org.theta.broadcaster.RawTxBroadcaster;
 import org.theta.common.RPC;
+import org.theta.signer.TxSigner;
+import org.theta.tx.TxAssembler;
+import org.theta.tx.types.SendTx;
 
 public final class App {
     
@@ -47,7 +46,7 @@ public final class App {
         BigInteger feeInGammaWei = BigInteger.valueOf(10).pow(12); // Any fee >= 10^12 GammaWei should work, higher fee yields higher priority
         long senderSequence = App.getAccountSequence(senderAddr) + 1; // similar to the "nonce" parameter in Ethereum transaction
         SendTx sendTx = TxAssembler.assembleSendTx(senderAddr, receiverAddr, thetaWeiToSend, gammaWeiToSend, feeInGammaWei, senderSequence);
-        System.out.printf("SendTx constructed: %s -> %s {%d ThetaWei, %d GammaWei}\n\n",
+        System.out.printf("SendTx constructed: From %s to %s {ThetaWei: %d, GammaWei: %d}\n\n",
             senderAddr, receiverAddr, thetaWeiToSend, gammaWeiToSend);
 
         System.out.println("----------------- Demo #2: Sign the Transaction --------------------");
