@@ -20,7 +20,7 @@ We can interact with the Theta ledger through its RPC API interface. By default 
 
 This API returns the details of the account being queried in json format.
 
-***RPC Method**: theta.GetAccount
+**RPC Method**: theta.GetAccount
 
 **Query Parameters**
 
@@ -60,7 +60,7 @@ curl -X POST -H 'Content-Type: application/json' --data '{"jsonrpc":"2.0","metho
 
 This API returns the block being queried in json format.
 
-***RPC Method**: theta.GetBlock
+**RPC Method**: theta.GetBlock
 
 **Query Parameters**
 
@@ -204,7 +204,7 @@ curl -X POST -H 'Content-Type: application/json' --data '{"jsonrpc":"2.0","metho
 
 This API returns the finalized block of given the height. If none of the block at the given height is finalized (either directly or indirectly), the API simplely returns an empty result.
 
-***RPC Method**: theta.GetBlockByHeight
+**RPC Method**: theta.GetBlockByHeight
 
 **Query Parameters**
 
@@ -247,7 +247,7 @@ curl -X POST -H 'Content-Type: application/json' --data '{"jsonrpc":"2.0","metho
 
 This API returns the transaction being queried in json format.
 
-***RPC Method**: theta.GetTransaction
+**RPC Method**: theta.GetTransaction
 
 **Query Parameters**
 
@@ -311,7 +311,7 @@ curl -X POST -H 'Content-Type: application/json' --data '{"jsonrpc":"2.0","metho
 
 This API submits the given raw transaction to the blockchain, and returns only after the transaction to be included in the blockchain, or timed out (i.e. synchronous call).
 
-***RPC Method**: theta.BroadcastRawTransaction
+**RPC Method**: theta.BroadcastRawTransaction
 
 **Query Parameters**
 
@@ -359,7 +359,7 @@ curl -X POST -H 'Content-Type: application/json' --data '{"jsonrpc":"2.0","metho
 
 This API submits the given raw transaction to the blockchain, and returns immediately (i.e. asynchronous call).
 
-***RPC Method**: theta.BroadcastRawTransactionAsync
+**RPC Method**: theta.BroadcastRawTransactionAsync
 
 **Query Parameters**
 
@@ -390,7 +390,7 @@ curl -X POST -H 'Content-Type: application/json' --data '{"jsonrpc":"2.0","metho
 
 This API simulates the smart contract execution locally without submitting the smart contract transaction to the blockchain. It is useful to evalute the execution result, calculate the gas cost, etc.
 
-***RPC Method**: theta.CallSmartContract
+**RPC Method**: theta.CallSmartContract
 
 **Query Parameters**
 
