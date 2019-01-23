@@ -43,7 +43,7 @@ public final class TxSigner {
     //      $$$"                         $$$$"
     //
 
-    public static byte[] getSignedRawTxBytes(String chainID, Tx tx) throws Exception {
+    public static byte[] signAndSerializeTx(String chainID, Tx tx) throws Exception {
         tx = signTx(chainID, tx);
         byte[] signedRawBytes = serializeTx(tx);
         return signedRawBytes;

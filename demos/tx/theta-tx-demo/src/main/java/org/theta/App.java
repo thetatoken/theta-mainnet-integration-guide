@@ -30,10 +30,10 @@ public final class App {
         String receiverAddr = "9F1233798E905E173560071255140b4A8aBd3Ec6";
 
         System.out.println("");
-        System.out.println("-------- Account Balances before the SendTx --------\n");
+        System.out.println("---------------- Account Balances before the SendTx ----------------\n");
         App.printAccountBalance(senderAddr);
         App.printAccountBalance(receiverAddr);
-        System.out.println("----------------------------------------------------");
+        System.out.println("--------------------------------------------------------------------");
         System.out.println("");
 
         System.out.println("----------------- Demo #1: Construct a Transaction -----------------");
@@ -49,10 +49,10 @@ public final class App {
         System.out.printf("SendTx constructed: From %s to %s {ThetaWei: %d, GammaWei: %d}\n\n",
             senderAddr, receiverAddr, thetaWeiToSend, gammaWeiToSend);
 
-        System.out.println("----------------- Demo #2: Sign the Transaction --------------------");
+        System.out.println("---------- Demo #2: Sign and Serialize the Transaction -------------");
      
         // This demo illustrates how to sign and serialize the transaction (can be done on an offline machine).
-        byte[] signedRawTxBytes = TxSigner.getSignedRawTxBytes(chainID, sendTx);
+        byte[] signedRawTxBytes = TxSigner.signAndSerializeTx(chainID, sendTx);
         System.out.printf("\nSigned SendTx Raw Bytes: %s\n\n", Hex.encodeHexString(signedRawTxBytes));
         
         System.out.println("--------------- Demo #3: Broadcast the Transaction -----------------");
@@ -67,10 +67,10 @@ public final class App {
         // --------------------------------------------------------------------- //
 
         System.out.println("");
-        System.out.println("-------- Account Balances after the SendTx ---------\n");
+        System.out.println("---------------- Account Balances after the SendTx -----------------\n");
         App.printAccountBalance(senderAddr);
         App.printAccountBalance(receiverAddr);
-        System.out.println("----------------------------------------------------");
+        System.out.println("--------------------------------------------------------------------");
         System.out.println("");
     }
 
