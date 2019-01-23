@@ -26,12 +26,7 @@ public final class App {
         String rpcMethod = "theta.GetStatus";
         JSONObject params = new JSONObject();
         JSONObject getStatusResult = post(rpcMethod, params);
-        System.out.println("-------------------------------------------------------");
-        System.out.println("RPC Call \"theta.GetStatus\" Result:");
-        System.out.println("");
-        System.out.println(getStatusResult.toString());
-        System.out.println("-------------------------------------------------------");
-        System.out.println("");
+        printRPCCallResult(rpcMethod, getStatusResult);
 
         // ---------------- Get a block at the given height ---------------- //
         // API Reference: https://github.com/thetatoken/theta-mainnet-integration-guide/blob/master/docs/api.md#getblockbyheight
@@ -40,12 +35,7 @@ public final class App {
         params = new JSONObject();
         params.put("height", Integer.toString(blockHeight));
         JSONObject getBlockByHeightResult = post(rpcMethod, params);
-        System.out.println("-------------------------------------------------------");
-        System.out.println("RPC Call \"theta.GetBlockByHeight\" Result:");
-        System.out.println("");
-        System.out.println(getBlockByHeightResult.toString());
-        System.out.println("-------------------------------------------------------");
-        System.out.println("");
+        printRPCCallResult(rpcMethod, getBlockByHeightResult);
 
         // ------------- Get a block with the given block hash ------------- //
         // API Reference: https://github.com/thetatoken/theta-mainnet-integration-guide/blob/master/docs/api.md#getblock
@@ -54,12 +44,7 @@ public final class App {
         params = new JSONObject();
         params.put("hash", blockHash);
         JSONObject getBlockResult = post(rpcMethod, params);
-        System.out.println("-------------------------------------------------------");
-        System.out.println("RPC Call \"theta.getBlock\" Result:");
-        System.out.println("");
-        System.out.println(getBlockResult.toString());
-        System.out.println("-------------------------------------------------------");
-        System.out.println("");
+        printRPCCallResult(rpcMethod, getBlockResult);
 
         // ------- Get a transaction with the given transaction hash ------- //
         // API Reference: https://github.com/thetatoken/theta-mainnet-integration-guide/blob/master/docs/api.md#gettransaction
@@ -68,12 +53,7 @@ public final class App {
         params = new JSONObject();
         params.put("hash", txHash);
         JSONObject getTransactionResult = post(rpcMethod, params);
-        System.out.println("-------------------------------------------------------");
-        System.out.println("RPC Call \"theta.GetTransaction\" Result:");
-        System.out.println("");
-        System.out.println(getTransactionResult.toString());
-        System.out.println("-------------------------------------------------------");
-        System.out.println("");
+        printRPCCallResult(rpcMethod, getTransactionResult);
 
         // ---------------------- Retrieve an account ---------------------- //
         // API Reference: https://github.com/thetatoken/theta-mainnet-integration-guide/blob/master/docs/api.md#getaccount
@@ -82,12 +62,7 @@ public final class App {
         params = new JSONObject();
         params.put("address", address);
         JSONObject getAccountResult = post(rpcMethod, params);
-        System.out.println("-------------------------------------------------------");
-        System.out.println("RPC Call \"theta.GetAccount\" Result:");
-        System.out.println("");
-        System.out.println(getAccountResult.toString());
-        System.out.println("-------------------------------------------------------");
-        System.out.println("");
+        printRPCCallResult(rpcMethod, getAccountResult);
     }  
 
     private static JSONObject post(String rpcMethod, JSONObject params) throws Exception {
@@ -138,5 +113,14 @@ public final class App {
             throw new Exception(String.format("Malformed block JSON object: %s, error: %s", blockJSONObj, e));
         }
         return firstTxHash;
+    }
+
+    private static void printRPCCallResult(String rpcMethod, JSONObject rpcCallResult) {
+        System.out.println("-------------------------------------------------------");
+        System.out.printf("RPC Call \"%s\" Result:", rpcMethod);
+        System.out.println("");
+        System.out.println(rpcCallResult.toString());
+        System.out.println("-------------------------------------------------------");
+        System.out.println("");
     }
 }
