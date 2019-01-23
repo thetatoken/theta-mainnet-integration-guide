@@ -56,7 +56,7 @@ public class App {
         for (int i = 0; i < address.length(); i++) {
             String addri = address.substring(i, i+1);
             String hashi = addressHash.substring(i, i+1);       
-            // If ith character is 9 to f then make it uppercase
+            // If ith character is 8 to f then make it uppercase
             if (Integer.parseInt(hashi, 16) > 7) {
                 checksumAddress += addri.toUpperCase();
             } else {

@@ -5,7 +5,7 @@ import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
-import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -79,7 +79,7 @@ public final class App {
     }  
 
     private static JSONObject post(String rpcMethod, JSONObject params) throws Exception {
-        HttpClient client = new DefaultHttpClient();
+        HttpClient client = HttpClientBuilder.create().build();
         HttpPost post = new HttpPost(App.RPC_URL);
         JSONObject data = new JSONObject();
         data.put("jsonrpc", "2.0");
