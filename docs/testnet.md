@@ -5,7 +5,7 @@ Theta Labs maintains a testnet environment which resembles the mainnet to facili
 #### Step 1. Setup
 Follow the instructions in [setup](./setup.md) to build and install the Theta ledger. Then,
 ```
-cd $UKULELE_HOME
+cd $THETA_HOME
 cp -r ./integration/privatenet ../testnet
 ```
 
@@ -27,6 +27,6 @@ Also replace the content of `../testnet/node/key` with a randomly generated priv
 #### Step 4. Launch and connect to the testnet
 Finally, use the following commands to launch a launch a node and connect to the Theta testnet.
 ```
-ukulele start --config=../testnet/node
+theta start --config=../testnet/node
 ```
 

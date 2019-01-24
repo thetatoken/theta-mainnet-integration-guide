@@ -44,8 +44,8 @@ public final class TxSigner {
     //
 
     public static byte[] signAndSerializeTx(String chainID, Tx tx) throws Exception {
-        tx = signTx(chainID, tx);
-        byte[] signedRawBytes = serializeTx(tx);
+        Tx signedTx = signTx(chainID, tx);
+        byte[] signedRawBytes = serializeTx(signedTx);
         return signedRawBytes;
     }
 
