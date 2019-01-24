@@ -79,10 +79,11 @@ public final class App {
         JSONObject params = new JSONObject();
         params.put("address", address);
         JSONObject getAccountResult = App.rpc.call(rpcMethod, params);
+        if (!getAccountResult.has("result")) {
+            throw new Exception("Account does not exist: " + address);
+        }
         long sequence = getAccountResult.getJSONObject("result").getLong("sequence");
-
         System.out.printf("Sequence of %s: %s\n\n", address, sequence);
-
         return sequence;
     }
 
@@ -91,6 +92,9 @@ public final class App {
         JSONObject params = new JSONObject();
         params.put("address", address);
         JSONObject getAccountResult = App.rpc.call(rpcMethod, params);
+        if (!getAccountResult.has("result")) {
+            return; // Account does not exist yet
+        }
         JSONObject coinsJSON = getAccountResult.getJSONObject("result").getJSONObject("coins");
         BigInteger thetaWei = coinsJSON.getBigInteger("thetawei");
         BigInteger tfuelWei = coinsJSON.getBigInteger("tfuelwei");
