@@ -8,9 +8,9 @@ public final class TxOutput {
     public byte[] address;
     public Coins  coins;
 
-    public TxOutput(byte[] address, BigInteger thetaWei, BigInteger gammaWei) {
+    public TxOutput(byte[] address, BigInteger thetaWei, BigInteger tfuelWei) {
         this.address = address;
-        this.coins = new Coins(thetaWei, gammaWei);
+        this.coins = new Coins(thetaWei, tfuelWei);
     }
 
     public byte[] rlpEncode() {

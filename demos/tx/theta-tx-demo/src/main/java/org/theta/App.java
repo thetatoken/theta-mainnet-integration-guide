@@ -39,15 +39,15 @@ public final class App {
         System.out.println("----------------- Demo #1: Construct a Transaction -----------------");
 
         // This demo illustrates how to construct a SendTx to send tokens from one address to another.
-        // A SendTx transaction can send both Theta and Gamma tokens in one shot.
-        BigInteger ten18 = BigInteger.valueOf(10).pow(18); // 10^18, 1 Theta = 10^18 ThetaWei, 1 Gamma = 10^ GammaWei
+        // A SendTx transaction can send both Theta and TFuel tokens in one shot.
+        BigInteger ten18 = BigInteger.valueOf(10).pow(18); // 10^18, 1 Theta = 10^18 ThetaWei, 1 TFuel = 10^ TFuelWei
         BigInteger thetaWeiToSend = BigInteger.valueOf(10).multiply(ten18);
-        BigInteger gammaWeiToSend = BigInteger.valueOf(20).multiply(ten18);
-        BigInteger feeInGammaWei  = BigInteger.valueOf(10).pow(12); // Any fee >= 10^12 GammaWei should work, higher fee yields higher priority
+        BigInteger tfuelWeiToSend = BigInteger.valueOf(20).multiply(ten18);
+        BigInteger feeInTFuelWei  = BigInteger.valueOf(10).pow(12); // Any fee >= 10^12 TFuelWei should work, higher fee yields higher priority
         long senderSequence = App.getAccountSequence(senderAddr) + 1; // similar to the "nonce" parameter in Ethereum transaction
-        SendTx sendTx = TxAssembler.assembleSendTx(senderAddr, receiverAddr, thetaWeiToSend, gammaWeiToSend, feeInGammaWei, senderSequence);
-        System.out.printf("SendTx constructed: From %s to %s {ThetaWei: %d, GammaWei: %d}\n\n",
-            senderAddr, receiverAddr, thetaWeiToSend, gammaWeiToSend);
+        SendTx sendTx = TxAssembler.assembleSendTx(senderAddr, receiverAddr, thetaWeiToSend, tfuelWeiToSend, feeInTFuelWei, senderSequence);
+        System.out.printf("SendTx constructed: From %s to %s {ThetaWei: %d, TFuelWei: %d}\n\n",
+            senderAddr, receiverAddr, thetaWeiToSend, tfuelWeiToSend);
 
         System.out.println("---------- Demo #2: Sign and Serialize the Transaction -------------");
      
@@ -93,8 +93,8 @@ public final class App {
         JSONObject getAccountResult = App.rpc.call(rpcMethod, params);
         JSONObject coinsJSON = getAccountResult.getJSONObject("result").getJSONObject("coins");
         BigInteger thetaWei = coinsJSON.getBigInteger("thetawei");
-        BigInteger gammaWei = coinsJSON.getBigInteger("gammawei");
+        BigInteger tfuelWei = coinsJSON.getBigInteger("tfuelwei");
 
-        System.out.printf("Balance of %s:\n\tThetaWei: %s\n\tGammaWei: %s\n\n", address, thetaWei, gammaWei);
+        System.out.printf("Balance of %s:\n\tThetaWei: %s\n\tTFuelWei: %s\n\n", address, thetaWei, tfuelWei);
     }
 }

@@ -11,14 +11,14 @@ public final class SendTx implements Tx {
     public TxInput[]  inputs;
     public TxOutput[] outputs;
 
-    public SendTx(byte[] senderAddr, byte[] receiverAddr, BigInteger thetaWei, BigInteger gammaWei, 
-        BigInteger feeInGammaWei, long senderSequence) {
-        this.fee = new Coins(BigInteger.valueOf(0), feeInGammaWei);
+    public SendTx(byte[] senderAddr, byte[] receiverAddr, BigInteger thetaWei, BigInteger tfuelWei, 
+        BigInteger feeInTFuelWei, long senderSequence) {
+        this.fee = new Coins(BigInteger.valueOf(0), feeInTFuelWei);
 
-        TxInput txInput = new TxInput(senderAddr, thetaWei, gammaWei.add(feeInGammaWei), senderSequence);
+        TxInput txInput = new TxInput(senderAddr, thetaWei, tfuelWei.add(feeInTFuelWei), senderSequence);
         this.inputs = new TxInput[]{txInput};
 
-        TxOutput txOutput = new TxOutput(receiverAddr, thetaWei, gammaWei);
+        TxOutput txOutput = new TxOutput(receiverAddr, thetaWei, tfuelWei);
         this.outputs = new TxOutput[]{txOutput};
     }
 

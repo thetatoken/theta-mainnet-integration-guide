@@ -83,7 +83,7 @@ curl -X POST -H 'Content-Type: application/json' --data '{"jsonrpc":"2.0","metho
 		"sequence": "1",
 		"coins": {
 			"thetawei": "994999990000000000000000000",
-			"gammawei": "4999999979999999000000000000"
+			"tfuelwei": "4999999979999999000000000000"
 		},
 		"reserved_funds": [],
 		"last_updated_block_height": "0",
@@ -162,7 +162,7 @@ Block status transitions:
 
 **Example**
 
-In this example, we queried the block with hash `0x9f1e77b08c9fa8984096a735d0aae6b0e43aee297e42c54ce36334103ddd67a7`. This block contains two transactions. The first one is a "coinbase" transaction (type 0), and the second is a "send" transaction (type 2). In particular, in the "send" transaction, address `0x2e833968e5bb786ae419c4d13189fb081cc43bab` sent 10 Theta and 20 Gamma tokens to address `0x9f1233798e905e173560071255140b4a8abd3ec6`, which cost 1000000000000 GammaWei transaction fee.
+In this example, we queried the block with hash `0x9f1e77b08c9fa8984096a735d0aae6b0e43aee297e42c54ce36334103ddd67a7`. This block contains two transactions. The first one is a "coinbase" transaction (type 0), and the second is a "send" transaction (type 2). In particular, in the "send" transaction, address `0x2e833968e5bb786ae419c4d13189fb081cc43bab` sent 10 Theta and 20 TFuel tokens to address `0x9f1233798e905e173560071255140b4a8abd3ec6`, which cost 1000000000000 TFuelWei transaction fee.
 
 ```
 // Request
@@ -190,7 +190,7 @@ curl -X POST -H 'Content-Type: application/json' --data '{"jsonrpc":"2.0","metho
 					"address": "0x2e833968e5bb786ae419c4d13189fb081cc43bab",
 					"coins": {
 						"thetawei": "0",
-						"gammawei": "0"
+						"tfuelwei": "0"
 					},
 					"sequence": "0",
 					"signature": "0x31af035f0dc47ded00eb5139fd5e4bb76f82e89e29adae60df1277a25b0c7b135b097502ff0aa66249a423d22f291804a9e178af59c24ccbf1af2f58b83964ef00"
@@ -199,7 +199,7 @@ curl -X POST -H 'Content-Type: application/json' --data '{"jsonrpc":"2.0","metho
 					"address": "0x2e833968e5bb786ae419c4d13189fb081cc43bab",
 					"coins": {
 						"thetawei": "0",
-						"gammawei": "0"
+						"tfuelwei": "0"
 					}
 				}],
 				"block_height": "2"
@@ -210,13 +210,13 @@ curl -X POST -H 'Content-Type: application/json' --data '{"jsonrpc":"2.0","metho
 			"raw": {
 				"fee": {
 					"thetawei": "0",
-					"gammawei": "1000000000000"
+					"tfuelwei": "1000000000000"
 				},
 				"inputs": [{
 					"address": "0x2e833968e5bb786ae419c4d13189fb081cc43bab",
 					"coins": {
 						"thetawei": "10000000000000000000",
-						"gammawei": "20000001000000000000"
+						"tfuelwei": "20000001000000000000"
 					},
 					"sequence": "1",
 					"signature": "0x2f8f17b13c07e57d4c5d2c89e87d9e608f0eff22ef1f96eed5647b063265450216ef4f7a8578bf702cf26db00fb2e758521873bb1b68528325c84b59a2debc7400"
@@ -225,7 +225,7 @@ curl -X POST -H 'Content-Type: application/json' --data '{"jsonrpc":"2.0","metho
 					"address": "0x9f1233798e905e173560071255140b4a8abd3ec6",
 					"coins": {
 						"thetawei": "10000000000000000000",
-						"gammawei": "20000000000000000000"
+						"tfuelwei": "20000000000000000000"
 					}
 				}]
 			},
@@ -299,7 +299,7 @@ This API returns the transaction being queried in json format.
 
 **Example**
 
-In this example, the transaction being queried is a "send transaction" (i.e., type 2, see the "Transaction types" note in the [GetBlock](#getblock) section). In this transaction, address `0x2e833968e5bb786ae419c4d13189fb081cc43bab` sent 10 Theta and 20 Gamma tokens to address `0x9f1233798e905e173560071255140b4a8abd3ec6`, which cost 1000000000000 GammaWei transaction fee.
+In this example, the transaction being queried is a "send transaction" (i.e., type 2, see the "Transaction types" note in the [GetBlock](#getblock) section). In this transaction, address `0x2e833968e5bb786ae419c4d13189fb081cc43bab` sent 10 Theta and 20 TFuel tokens to address `0x9f1233798e905e173560071255140b4a8abd3ec6`, which cost 1000000000000 TFuelWei transaction fee.
 
 ```
 // Request
@@ -317,13 +317,13 @@ curl -X POST -H 'Content-Type: application/json' --data '{"jsonrpc":"2.0","metho
 		"transaction": {
 			"fee": {
 				"thetawei": "0",
-				"gammawei": "1000000000000"
+				"tfuelwei": "1000000000000"
 			},
 			"inputs": [{
 				"address": "0x2e833968e5bb786ae419c4d13189fb081cc43bab",
 				"coins": {
 					"thetawei": "10000000000000000000",
-					"gammawei": "20000001000000000000"
+					"tfuelwei": "20000001000000000000"
 				},
 				"sequence": "1",
 				"signature": "0x2f8f17b13c07e57d4c5d2c89e87d9e608f0eff22ef1f96eed5647b063265450216ef4f7a8578bf702cf26db00fb2e758521873bb1b68528325c84b59a2debc7400"
@@ -332,7 +332,7 @@ curl -X POST -H 'Content-Type: application/json' --data '{"jsonrpc":"2.0","metho
 				"address": "0x9f1233798e905e173560071255140b4a8abd3ec6",
 				"coins": {
 					"thetawei": "10000000000000000000",
-					"gammawei": "20000000000000000000"
+					"tfuelwei": "20000000000000000000"
 				}
 			}]
 		}

@@ -6,17 +6,17 @@ import org.ethereum.util.RLP;
 public final class Coins {
     
     public BigInteger thetaWei;
-    public BigInteger gammaWei;
+    public BigInteger tfuelWei;
 
-    public Coins(BigInteger thetaWei, BigInteger gammaWei) {
+    public Coins(BigInteger thetaWei, BigInteger tfuelWei) {
         this.thetaWei = thetaWei;
-        this.gammaWei = gammaWei;
+        this.tfuelWei = tfuelWei;
     }
 
     public byte[] rlpEncode() {
         byte[] rlpEncoded = RLP.encodeList(
             RLP.encode(this.thetaWei),
-            RLP.encode(this.gammaWei));
+            RLP.encode(this.tfuelWei));
         return rlpEncoded;
     }
 }

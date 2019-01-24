@@ -10,9 +10,9 @@ public final class TxInput {
     public long   sequence;
     public byte[] signature;
 
-    public TxInput(byte[] address, BigInteger thetaWei, BigInteger gammaWei, long sequence) {
+    public TxInput(byte[] address, BigInteger thetaWei, BigInteger tfuelWei, long sequence) {
         this.address = address;
-        this.coins = new Coins(thetaWei, gammaWei);
+        this.coins = new Coins(thetaWei, tfuelWei);
         this.sequence = sequence;
         this.signature = new byte[0];
     }
