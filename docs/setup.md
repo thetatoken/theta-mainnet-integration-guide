@@ -44,3 +44,5 @@ And then, use the following commands to launch a private net with a single valid
 ```
 theta start --config=../privatenet/node
 ```
+When the prompt asks for password, simply enter `qwertyuiop`
+
