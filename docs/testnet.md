@@ -7,6 +7,7 @@ Follow the instructions in [setup](./setup.md) to build and install the Theta le
 ```
 cd $THETA_HOME
 cp -r ./integration/privatenet ../testnet
+rm -rf ../testnet/node/key/*
 ```
 
 #### Step 2. Update config 
@@ -21,12 +22,9 @@ rpc:
   enabled: true
 ```
 
-#### Step 3. Update key
-Also replace the content of `../testnet/node/key` with a randomly generated private key.
-
-#### Step 4. Launch and connect to the testnet
+#### Step 3. Launch and connect to the testnet
 Finally, use the following commands to launch a launch a node and connect to the Theta testnet.
 ```
 theta start --config=../testnet/node
 ```
-
+Note: when the Theta Node is launched for the first time, you need to choose a password to generate the address for the node. Please choose a secure password and keep it in a safe place. The next time when you launch the node again, you will need the password to unlock it.
