@@ -7,7 +7,7 @@ Install Go and set environment variables `GOPATH` , `GOBIN`, and `PATH`. The cur
 Clone the Theta Ledger repo https://github.com/thetatoken/theta-protocol-ledger into your `$GOPATH` with the following command. The path should look like this: `$GOPATH/src/github.com/thetatoken/theta`
 
 ```
-git clone git@github.com:thetatoken/theta-protocol-ledger.git $GOPATH/src/github.com/thetatoken/theta
+git clone https://github.com/thetatoken/theta-protocol-ledger.git $GOPATH/src/github.com/thetatoken/theta
 ```
 
 [Install glide](https://github.com/Masterminds/glide). Then execute the following commands to download all dependencies:
