@@ -2,7 +2,26 @@
 
 ## Preparation
 
-Install Go and set environment variables `GOPATH` , `GOBIN`, and `PATH`. The current code base should compile with **Go 1.9.7** on a Linux-like system (i.e. Ubuntu, Mac OS X).
+Install Go and set environment variables `GOPATH` , `GOBIN`, and `PATH`. The current code base should compile with **Go 1.9.7** on a Linux like system (i.e. Ubuntu, Mac OS X). Below are the steps to install Go 1.9.7 and setup the environments on Ubuntu.
+
+```
+sudo apt-get update
+sudo apt-get install gcc
+sudo apt-get install make
+sudo wget https://dl.google.com/go/go1.9.7.linux-amd64.tar.gz
+sudo tar -zxvf go1.9.7.linux-amd64.tar.gz -C /usr/local/
+echo 'export GOROOT=/usr/local/go' >> ~/.bashrc
+echo 'export GOPATH=$HOME/go' >> ~/.bashrc
+echo 'export PATH=$PATH:$GOROOT/bin:$GOPATH/bin' >> ~/.bashrc
+source ~/.bashrc
+```
+
+Also [install glide](https://github.com/Masterminds/glide) for dependency management, and [install jq](https://stedolan.github.io/jq/download/) to run the unit tests. 
+
+```
+sudo apt-get install golang-glide
+sudo apt-get install jq
+```
 
 Clone the Theta Ledger repo https://github.com/thetatoken/theta-protocol-ledger into your `$GOPATH` with the following command. The path should look like this: `$GOPATH/src/github.com/thetatoken/theta`
 
@@ -10,14 +29,13 @@ Clone the Theta Ledger repo https://github.com/thetatoken/theta-protocol-ledger 
 git clone https://github.com/thetatoken/theta-protocol-ledger.git $GOPATH/src/github.com/thetatoken/theta
 ```
 
-[Install glide](https://github.com/Masterminds/glide). Then execute the following commands to download all dependencies:
+Then execute the following commands to download all dependencies:
 
 ```
 export THETA_HOME=$GOPATH/src/github.com/thetatoken/theta
 cd $THETA_HOME
 make get_vendor_deps
 ```
-Also [install jq](https://stedolan.github.io/jq/download/) to run the unit tests. 
 
 ## Build and Install
 This should build the binaries and copy them into your `$GOPATH/bin`. Two binaries `theta` and `thetacli` are generated. `theta` can be regarded as the launcher of the Theta Ledger node, and `thetacli` is a wallet with command line tools to interact with the ledger. 
