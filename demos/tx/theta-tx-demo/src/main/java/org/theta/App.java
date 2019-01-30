@@ -25,7 +25,7 @@ public final class App {
         String rpcUrl = "http://localhost:16888/rpc"; // can point to any Theta node
         App.rpc = new RPC(rpcUrl);
 
-        String chainID      = "private_net"; // Only for the private net launched followig the setup guide, different chain should have different chainID
+        String chainID      = "privatenet"; // Only for the private net launched followig the setup guide, different chain should have different chainID
         String senderAddr   = "2E833968E5bB786Ae419c4d13189fB081Cc43bab";
         String receiverAddr = "9F1233798E905E173560071255140b4A8aBd3Ec6";
 

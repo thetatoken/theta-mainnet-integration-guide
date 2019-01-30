@@ -173,7 +173,7 @@ curl -X POST -H 'Content-Type: application/json' --data '{"jsonrpc":"2.0","metho
 	"jsonrpc": "2.0",
 	"id": 1,
 	"result": {
-		"chain_id": "private_net",
+		"chain_id": "privatenet",
 		"epoch": "5",
 		"height": "3",
 		"parent": "0x724b0f68d8e45f930b95bac224fa7d67eef243307b4e84f0f666198d1d70e9d7",
@@ -263,7 +263,7 @@ curl -X POST -H 'Content-Type: application/json' --data '{"jsonrpc":"2.0","metho
 	"jsonrpc": "2.0",
 	"id": 1,
 	"result": {
-		"chain_id": "private_net",
+		"chain_id": "privatenet",
 		"epoch": "5",
 		"height": "3",
 		"parent": "0x724b0f68d8e45f930b95bac224fa7d67eef243307b4e84f0f666198d1d70e9d7",
@@ -370,7 +370,7 @@ curl -X POST -H 'Content-Type: application/json' --data '{"jsonrpc":"2.0","metho
 	"result": {
 		"hash": "0x0a495698654ff5372ef8936eca727c25b975ea0f7e5ebea282e3c86017dfe521",
 		"block": {
-			"ChainID": "private_net",
+			"ChainID": "privatenet",
 			"Epoch": 40186,
 			"Height": 20094,
 			"Parent": "0x6797d42ff724a47e9dfd3aa425e2a4f06f40b64fd347ca8c9ebb43d08cb58847",
