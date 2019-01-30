@@ -15,4 +15,4 @@ Use the following commands to launch a launch a node and connect to the Theta te
 ```
 theta start --config=~/theta_testnet/walletnode
 ```
-Note: when the Theta Node is launched for the first time, you need to choose a password to generate an address for the node. Please choose a secure password and keep it in a safe place. The next time when you launch the node again, you will need the password to unlock it.
+Note: when the Theta Node is launched for the first time, you need to choose a password to generate an address for the node. **Please choose a secure password and keep it in a safe place**. The next time when you launch the node again, you will need the password to unlock it.
