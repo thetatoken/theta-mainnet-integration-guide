@@ -3,7 +3,7 @@
 Theta Labs maintains a testnet environment which resembles the mainnet to facilitate partner testing. To connect to the testnet, open a terminal, and follow the steps below.
 
 #### Step 1. Setup
-Follow the instructions in [setup](./setup.md) to build and install the Theta ledger. Then,
+Follow the instructions in [setup](./setup.md) to build and install the Theta ledger. Then, press `Ctrl+C` to stop the private net node, and execute the following commands.
 ```
 mkdir ~/theta_testnet
 cd $THETA_HOME
