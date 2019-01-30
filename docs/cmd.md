@@ -4,7 +4,7 @@ The Theta ledger software provides a command line wallet tool `thetacli` for use
 
 ## Send and Receive Tokens
 
-After building the Theta ledger, twwo binaries `theta` and `thetacli` are generated. `theta` can be regarded as the launcher of the Theta Ledger node, and `thetacli` is a wallet with command line tools to interact with the ledger. We can use the `thetacli` command line tool to send Theta tokens from one address to another by executing the following command. Open a terminal, and execute the following command. When the prompt asks for password, simply enter `qwertyuiop`
+After building the Theta ledger, two binaries `theta` and `thetacli` are generated. `theta` can be regarded as the launcher of the Theta Ledger node, and `thetacli` is a wallet with command line tools to interact with the ledger. We can use the `thetacli` command line tool to send Theta tokens from one address to another by executing the following command. Open a terminal, and execute the following command. When the prompt asks for password, simply enter `qwertyuiop`
 ```
 thetacli tx send --chain="private_net" --from=2E833968E5bB786Ae419c4d13189fB081Cc43bab --to=9F1233798E905E173560071255140b4A8aBd3Ec6 --theta=10 --seq=1
 ```
