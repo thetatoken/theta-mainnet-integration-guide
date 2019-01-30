@@ -12,7 +12,7 @@ The balance of an address can be retrieved with the following query command, aft
 ```
 thetacli query account --address=9F1233798E905E173560071255140b4A8aBd3Ec6
 ```
-Now let us send 20 more Theta tokens. Note that we need to increment the `seq` parameter to 2.
+Now let us send 20 more Theta tokens. Note that we need to increment the `seq` parameter to 2. The `seq` parameter is a transaction counter for each account, similar to the `nonce` parameter for Ethereum transactions. Each time we send tokens from an account, we need to increment the `seq` by 1.
 ```
 thetacli tx send --chain="private_net" --from=2E833968E5bB786Ae419c4d13189fB081Cc43bab --to=9F1233798E905E173560071255140b4A8aBd3Ec6 --theta=20 --seq=2
 ```
