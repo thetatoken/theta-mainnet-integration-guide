@@ -144,8 +144,9 @@ This API returns the block being queried in json format.
 3: committed
 4: directly finalized
 5: indirectly finalized
+6: trusted (the first block in a verified snapshot is marked as trusted)
 ```
-A block is considered Finalized by the validators if the status is **either 4 or 5**
+A block and all the transactions included in the block are considered Finalized by the validators if the block status is **either 4, 5, or 6**
 
 ```
 Block status transitions:
