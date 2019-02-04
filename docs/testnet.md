@@ -11,7 +11,7 @@ cp -r ./integration/testnet/walletnode ~/theta_testnet
 ```
 
 #### Step 2. Launch and connect to the testnet
-Use the following commands to launch a launch a node and connect to the Theta testnet. It may take some time to download the blockchain data to be in-sync with the network. 
+Start a screen or tmux session, and use the following commands to launch a launch a node and connect to the Theta testnet. It may take some time to download the blockchain data to be in-sync with the network.
 ```
 theta start --config=~/theta_testnet/walletnode
 ```
