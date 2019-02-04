@@ -10,9 +10,9 @@ The documentation is organized under the [docs](docs/) directory.
 
   - **CMD Tool**: The [command line tool guide](docs/cmd.md) illustrates how to interact with the Theta ledger through the Theta command line interface. 
 
-  - **RPC API**: The [API reference](docs/api.md) lists the RPC APIs of the Theta ledger. 
-
   - **Testnet/Mainnet**: The [testnet](docs/testnet.md) and [mainnet](docs/mainnet.md) integration guide contain the steps for launching a Theta node and connect to the testnet and mainnet, respectively.
+
+  - **RPC API**: The [API reference](docs/api.md) lists the RPC APIs of the Theta ledger. 
 
 ## Demos
 
