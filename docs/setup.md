@@ -64,3 +64,4 @@ theta start --config=../privatenet/node
 ```
 When the prompt asks for password, simply enter `qwertyuiop`
 
+**NEXT**: The Theta [command line tools](https://github.com/thetatoken/theta-mainnet-integration-guide/blob/master/docs/cmd.md#command-line-tool) 
