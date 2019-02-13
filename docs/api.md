@@ -31,6 +31,7 @@ This API returns the current status of the blockchain.
 - latest_finalized_block_epoch: the epoch (can be viewed as a logical clock for proposer rotation) of the latest finalized block
 - current_epoch: the current epoch
 - current_time: the current Unix timestamp
+- syncing: true if the node is still in the process of synchronizing with the network
 
 **Example**
 ```
@@ -47,7 +48,8 @@ curl -X POST -H 'Content-Type: application/json' --data '{"jsonrpc":"2.0","metho
 		"latest_finalized_block_time": "1548274304",
 		"latest_finalized_block_epoch": "41106",
 		"current_epoch": "41109",
-		"current_time": "1548274311"
+		"current_time": "1548274311",
+		"syncing":false
 	}
 }
 ```
