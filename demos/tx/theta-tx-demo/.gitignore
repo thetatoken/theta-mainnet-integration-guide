@@ -27,3 +27,4 @@ buildNumber.properties
 .vscode/
 
 logs/
+bin/

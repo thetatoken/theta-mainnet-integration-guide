@@ -1,20 +1,40 @@
 # API Reference
 
-We can interact with the Theta ledger through its RPC API interface. By default the Theta node runs an RPC server at port 16888. In the examples belows, we assume the reader has followed the [setup guide](setup.md) to launch a private net on the local machine.
+Theta offers two sets of RPC APIs. The rationale of this division is to separate the public interface accessible to all users and personal interface that manages a specific user's private wallet.
+
+The **Theta APIs** is provided by the Theta Node. It is the RPC interface via which a user can interact with the Theta Node directly. As described in the [setup guide](setup.md), the Theta Node can be launched with command `theta start --config=<path/to/config/folder`. By default the Theta node runs its RPC server at port `16888`.
+
+The **ThetaCli APIs** is provided by the ThetaCli Daemon. It allows a user to interact with his/her personal Theta Wallet through RPC calls. The wallet can manange multiple accounts simultaneously. The encrypted private keys of the accounts are stored under `~/.thetacli/keys/encrypted/` by default. The RPC APIs supports account creation, lock/unlock, and sending Theta/TFuel. The ThetaCli Daemon can be run by command `thetacli daemon run --port=<port>`. If the `port` parameter is not specified, by default it runs at port `16889`. Note that part of the ThetaCli Daemon's functionality depends on the Theta Node. Hence we need to have the Theta Node running when we launch the ThetaCli Daemon.
+
+In the examples belows, we assume the reader has followed the [setup guide](setup.md) to launch both the Theta Node and the ThetaCli Daemon on the local machine.
 
 ## Table of Contents
-- [Query APIs](#query-apis)
-    - [GetStatus](#getstatus)
-	- [GetAccount](#getaccount)
-	- [GetBlock](#getblock)
-	- [GetBlockByHeight](#getblockbyheight)
-	- [GetTransaction](#gettransaction)
-- [Tx APIs](#tx-apis)
-	- [BroadcastRawTransaction](#broadcastrawtransaction)
-	- [BroadcastRawTransactionAsync](#broadcastrawtransactionasync)
-- [Call Smart Contract](#call-smart-contract)
-	- [CallSmartContract](#callsmartcontract)
-	
+
+- [Theta APIs](#theta-apis)
+	- [Query APIs](#query-apis)
+    	- [GetStatus](#getstatus)
+		- [GetAccount](#getaccount)
+		- [GetBlock](#getblock)
+		- [GetBlockByHeight](#getblockbyheight)
+		- [GetTransaction](#gettransaction)
+	- [Tx APIs](#tx-apis)
+		- [BroadcastRawTransaction](#broadcastrawtransaction)
+		- [BroadcastRawTransactionAsync](#broadcastrawtransactionasync)
+	- [Call Smart Contract](#call-smart-contract)
+		- [CallSmartContract](#callsmartcontract)
+
+- [ThetaCli APIs](#thetacli-apis)
+	- [Account APIs](#account-apis)
+		- [NewKey](#newkey)
+		- [ListKeys](#listkeys)
+		- [UnlockKey](#unlockkey)
+		- [LockKey](#lockkey)
+		- [IsKeyUnlocked](#iskeyunlocked)
+	- [Tx APIs](#tx-apis-2)
+		- [Send](#send)
+
+## Theta APIs
+
 ## Query APIs
 
 ### GetStatus
@@ -446,3 +466,222 @@ This API simulates the smart contract execution locally without submitting the s
 ```
 ```
 
+## ThetaCli APIs
+
+## Account APIs
+
+### NewKey
+
+This API creates a new account (i.e. a private key/addres pair), and encrypts the private key under `~/.thetacli/keys/encrypted/` by default.
+
+**RPC Method**: thetacli.NewKey
+
+**Query Parameters**
+
+- password: the password for the new account
+
+**Returns**
+
+- address: the address of the newly created account
+
+**Example**
+```
+// Request
+curl -X POST -H 'Content-Type: application/json' --data '{"jsonrpc":"2.0","method":"thetacli.NewKey","params":[{"password":"qwertyuiop"}],"id":1}' http://localhost:16889/rpc
+
+// Result
+{
+	"jsonrpc": "2.0",
+	"id": 1,
+	"result": {
+		"address": "0x8318dd49f83A2684E30d5fB50cD0D3D69aA82EAd"
+	}
+}
+```
+
+### ListKey
+
+This API lists the addresses of all the accounts on the local machine (i.e. under `~/.thetacli/keys/encrypted/`)
+
+**RPC Method**: thetacli.ListKey
+
+**Query Parameters**
+
+- None
+
+**Returns**
+
+- addresses: the addresses of the accounts
+
+**Example**
+```
+// Request
+curl -X POST -H 'Content-Type: application/json' --data '{"jsonrpc":"2.0","method":"thetacli.ListKeys","params":[],"id":1}' http://localhost:16889/rpc
+
+// Result
+{
+	"jsonrpc": "2.0",
+	"id": 1,
+	"result": {
+		"addresses": ["0x0d2fD67d573c8ecB4161510fc00754d64B401F86", "0x21cA457E6E34162654aDEe28bcf235ebE5eee5De", "0x2E833968E5bB786Ae419c4d13189fB081Cc43bab", "0x36Cb7E4dFBbE9508B3A2a331f171E4F6254E213f", "0x636524F8318bCE66C2D2d3159980ad487DF0eC2D", "0x70f587259738cB626A1720Af7038B8DcDb6a42a0", "0x8318dd49f83A2684E30d5fB50cD0D3D69aA82EAd", "0x8fc9fB79a8aa0F9D13156A3CDD74200F75895468", "0xA47B89c94a50C32CEACE9cF64340C4Dce6E5EcC6", "0xa5cdB2B0306518fb37b28bb63A1B2590FdE9b747", "0xcd56123D0c5D6C1Ba4D39367b88cba61D93F5405"]
+	}
+}
+```
+
+### UnlockKey
+
+This API unlocks an account. Only unlocked accounts are allowed to send out Theta/TFuel tokens.
+
+**RPC Method**: thetacli.UnlockKey
+
+**Query Parameters**
+
+- address: The address of the account to be unlocked
+- password: The password for the account
+
+**Returns**
+
+- unlocked: A boolean indicating if the account is actually unlocked
+
+**Example**
+```
+// Request
+curl -X POST -H 'Content-Type: application/json' --data '{"jsonrpc":"2.0","method":"thetacli.UnlockKey","params":[{"address":"0x2E833968E5bB786Ae419c4d13189fB081Cc43bab", "password":"qwertyuiop"}],"id":1}' http://localhost:16889/rpc
+
+// Result
+{
+	"jsonrpc": "2.0",
+	"id": 1,
+	"result": {
+		"unlocked": true
+	}
+}
+```
+
+### LockKey
+
+This API locks an account. A locked account cannot send out Theta/TFuel tokens.
+
+**RPC Method**: thetacli.LockKey
+
+**Query Parameters**
+
+- address: The address of the account to be locked
+
+**Returns**
+
+- unlocked: A boolean indicating if the account is still unlocked
+
+**Example**
+```
+// Request
+curl -X POST -H 'Content-Type: application/json' --data '{"jsonrpc":"2.0","method":"thetacli.LockKey","params":[{"address":"0x2E833968E5bB786Ae419c4d13189fB081Cc43bab"}],"id":1}' http://localhost:16889/rpc
+
+// Result
+{
+	"jsonrpc": "2.0",
+	"id": 1,
+	"result": {
+		"unlocked": false
+	}
+}
+```
+
+### IsKeyUnlocked
+
+This API returns whether an account is currently unlocked.
+
+**RPC Method**: thetacli.IsKeyUnlocked
+
+**Query Parameters**
+
+- address: The address of the account to be checked
+
+**Returns**
+
+- unlocked: A boolean indicating if the account is still unlocked
+
+**Example**
+```
+// Request
+curl -X POST -H 'Content-Type: application/json' --data '{"jsonrpc":"2.0","method":"thetacli.IsKeyUnlocked","params":[{"address":"0x2E833968E5bB786Ae419c4d13189fB081Cc43bab"}],"id":1}' http://localhost:16889/rpc
+
+// Result
+{
+	"jsonrpc": "2.0",
+	"id": 1,
+	"result": {
+		"unlocked": false
+	}
+}
+```
+
+## Tx APIs
+
+### Send
+
+This API sends the Theta/TFuel tokens. Note the API call can send either Theta tokens or TFuel tokens, or both in one shot.
+
+**RPC Method**: thetacli.Send
+
+**Query Parameters**
+
+- chain_id: ID of the chain
+- from: The address of the account to send tokens from
+- to: The address of the receipient account
+- thetawei: The amount of Theta tokens to be sent (in ThetaWei, 1 Theta = 10^18 ThetaWei)
+- tfuelwei: The amount of TFuel tokens to be sent (in TFuelWei, 1 TFuel = 10^18 TFuelWei)
+- fee: The transaction fee in TFuelWei
+- sequence: The expected sequence number of the from account
+- async: A boolean flag. If `async` is set to `true`, the RPC call will wait until the transaction has been included in a block, or a timeout reached. Otherwise, the RPC call will return immediately. 
+
+**Returns**
+
+- hash: the hash of the transaction
+- block: the details of the block that has included the transaction
+
+**Example**
+
+```
+// Async Request
+curl -X POST -H 'Content-Type: application/json' --data '{"jsonrpc":"2.0","method":"thetacli.Send","params":[{"chain_id":"privatenet", "from":"0x2E833968E5bB786Ae419c4d13189fB081Cc43bab", "to":"0xA47B89c94a50C32CEACE9cF64340C4Dce6E5EcC6", "thetawei":"99000000000000000000", "tfuelwei":"88000000000000000000", "fee":"1000000000000", "sequence":"6", "async":true}],"id":1}' http://localhost:16889/rpc
+
+// Async Result
+{
+	"jsonrpc": "2.0",
+	"id": 1,
+	"result": {
+		"hash": "0xe3e82ae1e08ca49f85842729bd3c70ba0874d59cca3812fe0807506463851d22",
+		"block": null
+	}
+}
+
+// Sync Request
+curl -X POST -H 'Content-Type: application/json' --data '{"jsonrpc":"2.0","method":"thetacli.Send","params":[{"chain_id":"privatenet", "from":"0x2E833968E5bB786Ae419c4d13189fB081Cc43bab", "to":"0xA47B89c94a50C32CEACE9cF64340C4Dce6E5EcC6", "thetawei":"99000000000000000000", "tfuelwei":"88000000000000000000", "fee":"1000000000000", "sequence":"7", "async":false}],"id":1}' http://localhost:16889/rpc
+
+// Sync Result
+{
+	"jsonrpc": "2.0",
+	"id": 1,
+	"result": {
+		"hash": "0xd4dfa1b763cac0c18c816e31ff585c01f2c4f2604dfff01cb6638d6d19e1bd1e",
+		"block": {
+			"ChainID": "privatenet",
+			"Epoch": 170511,
+			"Height": 170472,
+			"Parent": "0xe36483c52eeee44634038252bb33dfe6b70c439c94c89236c6f18c1a4a676e01",
+			"HCC": {
+				"Votes": {},
+				"BlockHash": "0xe36483c52eeee44634038252bb33dfe6b70c439c94c89236c6f18c1a4a676e01"
+			},
+			"TxHash": "0xff0d7f1bd6aa699369a935de46c287b30917958c6dbd2d542d31548eaf279525",
+			"ReceiptHash": "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421",
+			"Bloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+			"StateHash": "0x49374ccea64633a51358816d29a55f372d0fbe7e2f9cb1447ddd2c7519fc17e5",
+			"Timestamp": 1550129583,
+			"Proposer": "0x2e833968e5bb786ae419c4d13189fb081cc43bab",
+			"Signature": "0x96dad1ff2ccc4eb2e18ca99f488cb9d6e6f3333c53a3347d7f8ded5f7301b613763bf0301a85b8f8e7342858c29dd1b262b1b6bdb9552fa5c9b6b61a9b4f6d5c01"
+		}
+	}
+}
+```
