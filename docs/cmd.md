@@ -25,10 +25,13 @@ thetacli query account --address=9F1233798E905E173560071255140b4A8aBd3Ec6
 
 The Theta command line tool can be used as a wallet, which can manange multiple accounts with the keys encrypted. Below are the relevant commands:
 
-`thetacli key new`      - Create a new account with a password. The newly created key is encrypted and stored under `~/.thetacli/keys/encrypted/` by default
-`thetacli key list`	    - List all the accounts managed by the wallet.
-`thetacli key password <address>` - Reset the password for the account. You'd need the current password for the reset.
-`thetacli key delete <address>`   - Delete the account. You'd need the password for the account for the deletion.
+- `thetacli key new`: Create a new account with a password. The newly created key is encrypted and stored under `~/.thetacli/keys/encrypted/` by default
+
+- `thetacli key list`: List all the accounts managed by the wallet.
+
+- `thetacli key password <address>`: Reset the password for the account. You'd need the current password for the reset.
+
+- `thetacli key delete <address>`: Delete the account. You'd need the password for the account for the deletion.
 
 ## CLI Command Documentation
 
