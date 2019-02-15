@@ -8,7 +8,7 @@ The **Theta APIs** is provided by the Theta Node. It is the RPC interface via wh
 
 The **ThetaCli APIs** is provided by the ThetaCli Daemon. It allows a user to interact with his/her personal Theta Wallet through RPC calls. The wallet can manange multiple accounts simultaneously. The encrypted private keys of the accounts are stored under ~/.thetacli/keys/encrypted/ by default. The RPC APIs supports account creation, lock/unlock, and sending Theta/TFuel. The ThetaCli Daemon can be run by the following command. If the `port` parameter is not specified, by default it runs at port 16889. Note that part of the ThetaCli Daemon's functionality depends on the Theta Node. Hence we need to have the Theta Node running when we launch the ThetaCli Daemon.
 
-`thetacli daemon run --port=<port>`
+`thetacli daemon start --port=<port>`
 
 In the examples below, we assume the reader has followed the [setup guide](setup.md) to launch **both** the Theta Node and the ThetaCli Daemon on the local machine at port 16888 and 16889 respectively.
 
