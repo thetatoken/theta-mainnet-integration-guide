@@ -16,7 +16,8 @@ In the examples below, we assume the reader has followed the [setup guide](setup
 
 - [Theta APIs](#theta-apis)
 	- [Query APIs](#query-apis)
-    	- [GetStatus](#getstatus)
+		- [GetVersion](#getversion)
+    		- [GetStatus](#getstatus)
 		- [GetAccount](#getaccount)
 		- [GetBlock](#getblock)
 		- [GetBlockByHeight](#getblockbyheight)
@@ -40,6 +41,35 @@ In the examples below, we assume the reader has followed the [setup guide](setup
 ## Theta APIs
 
 ## Query APIs
+
+### GetVersion
+
+This API returns the version of the blockchain software.
+
+**RPC Method**: theta.GetVersion
+
+**Returns**
+
+- version: the version number
+- git_hash: the git commit hash of the code base
+- timestamp: the build timestamp
+
+**Example**
+```
+// Request
+curl -X POST -H 'Content-Type: application/json' --data '{"jsonrpc":"2.0","method":"theta.GetVersion","params":[],"id":1}' http://localhost:16888/rpc
+
+// Result
+{
+	"jsonrpc": "2.0",
+	"id": 1,
+	"result": {
+		"version": "1.0",
+		"git_hash": "9d7669a735063a283ae8b6f0826183e3830c00a5",
+		"timestamp": "Tue Feb 19 23:31:32 UTC 2019"
+	}
+}
+```
 
 ### GetStatus
 
