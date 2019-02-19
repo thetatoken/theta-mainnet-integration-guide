@@ -17,7 +17,7 @@ In the examples below, we assume the reader has followed the [setup guide](setup
 - [Theta APIs](#theta-apis)
 	- [Query APIs](#query-apis)
 		- [GetVersion](#getversion)
-    		- [GetStatus](#getstatus)
+		- [GetStatus](#getstatus)
 		- [GetAccount](#getaccount)
 		- [GetBlock](#getblock)
 		- [GetBlockByHeight](#getblockbyheight)
