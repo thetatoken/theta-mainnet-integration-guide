@@ -1,0 +1,6 @@
+### Transaction Demos
+
+This Java program contains three demos: 1) Construct a transaction, 2) sign and serialize the transaction, and 3) broadcast the signed transaction to the blockchain. For convenience, we have combined these three demos into one program. However, we note that each demo can be easily modified to be a standalone program. In particular, the second demo (transaction signing) can be run on an OFFLINE computer to sign the transaction in a more secure evironment.
+
+To run the demo, first follow the steps in the setup guide to [launch a local private net](https://github.com/thetatoken/theta-mainnet-integration-guide/blob/master/docs/setup.md#setup). Then, import the project under `theta-tx-demo` with [VS Code](https://code.visualstudio.com/), and use Maven to install the dependencies. Then, we can run the demo in the VS Code IDE, it should first construct a SendTx transaction to send some Theta and TFuel tokens between two accounts. It then signs the transaction with the sender's private key and broadcast the signed transction to the blockchain. The demo also prints out the account balances before and after the transaction. Please refer to [the code and the comments](https://github.com/thetatoken/theta-mainnet-integration-guide/blob/master/demos/tx/theta-tx-demo/src/main/java/org/theta/App.java) for more details.
+

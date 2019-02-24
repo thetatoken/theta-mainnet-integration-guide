@@ -1,0 +1,39 @@
+{
+  "name": "thetajs",
+  "version": "1.0.0",
+  "description": "JS library for Theta Txs",
+  "main": "dist/thetajs.cjs.js",
+  "module": "dist/thetajs.esm.js",
+  "browser": "dist/thetajs.umd.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "test": "jest",
+    "pretest": "npm run build"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^23.6.0",
+    "jest-custom-reporter": "^1.0.4",
+    "jest-silent-reporter": "^0.1.1",
+    "rollup": "^0.66.0",
+    "rollup-plugin-commonjs": "^9.1.0",
+    "rollup-plugin-json": "^3.1.0",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-plugin-replace": "^2.1.0"
+  },
+  "dependencies": {
+    "arraybuffer-to-buffer": "0.0.5",
+    "bignumber.js": "^8.0.2",
+    "bn.js": "^4.11.8",
+    "js-sha3": "^0.8.0",
+    "rlp": "^2.2.2",
+    "secp256k1": "^3.6.1",
+    "eth-lib": "0.2.8",
+    "lodash": "4.17.11"
+  }
+}
