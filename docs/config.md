@@ -10,10 +10,10 @@ theta start --config=../privatenet/node
 
 If the `--config` parameter is not specified, the `theta` node uses `~/.theta` as the default config folder. The `theta` node also uses the config directory to store other important data. For example, it stores its encrypted key under the `key` folder, and the blockchain data under the `db` folder.
 
-The configuration for the `theta` node is defined by a configuration file `config.ymal` under `path/to/config/folder`. Below are the options
+The configuration for the `theta` node is defined by file `config.yaml` under `path/to/config/folder`. Below are the options
 
 ```
-storage: # configuration of the storage module
+storage:
   statePruningEnabled: true # true by default, when set to true the node will perform state pruning which can effectively reduce the disk space consumption
   statePruningInterval: 16 # the purning interval (in terms of blocks) which control the frequency the pruning procedure is activated
   statePruningRetainedBlocks: 512 # the number of blocks prior to the latest finalized block whose corresponding state tree need to be retained
