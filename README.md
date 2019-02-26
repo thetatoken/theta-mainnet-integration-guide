@@ -13,6 +13,8 @@ The documentation is organized under the [docs](docs/) directory.
   - **Testnet/Mainnet**: The [testnet](docs/testnet.md#connect-to-the-testnet) and [mainnet](docs/mainnet.md#connect-to-the-mainnet) integration guide contain the steps for launching a Theta node and connect to the testnet and mainnet, respectively.
 
   - **RPC API**: The [API reference](docs/api.md#api-reference) lists the RPC APIs of the Theta ledger. 
+  
+  - **Configuration**: The [configuration guide](docs/config.md#configuration) provides details on the configuration of the Theta ledger
 
 ## Demos
 
