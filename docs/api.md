@@ -22,6 +22,7 @@ In the examples below, we assume the reader has followed the [setup guide](setup
 		- [GetBlock](#getblock)
 		- [GetBlockByHeight](#getblockbyheight)
 		- [GetTransaction](#gettransaction)
+		- [GetPendingTransactions](#getpendingtransactions)
 	- [Tx APIs](#tx-apis)
 		- [BroadcastRawTransaction](#broadcastrawtransaction)
 		- [BroadcastRawTransactionAsync](#broadcastrawtransactionasync)
@@ -396,7 +397,31 @@ curl -X POST -H 'Content-Type: application/json' --data '{"jsonrpc":"2.0","metho
 	}
 }
 ```
+### GetPendingTransactions
 
+This API returns the pending transactions in the mempool.
+
+**RPC Method**: theta.GetPendingTransactions
+
+**Returns**
+
+- tx_hashes: the hashes of the transactions pending in the mempool
+
+**Example**
+
+```
+// Request
+curl -X POST -H 'Content-Type: application/json' --data '{"jsonrpc":"2.0","method":"theta.GetPendingTransactions","params":[],"id":1}' http://localhost:16888/rpc
+
+// Result
+{
+	"jsonrpc": "2.0",
+	"id": 1,
+	"result": {
+		"tx_hashes": ["0x61ed06b78fededbbd262f95f321d7e48dee81e9b1e493b7f4d42c6bf7afd4b27", "0xc4162541f5e9f283bd9c3beb2798a4a2539b567dd35f52edefde7063f985ab17", "0xc63f2a5bbdc9bc34acde6b800ffd795e7794faa8c07c7c5606fa6cb16513779e", "0xce31bd8d44b1747e8c727bf54aafc7886a0c219d4c79f1245926d4d1244fed8c", "0x2fd317b7c35ea9d1775defd332edc0194c541042090884b4c1d06813b9fe601a", "0x98f3f180abdc756c6443b204b79fcb468bed8e6924da0004159ba686f47d4bd9", "0x6546f2c83405178821d88f1649d7b9f0ebbcde2d9dea59df55bfc7a5e5774267", "0x4a638c8ac1e926447258934be1766f24450856482375a8b7da2f902a4975d28a", "0x8ddc181dd80732961f2886402120ba1568deacbc55ecbfc26b1cf1bddd78c664", "0x14d430ca0c0a208e6bce3c89fcc8664fd4421ce72231ae161672b1b9d575c4e8"]
+	}
+}
+```
 
 ## Tx APIs
 
