@@ -1,0 +1,21 @@
+{
+  "name": "thetajs",
+  "version": "1.0.0",
+  "description": "NodeJs mainnet api demo",
+  "scripts": {
+    "test": "jest  --watchAll"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.3.4",
+    "@babel/preset-env": "^7.3.4",
+    "@babel/runtime": "^7.3.4",
+    "babel-core": "^6.26.3",
+    "babel-jest": "^24.1.0",
+    "jest": "^24.0.1"
+  },
+  "dependencies": {
+    "jayson": "^2.1.2"
+  }
+}
