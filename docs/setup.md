@@ -33,7 +33,7 @@ Also [install jq](https://stedolan.github.io/jq/download/) to run the unit tests
 sudo apt-get install jq
 ```
 
-Clone the Theta Ledger repo https://github.com/thetatoken/theta-protocol-ledger into your `$GOPATH` with the following command. The path should look like this: `$GOPATH/src/github.com/thetatoken/theta`
+Clone the `release` branch of the Theta Ledger repo https://github.com/thetatoken/theta-protocol-ledger into your `$GOPATH` with the following command. The path should look like this: `$GOPATH/src/github.com/thetatoken/theta`
 
 ```
 git clone --branch release https://github.com/thetatoken/theta-protocol-ledger.git $GOPATH/src/github.com/thetatoken/theta
