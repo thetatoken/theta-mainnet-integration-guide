@@ -16,10 +16,20 @@ echo 'export PATH=$PATH:$GOROOT/bin:$GOPATH/bin' >> ~/.bashrc
 source ~/.bashrc
 ```
 
-Also [install glide](https://github.com/Masterminds/glide) for dependency management, and [install jq](https://stedolan.github.io/jq/download/) to run the unit tests. 
+[install glide](https://github.com/Masterminds/glide#install) for dependency management, 
+```
+sudo add-apt-repository ppa:masterminds/glide && sudo apt-get update
+
+# On Ubuntu Zesty (17.04) or higher version
+sudo apt-get install golang-glide
+
+# On Ubuntu Precise (12.04), Trusty (14.04), Wily (15.10) or Xenial (16.04)
+sudo apt-get install glide
+```
+
+Also [install jq](https://stedolan.github.io/jq/download/) to run the unit tests. 
 
 ```
-sudo apt-get install golang-glide
 sudo apt-get install jq
 ```
 
