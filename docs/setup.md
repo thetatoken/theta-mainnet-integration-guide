@@ -16,7 +16,7 @@ echo 'export PATH=$PATH:$GOROOT/bin:$GOPATH/bin' >> ~/.bashrc
 source ~/.bashrc
 ```
 
-[install glide](https://github.com/Masterminds/glide#install) for dependency management, 
+[Install glide](https://github.com/Masterminds/glide#install) for dependency management, 
 ```
 sudo add-apt-repository ppa:masterminds/glide && sudo apt-get update
 
