@@ -1,6 +1,6 @@
 # Connect to the Mainnet
 
-The Theta Mainnet will launch on 3/15/2019. To connect to the mainnet, open a terminal, and follow the steps below.
+The Theta Mainnet was launched on 3/15/2019. To connect to the mainnet, open a terminal, and follow the steps below.
 
 #### Step 1. Setup
 Follow the instructions in [setup](./setup.md) to build and install the Theta ledger. Then, press `Ctrl+C` to stop the private net node, and execute the following commands.
