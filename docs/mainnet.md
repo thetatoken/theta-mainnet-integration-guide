@@ -15,6 +15,18 @@ Start a screen or tmux session, and use the following commands to launch a launc
 ```
 theta start --config=../mainnet/walletnode
 ```
-**Note**: when the mainnet Theta Node is launched for the first time, you need to choose a password to generate an address for the node. *Please choose a secure password and keep it in a safe place*. The next time when you launch the node again, you will need the password to unlock it.
+**Note**: when the mainnet Theta Node is launched for the first time, you need to choose a password to generate an address for the node. 
+1. Please choose a secure password and keep it in a safe place.
+2. Please make a backup of the key file in the folder ' ../mainnet/walletnode/key/encrypted' and keep it in a safe place.
 
-**NETX**: The [API reference](https://github.com/thetatoken/theta-mainnet-integration-guide/blob/master/docs/api.md#api-reference)
+The next time when you launch the node again, you will need the password to unlock it.
+
+
+Use the following commands to launch and connect to the mainnet the next time.
+```
+cd $THETA_HOME
+theta start --config=../mainnet/walletnode
+```
+
+
+**NEXT**: The [API reference](https://github.com/thetatoken/theta-mainnet-integration-guide/blob/master/docs/api.md#api-reference)
