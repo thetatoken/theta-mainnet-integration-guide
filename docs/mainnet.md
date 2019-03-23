@@ -7,6 +7,7 @@ Follow the instructions in [setup](./setup.md) to build and install the Theta le
 
 **Note**: when this is not the first time, make sure you have a backup of the key file in the folder `../mainnet/walletnode/key/encrypted`
 ```
+export THETA_HOME=$GOPATH/src/github.com/thetatoken/theta
 cd $THETA_HOME
 mkdir ../mainnet
 cp -r ./integration/mainnet/walletnode ../mainnet
@@ -26,6 +27,7 @@ The next time when you launch the node again, you will need the password to unlo
 
 Use the following commands to launch and connect to the mainnet the next time.
 ```
+export THETA_HOME=$GOPATH/src/github.com/thetatoken/theta
 cd $THETA_HOME
 theta start --config=../mainnet/walletnode
 ```
