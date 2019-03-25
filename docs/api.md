@@ -692,7 +692,7 @@ This API sends the Theta/TFuel tokens. Note the API call can send either Theta t
 - tfuelwei: The amount of TFuel tokens to be sent (in TFuelWei, 1 TFuel = 10^18 TFuelWei)
 - fee: The transaction fee in TFuelWei
 - sequence: The expected sequence number of the from account
-- async: A boolean flag. If `async` is set to `true`, the RPC call will wait until the transaction has been included in a block, or a timeout reached. Otherwise, the RPC call will return immediately. 
+- async: A boolean flag. If `async` is set to `false`, the RPC call will wait until the transaction has been included in a block, or a timeout reached. Otherwise, the RPC call will return immediately with the transaction hash. 
 
 **Returns**
 
