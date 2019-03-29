@@ -33,7 +33,7 @@ it('list key', async () => {
 })
 
 it('unlock key', async () => {
-  let actual = await underTest.UnlockKey('0x2E833968E5bB786Ae419c4d13189fB081Cc43bab', 'qwertyuiop')
+  let actual = await underTest.UnlockKey('0xcd56123D0c5D6C1Ba4D39367b88cba61D93F5405', 'qwertyuiop')
 
   printToConsole('unlock key', actual)
 
@@ -43,7 +43,7 @@ it('unlock key', async () => {
 })
 
 it('lock key', async () => {
-  let actual = await underTest.LockKey('0x2E833968E5bB786Ae419c4d13189fB081Cc43bab')
+  let actual = await underTest.LockKey('0xcd56123D0c5D6C1Ba4D39367b88cba61D93F5405')
 
   printToConsole('lock key', actual)
 
@@ -53,7 +53,7 @@ it('lock key', async () => {
 })
 
 it('is key unlocked', async () => {
-  let actual = await underTest.IsKeyUnlocked('0x2E833968E5bB786Ae419c4d13189fB081Cc43bab')
+  let actual = await underTest.IsKeyUnlocked('0xcd56123D0c5D6C1Ba4D39367b88cba61D93F5405')
 
   printToConsole('is key unlocked', actual)
 
