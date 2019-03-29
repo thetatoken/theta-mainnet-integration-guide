@@ -1,7 +1,8 @@
-import QueryApi from './../src/queryapi'
+import QueryApi from '../../src/node/queryapi'
+import { printToConsole } from '../testhelpers'
 
 const underTest = new QueryApi('http://localhost:16888/rpc')
-const address = '0x2E833968E5bB786Ae419c4d13189fB081Cc43bab';
+const address = '0x2E833968E5bB786Ae419c4d13189fB081Cc43bab'
 let transaction
 let block
 let blockHeight
@@ -11,23 +12,23 @@ it('get version', async () => {
 
   printToConsole('get version', actual)
 
-  let { result: {
+  let {
     version,
     git_hash,
-    timestamp }
+    timestamp
   } = actual
 
   expect(version).toBeDefined()
   expect(git_hash).toBeDefined()
   expect(timestamp).toBeDefined()
-}) 
+})
 
 it('get account', async () => {
   let actual = await underTest.GetAccount(address)
 
-  printToConsole('et account', actual)
+  printToConsole('get account', actual)
 
-  let { result: {
+  let {
     sequence,
     coins: {
       thetawei,
@@ -35,7 +36,7 @@ it('get account', async () => {
     reserved_funds,
     last_updated_block_height,
     root,
-    code }
+    code
   } = actual
 
   expect(sequence).toBeDefined()
@@ -47,19 +48,38 @@ it('get account', async () => {
   expect(code).toBeDefined()
 })
 
+it('get account with shema', async () => {
+  const coins = {
+    thetawei: 'coins.thetawei',
+    tfuelwei: 'coins.tfuelwei'
+  }
+
+  let actual = await underTest.GetAccount(address, coins)
+
+  printToConsole('get account with schema', actual)
+
+  let {
+    thetawei,
+    tfuelwei
+  } = actual
+
+  expect(thetawei).toBeDefined()
+  expect(tfuelwei).toBeDefined()
+})
+
 it('get status', async () => {
   let actual = await underTest.GetStatus()
 
   printToConsole('get status', actual)
 
-  let { result: {
+  let {
     latest_finalized_block_hash,
     latest_finalized_block_height,
     latest_finalized_block_time,
     latest_finalized_block_epoch,
     current_epoch,
     current_time,
-    syncing }
+    syncing
   } = actual
 
   // set values for other tests
@@ -79,7 +99,7 @@ it('get block', async () => {
   let actual = await underTest.GetBlock(block)
 
   // set value for 'get transaction test'
-  transaction = actual.result.transactions[0].hash
+  transaction = actual.transactions[0].hash
 
   printToConsole('get block', actual)
 
@@ -95,7 +115,7 @@ it('get block by height', async () => {
 })
 
 function expectCombined (actual) {
-  let { result: { chain_id, epoch, height, parent, transactions_hash, state_hash, timestamp, proposer, children, status, hash, transactions } } = actual
+  let { chain_id, epoch, height, parent, transactions_hash, state_hash, timestamp, proposer, children, status, hash, transactions } = actual
   expect(chain_id).toBe('privatenet')
   expect(epoch).toBeDefined()
   expect(height).toBeDefined()
@@ -115,7 +135,7 @@ it('get transaction', async () => {
 
   printToConsole('get transaction ', actual)
 
-  let { result: {
+  let {
     block_hash,
     block_height,
     status,
@@ -124,8 +144,8 @@ it('get transaction', async () => {
       proposer,
       inputs,
       outputs
-    }
-  } } = actual
+
+    } } = actual
 
   expect(block_hash).toBeDefined()
   expect(block_height).toBeDefined()
@@ -147,14 +167,7 @@ it('get pending transactions', async () => {
 
   printToConsole('get pending transactions', actual)
 
-  let { result: {
-    tx_hashes }
-  } = actual
+  let { tx_hashes } = actual
 
   expect(tx_hashes).toBeInstanceOf(Array)
 })
-
-
-function printToConsole(test, actual) {
-  console.log(`-- ${test} -- \n`, JSON.stringify(actual, null,1))
-}

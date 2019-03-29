@@ -8,7 +8,6 @@ Install Go and set environment variables `GOPATH` , `GOBIN`, and `PATH`. The cur
 sudo apt-get update
 sudo apt-get install gcc
 sudo apt-get install make
-sudo apt-get install build-essential
 sudo wget https://dl.google.com/go/go1.9.7.linux-amd64.tar.gz
 sudo tar -zxvf go1.9.7.linux-amd64.tar.gz -C /usr/local/
 echo 'export GOROOT=/usr/local/go' >> ~/.bashrc
