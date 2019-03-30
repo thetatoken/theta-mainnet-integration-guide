@@ -558,7 +558,7 @@ curl -X POST -H 'Content-Type: application/json' --data '{"jsonrpc":"2.0","metho
 }
 ```
 
-### ListKey
+### ListKeys
 
 This API lists the addresses of all the accounts on the local machine (i.e. under `~/.thetacli/keys/encrypted/`)
 
