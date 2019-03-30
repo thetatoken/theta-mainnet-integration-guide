@@ -27,7 +27,7 @@ const feeInTFuelWei = (new BigNumber(10)).pow(12) // Any fee >= 10^12 TFuelWei s
 
 afterAll(async () => {
   // sent back the coins
-  accountApi.UnlockKey(receiverAddr, password)
+  await accountApi.UnlockKey(receiverAddr, password)
   let account = await queryApi.GetAccount(receiverAddr, sendPrerequistSchema)
   let sendQuery = new SendParameters('privatenet', receiverAddr, senderAddr, thetaWei.multipliedBy(2), tfuelWei.multipliedBy(2), feeInTFuelWei, account.sequence.plus(1), true)
   await underTest.Send(sendQuery)
@@ -143,3 +143,4 @@ it('send async tx', async (done) => {
 
   done()
 })
+z
