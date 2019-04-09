@@ -6,6 +6,7 @@ Install Go and set environment variables `GOPATH` , `GOBIN`, and `PATH`. The cur
 
 ```
 sudo apt-get update
+sudo apt-get install build-essential
 sudo apt-get install gcc
 sudo apt-get install make
 sudo wget https://dl.google.com/go/go1.9.7.linux-amd64.tar.gz
