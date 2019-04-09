@@ -1,4 +1,5 @@
 import jayson from 'jayson/promise'
+import { responseExtractor } from '../helpers/responseExtractor'
 
 // API Reference: https://github.com/thetatoken/theta-mainnet-integration-guide/blob/master/docs/api.md#api-reference
 
@@ -12,19 +13,22 @@ export default class QueryApi {
 
   // --------------- Get version of the Blockchain ---------------- //
   // API Reference: https://github.com/thetatoken/theta-mainnet-integration-guide/blob/master/docs/api.md#getversion
-  async GetVersion () {
+  async GetVersion (schema) {
     try {
-      return this.client.request('theta.GetVersion', [])
+      let response = await this.client.request('theta.GetVersion', [])
+      return responseExtractor(response, schema)
     } catch (error) {
       console.error(error)
+      throw error
     }
   }
 
   // --------------- Get the Status of the Blockchain ---------------- //
   // API Reference: https://github.com/thetatoken/theta-mainnet-integration-guide/blob/master/docs/api.md#getstatus
-  async GetStatus () {
+  async GetStatus (schema) {
     try {
-      return this.client.request('theta.GetStatus', [])
+      let response = await this.client.request('theta.GetStatus', [])
+      return responseExtractor(response, schema)
     } catch (error) {
       console.error(error)
     }
@@ -32,29 +36,34 @@ export default class QueryApi {
 
   // ---------------------- Retrieve an account ---------------------- //
   // API Reference: https://github.com/thetatoken/theta-mainnet-integration-guide/blob/master/docs/api.md#getaccount
-  async GetAccount (address) {
+  async GetAccount (address, schema) {
     try {
-      return this.client.request('theta.GetAccount', [{ address: address }])
+      let response = await this.client.request('theta.GetAccount', [{ address: address }])
+      return responseExtractor(response, schema)
     } catch (error) {
       console.error(error)
+      throw error
     }
   }
-    
+
   // ------------- Get a block with the given block hash ------------- //
   // API Reference: https://github.com/thetatoken/theta-mainnet-integration-guide/blob/master/docs/api.md#getblock
-  async GetBlock (hash) {
+  async GetBlock (hash, schema) {
     try {
-      return this.client.request('theta.GetBlock', [{ hash: hash }])
+      let response = await this.client.request('theta.GetBlock', [{ hash: hash }])
+      return responseExtractor(response, schema)
     } catch (error) {
       console.error(error)
+      throw error
     }
   }
-  
+
   // ---------------- Get a block at the given height ---------------- //
   // API Reference: https://github.com/thetatoken/theta-mainnet-integration-guide/blob/master/docs/api.md#getblockbyheight
-  async GetBlockByHeight (height) {
+  async GetBlockByHeight (height, schema) {
     try {
-      return this.client.request('theta.GetBlockByHeight', [{ height: height.toString() }])
+      let response = await this.client.request('theta.GetBlockByHeight', [{ height: height.toString() }])
+      return responseExtractor(response, schema)
     } catch (error) {
       console.error(error)
     }
@@ -62,21 +71,25 @@ export default class QueryApi {
 
   // ------- Get a transaction with the given transaction hash ------- //
   // API Reference: https://github.com/thetatoken/theta-mainnet-integration-guide/blob/master/docs/api.md#gettransaction
-  async GetTransaction (hash) {
+  async GetTransaction (hash, schema) {
     try {
-      return this.client.request('theta.GetTransaction', [{ hash: hash }])
+      let response = await this.client.request('theta.GetTransaction', [{ hash: hash }])
+      return responseExtractor(response, schema)
     } catch (error) {
       console.error(error)
+      throw error
     }
   }
 
   // ------- Get pending transactions ------- //
   // API Reference: https://github.com/thetatoken/theta-mainnet-integration-guide/blob/master/docs/api.md#getpendingtransactions
-  async GetPendingTransactions (hash) {
+  async GetPendingTransactions (schema) {
     try {
-      return this.client.request('theta.GetPendingTransactions', [])
+      let response = await this.client.request('theta.GetPendingTransactions', [])
+      return responseExtractor(response, schema)
     } catch (error) {
       console.error(error)
+      throw error
     }
   }
 }
