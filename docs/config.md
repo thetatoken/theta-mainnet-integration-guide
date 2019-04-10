@@ -18,6 +18,7 @@ storage:
   statePruningInterval: 16 # the purning interval (in terms of blocks) which control the frequency the pruning procedure is activated
   statePruningRetainedBlocks: 512 # the number of blocks prior to the latest finalized block whose corresponding state tree need to be retained
 p2p:
+  address: 127.0.0.1 # the binding address of the RPC service, 0.0.0.0 by default
   port: 50001 # the p2p port that the Theta node listens on, 50001 by default
   seeds: 18.218.16.108:21000,18.191.88.191:21000,18.222.201.29:21000 # the IP addresses of the seed nodes
 rpc:
