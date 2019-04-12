@@ -2,6 +2,7 @@ package org.theta.tx.types;
 
 import java.math.BigInteger;
 import org.ethereum.util.RLP;
+import org.ethereum.util.ByteUtil;
 
 public final class TxInput {
 
@@ -22,10 +23,11 @@ public final class TxInput {
     }
 
     public byte[] rlpEncode() {
+        byte[] sequence = ByteUtil.longToBytesNoLeadZeroes(this.sequence);
         byte[] rlpEncoded = RLP.encodeList(
             RLP.encode(this.address),
             this.coins.rlpEncode(),
-            RLP.encode(this.sequence),
+            RLP.encodeElement(sequence),
             RLP.encode(this.signature));
         return rlpEncoded;
     }
