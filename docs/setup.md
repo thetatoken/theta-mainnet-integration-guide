@@ -2,15 +2,15 @@
 
 ## Preparation
 
-Install Go and set environment variables `GOPATH` , `GOBIN`, and `PATH`. The current code base should compile with **Go 1.9.7** on a Linux like system (i.e. Ubuntu, Mac OS X). Below are the steps to install Go 1.9.7 and setup the environments on Ubuntu.
+Install Go and set environment variables `GOPATH` , `GOBIN`, and `PATH`. The current code base should compile with **Go 1.11.6** on a Linux like system (i.e. Ubuntu, Mac OS X). Below are the steps to install Go 1.9.7 and setup the environments on Ubuntu.
 
 ```
 sudo apt-get update
 sudo apt-get install build-essential
 sudo apt-get install gcc
 sudo apt-get install make
-sudo wget https://dl.google.com/go/go1.9.7.linux-amd64.tar.gz
-sudo tar -zxvf go1.9.7.linux-amd64.tar.gz -C /usr/local/
+sudo wget https://dl.google.com/go/go1.11.6.linux-amd64.tar.gz
+sudo tar -zxvf go1.11.6.linux-amd64.tar.gz -C /usr/local/
 echo 'export GOROOT=/usr/local/go' >> ~/.bashrc
 echo 'export GOPATH=$HOME/go' >> ~/.bashrc
 echo 'export PATH=$PATH:$GOROOT/bin:$GOPATH/bin' >> ~/.bashrc
