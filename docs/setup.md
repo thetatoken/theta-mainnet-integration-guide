@@ -11,6 +11,7 @@ sudo apt-get install gcc
 sudo apt-get install make
 sudo apt-get install git
 sudo apt-get install -y bzr
+sudo apt-get install jq
 sudo wget https://dl.google.com/go/go1.12.1.linux-amd64.tar.gz
 sudo tar -C /usr/local -xzf go1.12.1.linux-amd64.tar.gz
 echo 'export GOROOT=/usr/local/go' >> ~/.bashrc
@@ -20,13 +21,7 @@ echo 'export THETA_HOME=$GOPATH/src/github.com/thetatoken/theta' >> ~/.bashrc
 source ~/.bashrc
 ```
 
-Also [install jq](https://stedolan.github.io/jq/download/) to run the unit tests. 
-
-```
-sudo apt-get install jq
-```
-
-Clone the `release` branch of the Theta Ledger repo https://github.com/thetatoken/theta-protocol-ledger into your `$GOPATH` with the following command. The path should look like this: `$GOPATH/src/github.com/thetatoken/theta`
+Next, clone the `release` branch of the Theta Ledger repo https://github.com/thetatoken/theta-protocol-ledger into your `$GOPATH` with the following command. The path should look like this: `$GOPATH/src/github.com/thetatoken/theta`
 
 ```
 git clone --branch release https://github.com/thetatoken/theta-protocol-ledger.git $GOPATH/src/github.com/thetatoken/theta
