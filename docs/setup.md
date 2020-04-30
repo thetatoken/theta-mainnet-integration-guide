@@ -29,14 +29,6 @@ Clone the `release` branch of the Theta Ledger repo https://github.com/thetatoke
 git clone --branch release https://github.com/thetatoken/theta-protocol-ledger.git $GOPATH/src/github.com/thetatoken/theta
 ```
 
-Then execute the following commands to download all dependencies:
-
-```
-export THETA_HOME=$GOPATH/src/github.com/thetatoken/theta
-cd $THETA_HOME
-make get_vendor_deps
-```
-
 ## Build and Install
 This should build the binaries and copy them into your `$GOPATH/bin`. Two binaries `theta` and `thetacli` are generated. `theta` can be regarded as the launcher of the Theta Ledger node, and `thetacli` is a wallet with command line tools to interact with the ledger. 
 ```
