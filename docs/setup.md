@@ -9,11 +9,14 @@ sudo apt-get update
 sudo apt-get install build-essential
 sudo apt-get install gcc
 sudo apt-get install make
+sudo apt-get install git
+sudo apt-get install -y bzr
 sudo wget https://dl.google.com/go/go1.12.1.linux-amd64.tar.gz
 sudo tar -C /usr/local -xzf go1.12.1.linux-amd64.tar.gz
 echo 'export GOROOT=/usr/local/go' >> ~/.bashrc
 echo 'export GOPATH=$HOME/go' >> ~/.bashrc
 echo 'export PATH=$PATH:$GOROOT/bin:$GOPATH/bin' >> ~/.bashrc
+echo 'export THETA_HOME=$GOPATH/src/github.com/thetatoken/theta' >> ~/.bashrc
 source ~/.bashrc
 ```
 
@@ -32,6 +35,8 @@ git clone --branch release https://github.com/thetatoken/theta-protocol-ledger.g
 ## Build and Install
 This should build the binaries and copy them into your `$GOPATH/bin`. Two binaries `theta` and `thetacli` are generated. `theta` can be regarded as the launcher of the Theta Ledger node, and `thetacli` is a wallet with command line tools to interact with the ledger. 
 ```
+export GO111MODULE=on
+cd $THETA_HOME
 make install
 ```
 
