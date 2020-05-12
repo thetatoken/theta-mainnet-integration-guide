@@ -14,6 +14,8 @@ The documentation is organized under the [docs](docs/) directory.
 
   - **RPC API**: The [API reference](docs/api.md#api-reference) lists the RPC APIs of the Theta ledger. 
   
+  - **Explorer API**: The [Explorer API reference](https://github.com/thetatoken/theta-infrastructure-ledger-explorer/blob/master/docs/api.md#api-reference) lists the APIs provided by the [Theta Explorer](https://explorer.thetatoken.org/). 
+
   - **Configuration**: The [configuration guide](docs/config.md#configuration) provides details on the configuration of the Theta ledger.
 
 ## Demos
