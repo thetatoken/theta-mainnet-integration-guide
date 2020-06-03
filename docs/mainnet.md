@@ -9,8 +9,9 @@ Follow the instructions in [setup](./setup.md) to build and install the Theta le
 ```
 export THETA_HOME=$GOPATH/src/github.com/thetatoken/theta
 cd $THETA_HOME
-mkdir ../mainnet
-cp -r ./integration/mainnet/walletnode ../mainnet
+mkdir -p ../mainnet/walletnode
+wget -O ../mainnet/walletnode/snapshot `curl -k https://mainnet-data.thetatoken.org/snapshot`
+curl -k --output ../mainnet/walletnode/config.yaml `curl -k 'https://mainnet-data.thetatoken.org/config?is_guardian=true'`
 ```
 
 #### Step 2. Launch and connect to the mainnet
