@@ -3,15 +3,15 @@
 The Theta Mainnet was launched on 3/15/2019. To connect to the mainnet, open a terminal, and follow the steps below.
 
 #### Step 1. Setup
-Follow the instructions in [setup](./setup.md) to build and install the Theta ledger. Then, press `Ctrl+C` to stop the private net node, and execute the following commands to download the snapshot and config file for mainnet.
+Follow the instructions in [setup](./setup.md) to build and install the Theta ledger. Then, press `Ctrl+C` to stop the private net node, and execute the following commands to download the config file and the **latest snapshot** for mainnet.
 
 **Note**: when this is not the first time, make sure you have a backup of the key file in the folder `../mainnet/walletnode/key/encrypted`
 ```
 export THETA_HOME=$GOPATH/src/github.com/thetatoken/theta
 cd $THETA_HOME
 mkdir -p ../mainnet/walletnode
-wget -O ../mainnet/walletnode/snapshot `curl -k https://mainnet-data.thetatoken.org/snapshot`
 curl -k --output ../mainnet/walletnode/config.yaml `curl -k 'https://mainnet-data.thetatoken.org/config?is_guardian=true'`
+wget -O ../mainnet/walletnode/snapshot `curl -k https://mainnet-data.thetatoken.org/snapshot`
 ```
 
 #### Step 2. Launch and connect to the mainnet
