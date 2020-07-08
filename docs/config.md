@@ -16,7 +16,7 @@ The configuration for the `theta` node is defined by file `config.yaml` under `p
 storage:
   statePruningEnabled: true # true by default, when set to true the node will perform state pruning which can effectively reduce the disk space consumption
   statePruningInterval: 16 # the purning interval (in terms of blocks) which control the frequency the pruning procedure is activated
-  statePruningRetainedBlocks: 512 # the number of blocks prior to the latest finalized block whose corresponding state tree need to be retained
+  statePruningRetainedBlocks: 2048 # the number of blocks prior to the latest finalized block whose corresponding state tree need to be retained
 p2p:
   address: 127.0.0.1 # the binding address of the RPC service, 0.0.0.0 by default
   port: 50001 # the p2p port that the Theta node listens on, 50001 by default
@@ -24,7 +24,7 @@ p2p:
 rpc:
   enabled: true # false by default, when set to true the RPC API is enabled
   port: 16888 # the PRC API port, 16888 by default
-  maxConnections: # max number of simultaneous RPC connections, 200 by default
+  maxConnections: 100 # max number of simultaneous RPC connections, 200 by default
 log:
   levels: "*:info" # level of logs to be printed, "*:debug" by default
 ```
