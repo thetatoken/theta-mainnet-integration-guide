@@ -1,6 +1,6 @@
 # Theta Mainnet Integration Guide
 
-This repo contains documentation and demos to facilitate Theta mainnet integration.
+This repo contains documentation and demos to facilitate Theta mainnet integration. To learn more about the Theta Network, please visit the Theta documentation site: https://docs.thetatoken.org/
 
 ## Documentation
 
